@@ -1,0 +1,27 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <AssemblyName>StellarMap.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>StellarMap.Components.$(MSBuildProjectName)</RootNamespace>
+    <PackageId>StellarMap.$(MSBuildProjectName)</PackageId>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>0.1.0</Version>
+    <Authors>Ergodic Mage</Authors>
+    <Product>StellarMap2</Product>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ErgodicMage.Result" Version="0.2.0" />
+  </ItemGroup>
+
+</Project>
