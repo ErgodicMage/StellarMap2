@@ -7,6 +7,8 @@ public interface IStellarObject
 
     string Name { get; set; }
 
+    string ObjectType { get; set; }
+
     StellarObjectProperties StellarObjectProperties { get; set; }
 
     Result Add<T>(T obj) where T : IStellarObject;

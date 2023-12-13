@@ -7,6 +7,7 @@ public class Planet : IStellarObject, IEqualityComparer<Star>
     public string Identifier { get; set; } = string.Empty;
     public string ParentIdentifier { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
+    public string ObjectType { get; set; } = string.Empty;
     public StellarObjectProperties StellarObjectProperties { get; set; }
 
     #region Add Functions
