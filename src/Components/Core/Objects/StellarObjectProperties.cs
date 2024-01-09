@@ -1,4 +1,4 @@
-﻿namespace StellarMap.Components.Core;
+﻿namespace StellarMap.Core;
 
 public record struct StellarObjectProperties
 {
@@ -10,5 +10,5 @@ public record struct StellarObjectProperties
     public string Designation {get; set;} = string.Empty;
     public string Description { get; set; } = string.Empty;
 
-    public string? ObjectType { get; set; } = string.Empty;
+    public string ObjectType { get; set; } = string.Empty;
 }

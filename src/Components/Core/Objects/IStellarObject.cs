@@ -1,13 +1,13 @@
-﻿namespace StellarMap.Components.Core;
+﻿namespace StellarMap.Core;
 
 public interface IStellarObject
 {
-    string Identifier { get; set; }
-    string ParentIdentifier { get; set; }
+    Identifier Identifier { get; set; }
+    Identifier ParentIdentifier { get; set; }
 
-    string Name { get; set; }
+    string? Name { get; }
 
-    string ObjectType { get; set; }
+    string? ObjectType { get; }
 
     StellarObjectProperties StellarObjectProperties { get; set; }
 

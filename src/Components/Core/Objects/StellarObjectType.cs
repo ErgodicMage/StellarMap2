@@ -1,4 +1,4 @@
-﻿namespace StellarMap.Components.Core;
+﻿namespace StellarMap.Core;
 
 public static class StellarObjectType
 {

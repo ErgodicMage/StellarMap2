@@ -1,14 +1,25 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿namespace StellarMap.Core;
 
-namespace StellarMap.Components.Core;
-
-public class Planet : IStellarObject, IEqualityComparer<Star>
+public class Planet : BaseStellarObject, IStellarObject, IEqualityComparer<Planet>
 {
-    public string Identifier { get; set; } = string.Empty;
-    public string ParentIdentifier { get; set; } = string.Empty;
-    public string Name { get; set; } = string.Empty;
-    public string ObjectType { get; set; } = string.Empty;
-    public StellarObjectProperties StellarObjectProperties { get; set; }
+    #region Constructors
+    public Planet() { }
+
+    public Planet(StellarObjectProperties properties) 
+        => StellarObjectProperties = properties with { ObjectType = StellarObjectType.Planet };
+
+    public Planet(StellarObjectProperties properties, Identifier identifier)
+    {
+        StellarObjectProperties = properties with { ObjectType = StellarObjectType.Planet };
+        Identifier = identifier;
+    }
+
+    public Planet(StellarObjectProperties properties, IIdentifierGenerator identifierGenerator)
+    {
+        StellarObjectProperties = properties with { ObjectType = StellarObjectType.Planet };
+        Identifier = identifierGenerator.GenerateIdentifier(StellarObjectType.Planet);
+    }
+    #endregion
 
     #region Add Functions
     public Result Add<T>(T obj) where T : IStellarObject
@@ -35,12 +46,12 @@ public class Planet : IStellarObject, IEqualityComparer<Star>
     #endregion
 
     #region IEqualityComparer Functions
-    public bool Equals(Star? x, Star? y)
+    public bool Equals(Planet? x, Planet? y)
     {
         throw new NotImplementedException();
     }
 
-    public int GetHashCode([DisallowNull] Star obj)
+    public int GetHashCode(Planet obj)
     {
         throw new NotImplementedException();
     }
