@@ -4,10 +4,10 @@ namespace StellarMap.Core.Math;
 
 public readonly record struct Point(double X, double Y, double Z)
 {
-    #region Static Point3s
-    public static Point Origin { get; } = new (0, 0, 0);
+    #region Static Points
+    public static Point Origin => new (0, 0, 0);
 
-    public static Point NaN { get; } = new (double.NaN, double.NaN, double.NaN);
+    public static Point NaN => new (double.NaN, double.NaN, double.NaN);
     #endregion
 
     #region Functions
@@ -16,7 +16,7 @@ public readonly record struct Point(double X, double Y, double Z)
         var radius = System.Math.Sqrt(X * X + Y * Y + Z * Z);
         var inclination = System.Math.Acos(Z / radius);
         var azimuthal = System.Math.Sign(Y) * System.Math.Acos(X / radius);
-        return new SphericalPoint(radius, inclination, azimuthal);
+        return new(radius, inclination, azimuthal);
     }
 
     public readonly Vector ToVector() => new (this.X, this.X, this.Z);
@@ -28,18 +28,7 @@ public readonly record struct Point(double X, double Y, double Z)
     #endregion
 
     #region HashCode
-    public override readonly int GetHashCode()
-    {
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 81173;
-            // Suitable nullity checks etc, of course :)
-            hash = hash * 96527 + X.GetHashCode();
-            hash = hash * 96527 + Y.GetHashCode();
-            hash = hash * 96527 + Z.GetHashCode();
-            return hash;
-        }
-    }
+    public override readonly int GetHashCode() => HashCode.Combine(X, Y, Z);
     #endregion
 
     #region Operators
@@ -79,8 +68,8 @@ public readonly record struct Point(double X, double Y, double Z)
         y = default;
         z = default;
 
-        Result guardResult = GuardClause.NullOrWhiteSpace(text);
-        if (!guardResult.Success) return false;
+        if (string.IsNullOrEmpty(text))
+            return false;
 
         // right now this is elcheapo - only handles (1.1, 2.4, 3.2) format
         string? temp = text?.Replace("(", "").Replace(")", "");

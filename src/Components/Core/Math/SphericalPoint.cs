@@ -16,13 +16,12 @@ public readonly record struct SphericalPoint(double Radius, double Inclination, 
     #endregion
 
     #region Conversion
-    [Pure]
     public readonly Point ToPoint()
     {
         var x = Radius * System.Math.Sin(Inclination) * System.Math.Cos(Azimuth);
         var y = Radius * System.Math.Sin(Inclination) * System.Math.Sin(Azimuth);
         var z = Radius * System.Math.Cos(Inclination);
-        return new Point(x, y, z);
+        return new(x, y, z);
     }
     #endregion
 }

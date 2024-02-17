@@ -4,8 +4,9 @@ namespace StellarMap.Core.Math;
 
 public readonly record struct Vector(double X, double Y, double Z)
 {
-    #region Static Vector3ds
+    #region Static Vectors
     public static Vector NullVector => new(0, 0, 0);
+    public static Vector UnitVector => new(1, 1, 1);
     public static Vector NaN => new(double.NaN, double.NaN, double.NaN);
     #endregion
 
@@ -35,18 +36,7 @@ public readonly record struct Vector(double X, double Y, double Z)
     #endregion
 
     #region HashCode
-    public override readonly int GetHashCode()
-    {
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 103841;
-            // Suitable nullity checks etc, of course :)
-            hash = hash * 49627 + X.GetHashCode();
-            hash = hash * 49627 + Y.GetHashCode();
-            hash = hash * 49627 + Z.GetHashCode();
-            return hash;
-        }
-    }
+    public override readonly int GetHashCode() => HashCode.Combine(X, Y, Z);
     #endregion
 
     #region Operators
