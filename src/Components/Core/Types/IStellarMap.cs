@@ -1,6 +1,6 @@
 ﻿namespace StellarMap.Core;
 
-internal interface IStellarMap
+public interface IStellarMap
 {
     string? Name { get; set; }
     Dictionary<string, string>? MetaData { get; }
