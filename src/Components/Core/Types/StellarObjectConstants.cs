@@ -1,6 +1,6 @@
 ﻿namespace StellarMap.Core;
 
-public static class StellarObjectTypes
+public static class StellarObjectConstants
 {
     public const string StellarBody = "StellarBody";
     public const string Star = "Star";
