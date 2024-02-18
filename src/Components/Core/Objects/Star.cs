@@ -6,18 +6,18 @@ public class Star : BaseStellarObject, IStellarObject, IEqualityComparer<Star>
     public Star() { }
 
     public Star(StellarObjectProperties properties) 
-        => StellarObjectProperties = properties with { ObjectType = StellarObjectType.Star };
+        => StellarObjectProperties = properties with { ObjectType = StellarObjectTypes.Star };
 
     public Star(StellarObjectProperties properties, Identifier identifier)
     {
-        StellarObjectProperties = properties with { ObjectType = StellarObjectType.Star };
+        StellarObjectProperties = properties with { ObjectType = StellarObjectTypes.Star };
         Identifier = identifier;
     }
 
     public Star(StellarObjectProperties properties, IIdentifierGenerator identifierGenerator)
     {
-        StellarObjectProperties = properties with { ObjectType = StellarObjectType.Star };
-        Identifier = identifierGenerator.GenerateIdentifier(StellarObjectType.Planet);
+        StellarObjectProperties = properties with { ObjectType = StellarObjectTypes.Star };
+        Identifier = identifierGenerator.GenerateIdentifier(StellarObjectTypes.Planet);
     }
     #endregion
     #region Add Functions
