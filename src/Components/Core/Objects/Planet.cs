@@ -6,18 +6,18 @@ public class Planet : BaseStellarObject, IStellarObject, IEqualityComparer<Plane
     public Planet() { }
 
     public Planet(StellarObjectProperties properties) 
-        => StellarObjectProperties = properties with { ObjectType = StellarObjectConstants.Planet };
+        => StellarObjectProperties = properties with { ObjectType = StellarObjectType.Planet };
 
     public Planet(StellarObjectProperties properties, Identifier identifier)
     {
-        StellarObjectProperties = properties with { ObjectType = StellarObjectConstants.Planet };
+        StellarObjectProperties = properties with { ObjectType = StellarObjectType.Planet };
         Identifier = identifier;
     }
 
     public Planet(StellarObjectProperties properties, IIdentifierGenerator identifierGenerator)
     {
-        StellarObjectProperties = properties with { ObjectType = StellarObjectConstants.Planet };
-        Identifier = identifierGenerator.GenerateIdentifier(StellarObjectConstants.Planet);
+        StellarObjectProperties = properties with { ObjectType = StellarObjectType.Planet };
+        Identifier = identifierGenerator.GenerateIdentifier(StellarObjectType.Planet);
     }
     #endregion
 

@@ -7,7 +7,7 @@ public interface IStellarObject
 
     string? Name { get; }
 
-    string? ObjectType { get; }
+    StellarObjectType? ObjectType { get; }
 
     StellarObjectProperties StellarObjectProperties { get; set; }
 
