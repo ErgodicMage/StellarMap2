@@ -8,6 +8,7 @@ public interface IStellarMap
     Dictionary<Identifier, Planet>? Planets { get; set; }
     Dictionary<Identifier, Satelite>? Satelites { get; set; }
     Dictionary<Identifier, DwarfPlanet>? DwarfPlanets { get; set; }
+    Dictionary<Identifier, Asteroid>? Asteroids { get; set; }
 
     Result<T> Get<T>(Identifier identifier) where T : IStellarObject;
 

@@ -8,6 +8,7 @@ public abstract class StellarObjectType
     public static readonly StellarObjectType Planet = new PlanetType(2);
     public static readonly StellarObjectType Satelite = new SateliteType(3);
     public static readonly StellarObjectType DwarfPlanet = new DwarfPlanetType(4);
+    public static readonly StellarObjectType Asteroid = new AsteroidType(5);
 
     public string Name { get; protected init; }
     public int Value {get; protected init; }
@@ -31,6 +32,10 @@ public abstract class StellarObjectType
     }
 
     private class DwarfPlanetType(int value) : StellarObjectType(value, StellarObjectConstants.DwarfPlanet)
+    {
+    }
+
+    private class AsteroidType(int value) : StellarObjectType(value, StellarObjectConstants.Asteroid)
     {
     }
 }
