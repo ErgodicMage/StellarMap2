@@ -2,14 +2,17 @@
 
 public interface IStellarObject
 {
-    Identifier Identifier { get; set; }
+    string? Name { get; init; }
+    string? AlternativeName { get; set; }
+    string? Description { get; set; }
+    string? Designation { get; set; }
+
+    IStellarMap Map { get; init; }
+
+    Identifier Identifier { get; init; }
     Identifier ParentIdentifier { get; set; }
 
-    string? Name { get; }
-
     StellarObjectType? ObjectType { get; }
-
-    StellarObjectProperties StellarObjectProperties { get; set; }
 
     Result Add<T>(T obj) where T : IStellarObject;
 

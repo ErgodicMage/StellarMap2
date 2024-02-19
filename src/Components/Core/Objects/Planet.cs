@@ -5,41 +5,28 @@ public class Planet : BaseStellarObject, IStellarObject, IEqualityComparer<Plane
     #region Constructors
     public Planet() { }
 
-    public Planet(StellarObjectProperties properties) 
-        => StellarObjectProperties = properties with { ObjectType = StellarObjectType.Planet };
-
-    public Planet(StellarObjectProperties properties, Identifier identifier)
-    {
-        StellarObjectProperties = properties with { ObjectType = StellarObjectType.Planet };
-        Identifier = identifier;
-    }
-
-    public Planet(StellarObjectProperties properties, IIdentifierGenerator identifierGenerator)
-    {
-        StellarObjectProperties = properties with { ObjectType = StellarObjectType.Planet };
-        Identifier = identifierGenerator.GenerateIdentifier(StellarObjectType.Planet);
-    }
+    public Planet(string name, Identifier identifier, IStellarMap map) : base(name, identifier, map) { }
     #endregion
 
     #region Add Functions
-    public Result Add<T>(T obj) where T : IStellarObject
+    public override Result Add<T>(T obj)
     {
         throw new NotImplementedException();
     }
     #endregion
 
     #region Get Functions
-    public Result<T> Get<T>(string identifier) where T : IStellarObject
+    public override Result<T> Get<T>(string identifier)
     {
         throw new NotImplementedException();
     }
 
-    public Result<T> GetByName<T>(string name) where T : IStellarObject
+    public override Result<T> GetByName<T>(string name)
     {
         throw new NotImplementedException();
     }
 
-    public Result<T> GetAll<T>() where T : IStellarObject
+    public override Result<T> GetAll<T>()
     {
         throw new NotImplementedException();
     }

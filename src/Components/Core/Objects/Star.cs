@@ -2,43 +2,36 @@
 
 public class Star : BaseStellarObject, IStellarObject, IEqualityComparer<Star>
 {
+    #region Properties
+    public List<Identifier>? PlanetIdentifiers {get; set; }
+
+    #endregion
+
     #region Constructors
     public Star() { }
 
-    public Star(StellarObjectProperties properties) 
-        => StellarObjectProperties = properties with { ObjectType = StellarObjectType.Star };
-
-    public Star(StellarObjectProperties properties, Identifier identifier)
-    {
-        StellarObjectProperties = properties with { ObjectType = StellarObjectType.Star };
-        Identifier = identifier;
-    }
-
-    public Star(StellarObjectProperties properties, IIdentifierGenerator identifierGenerator)
-    {
-        StellarObjectProperties = properties with { ObjectType = StellarObjectType.Star };
-        Identifier = identifierGenerator.GenerateIdentifier(StellarObjectType.Planet);
-    }
+    public Star(string name, Identifier identifier, IStellarMap map) : base(name, identifier, map) { }
     #endregion
+
     #region Add Functions
-    public Result Add<T>(T obj) where T : IStellarObject
+    public override Result Add<T>(T obj)
     {
         throw new NotImplementedException();
     }
     #endregion
 
     #region Get Functions
-    public Result<T> Get<T>(string identifier) where T : IStellarObject
+    public override Result<T> Get<T>(string identifier)
     {
         throw new NotImplementedException();
     }
 
-    public Result<T> GetByName<T>(string name) where T : IStellarObject
+    public override Result<T> GetByName<T>(string name)
     { 
         throw new NotImplementedException(); 
     }
 
-    public Result<T> GetAll<T>() where T : IStellarObject
+    public override Result<T> GetAll<T>()
     {
         throw new NotImplementedException();
     }
