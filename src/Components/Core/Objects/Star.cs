@@ -10,10 +10,7 @@ public class Star : BaseStellarObject, IStellarObject, IEqualityComparer<Star>
     #region Constructors
     public Star() { }
 
-    public Star(string name, Identifier identifier, IStellarMap map) : base(name, identifier, map, StellarObjectType.Star) 
-    {
-        ObjectType = StellarObjectType.Star;
-    }
+    public Star(string name, Identifier identifier, IStellarMap map) : base(name, identifier, map, StellarObjectType.Star) { }
     #endregion
 
     #region IEqualityComparer Functions

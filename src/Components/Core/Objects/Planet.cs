@@ -9,10 +9,7 @@ public class Planet : BaseStellarObject, IStellarObject, IEqualityComparer<Plane
     #region Constructors
     public Planet() { }
 
-    public Planet(string name, Identifier identifier, IStellarMap map) : base(name, identifier, map, StellarObjectType.Planet) 
-    {
-        ObjectType = StellarObjectType.Planet;
-    }
+    public Planet(string name, Identifier identifier, IStellarMap map) : base(name, identifier, map, StellarObjectType.Planet) { }
     #endregion
 
     #region Add
