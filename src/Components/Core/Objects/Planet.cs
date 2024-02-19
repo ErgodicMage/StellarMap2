@@ -2,33 +2,28 @@
 
 public class Planet : BaseStellarObject, IStellarObject, IEqualityComparer<Planet>
 {
+    #region Properties
+    public IList<Identifier>? SateliteIdentifiers { get; set; }
+    #endregion
+
     #region Constructors
     public Planet() { }
 
-    public Planet(string name, Identifier identifier, IStellarMap map) : base(name, identifier, map) { }
-    #endregion
-
-    #region Add Functions
-    public override Result Add<T>(T obj)
+    public Planet(string name, Identifier identifier, IStellarMap map) : base(name, identifier, map, StellarObjectType.Planet) 
     {
-        throw new NotImplementedException();
+        ObjectType = StellarObjectType.Planet;
     }
     #endregion
 
-    #region Get Functions
-    public override Result<T> Get<T>(string identifier)
-    {
-        throw new NotImplementedException();
-    }
+    #region Add
+    public Result Add(Satelite satelite) => AddSatelite(satelite);
 
-    public override Result<T> GetByName<T>(string name)
+    public Result AddSatelite(Satelite satelite)
     {
-        throw new NotImplementedException();
-    }
+        var result = GuardClause.Null(Map).Null(satelite);
+        if (!result.Success) return result;
 
-    public override Result<T> GetAll<T>()
-    {
-        throw new NotImplementedException();
+        return Map!.Add<Satelite>(satelite);
     }
     #endregion
 

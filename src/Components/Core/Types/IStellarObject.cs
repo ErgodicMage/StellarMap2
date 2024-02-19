@@ -12,11 +12,5 @@ public interface IStellarObject
     Identifier Identifier { get; init; }
     Identifier ParentIdentifier { get; set; }
 
-    StellarObjectType? ObjectType { get; }
-
-    Result Add<T>(T obj) where T : IStellarObject;
-
-    Result<T> Get<T>(string identifier) where T : IStellarObject;
-    Result<T> GetByName<T>(string name) where T : IStellarObject;
-    Result<T> GetAll<T>() where T : IStellarObject;
+    StellarObjectType ObjectType { get; }
 }

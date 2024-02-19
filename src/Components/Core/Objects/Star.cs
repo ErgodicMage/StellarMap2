@@ -10,30 +10,9 @@ public class Star : BaseStellarObject, IStellarObject, IEqualityComparer<Star>
     #region Constructors
     public Star() { }
 
-    public Star(string name, Identifier identifier, IStellarMap map) : base(name, identifier, map) { }
-    #endregion
-
-    #region Add Functions
-    public override Result Add<T>(T obj)
+    public Star(string name, Identifier identifier, IStellarMap map) : base(name, identifier, map, StellarObjectType.Star) 
     {
-        throw new NotImplementedException();
-    }
-    #endregion
-
-    #region Get Functions
-    public override Result<T> Get<T>(string identifier)
-    {
-        throw new NotImplementedException();
-    }
-
-    public override Result<T> GetByName<T>(string name)
-    { 
-        throw new NotImplementedException(); 
-    }
-
-    public override Result<T> GetAll<T>()
-    {
-        throw new NotImplementedException();
+        ObjectType = StellarObjectType.Star;
     }
     #endregion
 

@@ -6,6 +6,7 @@ public abstract class StellarObjectType
 {
     public static readonly StellarObjectType Star = new StarType(1);
     public static readonly StellarObjectType Planet = new PlanetType(1);
+    public static readonly StellarObjectType Satelite = new SateliteType(2);
 
     public string Name { get; protected init; }
     public int Value {get; protected init; }
@@ -21,6 +22,10 @@ public abstract class StellarObjectType
     }
 
     private class PlanetType(int value) : StellarObjectType(value, StellarObjectConstants.Planet)
+    {
+    }
+
+    private class SateliteType(int value) : StellarObjectType(value, StellarObjectConstants.Satellite)
     {
     }
 }
