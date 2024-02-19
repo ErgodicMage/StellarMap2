@@ -1,6 +1,6 @@
 ﻿namespace StellarMap.Core;
 
-public class Satelite : BaseStellarObject
+public class Satelite : StellarObject
 {
     public Satelite() { }
 

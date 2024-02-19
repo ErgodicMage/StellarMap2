@@ -1,5 +1,5 @@
 ﻿namespace StellarMap.Core;
 
-public class Comet : BaseStellarObject
+public class Comet : StellarObject
 {
 }

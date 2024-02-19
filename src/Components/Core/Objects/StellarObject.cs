@@ -1,7 +1,7 @@
 ﻿
 namespace StellarMap.Core;
 
-public abstract class BaseStellarObject : IStellarObject
+public abstract class StellarObject : IStellarObject
 {
     public string? Name { get; init; }
     public string? AlternativeName { get; set; }
@@ -16,10 +16,10 @@ public abstract class BaseStellarObject : IStellarObject
     public StellarObjectType ObjectType { get; init;  }
 
 #pragma warning disable CS8618
-    public BaseStellarObject() { }
+    public StellarObject() { }
 #pragma warning restore CS8618
 
-    public BaseStellarObject(string name, Identifier identifier, IStellarMap map, StellarObjectType objectType)
+    public StellarObject(string name, Identifier identifier, IStellarMap map, StellarObjectType objectType)
     {
         Name = name;
         Identifier = identifier;

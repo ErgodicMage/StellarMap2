@@ -1,6 +1,6 @@
 ﻿namespace StellarMap.Core;
 
-public class Asteroid : BaseStellarObject
+public class Asteroid : StellarObject
 {
     public Asteroid() { }
 

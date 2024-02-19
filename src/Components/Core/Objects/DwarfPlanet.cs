@@ -1,6 +1,6 @@
 ﻿namespace StellarMap.Core;
 
-public class DwarfPlanet : BaseStellarObject
+public class DwarfPlanet : StellarObject
 {
     #region Properties
     public IList<Identifier>? SateliteIdentifiers { get; set; }

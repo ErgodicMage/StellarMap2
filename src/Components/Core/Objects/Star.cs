@@ -1,6 +1,6 @@
 ﻿namespace StellarMap.Core;
 
-public class Star : BaseStellarObject, IStellarObject, IEqualityComparer<Star>
+public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
 {
     #region Properties
     public List<Identifier>? PlanetIdentifiers {get; set; }
