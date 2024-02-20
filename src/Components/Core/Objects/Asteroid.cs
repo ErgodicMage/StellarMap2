@@ -1,4 +1,5 @@
-﻿namespace StellarMap.Core;
+﻿
+namespace StellarMap.Core;
 
 public class Asteroid : StellarObject
 {
@@ -6,4 +7,5 @@ public class Asteroid : StellarObject
 
     public Asteroid(string name, Identifier identifier, IStellarMap map) : base(name, identifier, map, StellarObjectType.Asteroid) { }
 
+    protected override Result<IReadOnlyDictionary<string, Identifier>> GetIdentifiers<T>() => Result.Error(string.Empty);
 }

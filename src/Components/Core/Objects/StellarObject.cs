@@ -1,4 +1,8 @@
 ﻿
+using System.Runtime.CompilerServices;
+using System.Security.AccessControl;
+using System.Xml.Serialization;
+
 namespace StellarMap.Core;
 
 public abstract class StellarObject : IStellarObject
@@ -26,4 +30,80 @@ public abstract class StellarObject : IStellarObject
         Map = map;
         ObjectType = objectType;
     }
+
+    #region Get
+    public virtual Result<T> Get<T>(Identifier identifier) where T : IStellarObject
+    {
+        var result = GuardClause.Null(Map).Null(Identifier);
+        if (!result.Success) return result;
+
+        var identifiers = GetIdentifiers<T>();
+        if (!identifiers.Success)
+            return Result.Error($"No {typeof(T).Name}s for {GetType().Name} {Name} {Identifier}");
+
+        if (!identifiers.Value.Any(i => i.Value == identifier))
+            return Result.Error($"{typeof(T).Name} {identifier} is not found in {GetType().Name} {Name} {Identifier}");
+
+        return Map.Get<T>(identifier);
+    }
+
+    public virtual Result<T> Get<T>(string name) where T : IStellarObject
+    {
+        var result = GuardClause.Null(Map).NullOrWhiteSpace(name);
+        if (!result.Success) return result;
+
+        var identifiers = GetIdentifiers<T>();
+        if (!identifiers.Success)
+            return Result.Error($"{GetType().Name} does not have Object Type {typeof(T).Name}");
+
+        var identifier = identifiers.Value.FirstOrDefault(o => o.Key == name).Value;
+
+        if (identifier is null)
+            return Result.Error($"{typeof(T).Name} {name} not found for {GetType().Name} {Name} {Identifier}");
+
+        return Map.Get<T>(Identifier);
+    }
+
+    public virtual Result<IReadOnlyList<T>> GetAll<T>() where T : IStellarObject
+    {
+        var result = GuardClause.Null(Map);
+        if (!result.Success) return result;
+
+        var identifiers = GetIdentifiers<T>();
+        if (!identifiers.Success)
+            return Result.Error($"{GetType().Name} does not have Object Type {typeof(T).Name}");
+
+        List<T> objects = new();
+
+        foreach (var (name, identifier) in identifiers.Value)
+        {
+            var obj = Map.Get<T>(identifier);
+            if (obj.Success) 
+                objects.Add(obj);
+        }
+
+        return objects;
+    }
+
+    protected abstract Result<IReadOnlyDictionary<string, Identifier>> GetIdentifiers<T>() where T : IStellarObject;
+    #endregion
+
+    #region Add
+    public virtual Result Add<T>(T t) where T : IStellarObject
+    {
+        var result = GuardClause.Null(Map).Null(Identifier);
+        if (!result.Success) return result;
+
+        var identifiers = GetIdentifiers<T>();
+        if (!identifiers.Success)
+            return Result.Error($"No {typeof(T).Name}s for {GetType().Name} {Name} {Identifier}");
+
+        if (identifiers.Value.Any(i => i.Value == t.Identifier))
+            return Result.Error($"{t.GetType().Name} {t.Name} {t.Identifier} already exists in {GetType().Name} {Name} {Identifier}");
+
+        t.ParentIdentifier = Identifier;
+
+        return Map.Add(t);
+    }
+    #endregion
 }

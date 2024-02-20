@@ -3,7 +3,7 @@
 public class DwarfPlanet : StellarObject
 {
     #region Properties
-    public IList<Identifier>? SateliteIdentifiers { get; set; }
+    public Dictionary<string, Identifier>? Satelites { get; set; }
     #endregion
 
     #region Constructors
@@ -12,15 +12,21 @@ public class DwarfPlanet : StellarObject
     public DwarfPlanet(string name, Identifier identifier, IStellarMap map) : base(name, identifier, map, StellarObjectType.DwarfPlanet) { }
     #endregion
 
-    #region Add
-    public Result Add(Satelite satelite) => AddSatelite(satelite);
+    #region Get
+    public Result<Satelite> GetSatelite(Identifier identifier) => Get<Satelite>(identifier);
 
-    public Result AddSatelite(Satelite satelite)
+    protected override Result<IReadOnlyDictionary<string, Identifier>> GetIdentifiers<T>()
     {
-        var result = GuardClause.Null(Map).Null(satelite);
-        if (!result.Success) return result;
-
-        return Map!.Add<Satelite>(satelite);
+        if (typeof(T).Name == nameof(Satelite) && Satelites is not null)
+            return Satelites!.AsReadOnly();
+        return Result.Error(string.Empty);
     }
+
+    #endregion
+
+    #region Add
+    public Result Add(Satelite satelite) => Add<Satelite>(satelite);
+
+    public Result AddSatelite(Satelite satelite) => Add<Satelite>(satelite);
     #endregion
 }

@@ -1,9 +1,17 @@
-﻿namespace StellarMap.Core;
+﻿using System.Xml.Serialization;
+
+namespace StellarMap.Core;
 
 public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
 {
     #region Properties
-    public List<Identifier>? PlanetIdentifiers {get; set; }
+    public Dictionary<string, Identifier>? Planets {get; set; }
+
+    public Dictionary<string, Identifier>? DwarfPlanets {get; set; }
+
+    public Dictionary<string, Identifier> Asteroids {get; set; }
+
+    public Dictionary<string, Identifier> Comets {get; set; }
 
     #endregion
 
@@ -11,6 +19,51 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
     public Star() { }
 
     public Star(string name, Identifier identifier, IStellarMap map) : base(name, identifier, map, StellarObjectType.Star) { }
+    #endregion
+
+    #region Get
+    public Result<Planet> GetPlanet(Identifier identifier) => Get<Planet>(identifier);
+    public Result<Planet> GetPlanet(string name) => Get<Planet>(name);
+
+    public Result<DwarfPlanet> GetDwarfPlanet(Identifier identifier) => Get<DwarfPlanet>(identifier);
+    public Result<DwarfPlanet> GetDwarfPlanet(string name) => Get<DwarfPlanet>(name);
+
+    public Result<Asteroid> GetAsteroid(Identifier identifier) => Get<Asteroid>(identifier);
+    public Result<Asteroid> GetAsteroid(string name) => Get<Asteroid>(name);
+
+    public Result<Comet> GetComet(Identifier identifier) => Get<Comet>(identifier);
+    public Result<Comet> GetComet(string name) => Get<Comet>(name);
+
+    protected override Result<IReadOnlyDictionary<string, Identifier>> GetIdentifiers<T>()
+    {
+        var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
+        if (foundObjectType is null)
+            return Result.Error($"Can not find StellarObjectTypr for {nameof(T)}");
+
+        Dictionary<string, Identifier>? dictionary = default;
+        foundObjectType
+                .When(StellarObjectType.Planet).Then(() => dictionary = Planets)
+                .When(StellarObjectType.DwarfPlanet).Then(() => dictionary = DwarfPlanets)
+                .When(StellarObjectType.Asteroid).Then(() => dictionary = Asteroids)
+                .When(StellarObjectType.Comet).Then(() => dictionary = Comets)
+                .Default(() => { });
+
+        return dictionary!.AsReadOnly();
+    }
+    #endregion
+
+    #region Add
+    public Result Add(Planet planet) => Add<Planet>(planet);
+    public Result AddPlanet(Planet planet) => Add<Planet>(planet);
+
+    public Result Add(DwarfPlanet dwarfPlanet) => Add<DwarfPlanet>(dwarfPlanet);
+    public Result AddDwarfPlanet(DwarfPlanet dwarfPlanet) => Add<DwarfPlanet>(dwarfPlanet);
+
+    public Result Add(Asteroid asteroid) => Add<Asteroid>(asteroid);
+    public Result AddAsteroid(Asteroid asteroid) => Add<Asteroid>(asteroid);
+
+    public Result Add(Comet comet) => Add<Comet>(comet);
+    public Result AddComet(Comet comet) => Add<Comet>(comet);
     #endregion
 
     #region IEqualityComparer Functions

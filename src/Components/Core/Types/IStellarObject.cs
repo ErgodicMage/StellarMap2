@@ -13,4 +13,12 @@ public interface IStellarObject
     Identifier ParentIdentifier { get; set; }
 
     StellarObjectType ObjectType { get; }
+
+    Result<T> Get<T>(Identifier identifier) where T : IStellarObject;
+
+    Result<T> Get<T>(string name) where T : IStellarObject;
+
+    Result<IReadOnlyList<T>> GetAll<T>() where T : IStellarObject;
+
+    Result Add<T>(T t) where T : IStellarObject;
 }
