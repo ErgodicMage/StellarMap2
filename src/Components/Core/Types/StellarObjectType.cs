@@ -54,27 +54,27 @@ public abstract class StellarObjectType
         return objectType;
     }
 
-    private class StarType(int value) : StellarObjectType(value, StellarObjectConstants.Star, typeof(Star))
+    private sealed class StarType(int value) : StellarObjectType(value, StellarObjectConstants.Star, typeof(Star))
     {
     }
 
-    private class PlanetType(int value) : StellarObjectType(value, StellarObjectConstants.Planet, typeof(Planet))
+    private sealed class PlanetType(int value) : StellarObjectType(value, StellarObjectConstants.Planet, typeof(Planet))
     {
     }
 
-    private class DwarfPlanetType(int value) : StellarObjectType(value, StellarObjectConstants.DwarfPlanet, typeof(DwarfPlanet))
+    private sealed class DwarfPlanetType(int value) : StellarObjectType(value, StellarObjectConstants.DwarfPlanet, typeof(DwarfPlanet))
     {
     }
 
-    private class SateliteType(int value) : StellarObjectType(value, StellarObjectConstants.Satellite, typeof(Satelite))
+    private sealed class SateliteType(int value) : StellarObjectType(value, StellarObjectConstants.Satellite, typeof(Satelite))
     {
     }
 
-    private class AsteroidType(int value) : StellarObjectType(value, StellarObjectConstants.Asteroid, typeof(Asteroid))
+    private sealed class AsteroidType(int value) : StellarObjectType(value, StellarObjectConstants.Asteroid, typeof(Asteroid))
     {
     }
 
-    private class CometType(int value) : StellarObjectType(value, StellarObjectConstants.Comet, typeof(Comet))
+    private sealed class CometType(int value) : StellarObjectType(value, StellarObjectConstants.Comet, typeof(Comet))
     {
     }
 }
