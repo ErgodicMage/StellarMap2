@@ -74,6 +74,8 @@ public class Planet : StellarObject, IStellarObject, IEqualityComparer<Planet>
         if (exists)
             return Result.Error($"{satelite.Name} {satelite.Identifier} already exists for Planet {Name} {Identifier}");
 
+        satelite.ParentIdentifier = Identifier;
+
         result = Map!.Add<Satelite>(satelite);
 
         if (result)
