@@ -1,5 +1,4 @@
-﻿
-namespace StellarMap.Core;
+﻿namespace StellarMap.Core;
 
 public class StellarMap : IStellarMap
 {
@@ -28,11 +27,11 @@ public class StellarMap : IStellarMap
     {
         var result = GuardClause.Null(t);
         if (!result.Success) return result;
-
-        var dict = GetDictionaryCreateIfNeeded<T>(true);
+        CreateDictionary<T>();
+        var dict = GetDictionary<T>();
         if (!dict.Success) return dict;
         
-        if (!dict.Value.ContainsKey(t.Identifier))
+        if (dict.Value.ContainsKey(t.Identifier))
             return Result.Error($"{t.Identifier} already exists in {nameof(T)}s");
         
         dict.Value.Add(t.Identifier, t);
@@ -41,7 +40,7 @@ public class StellarMap : IStellarMap
 
     public Result<T> Get<T>(Identifier identifier) where T : IStellarObject
     {
-        var result = GetDictionaryCreateIfNeeded<T>(false);
+        var result = GetDictionary<T>();
         if (!result.Success) return Result<T>.Error($"Can not find {identifier} in {nameof(T)}s");
 
         if (result.Value.TryGetValue(identifier, out var value))
@@ -50,42 +49,37 @@ public class StellarMap : IStellarMap
         return Result.Error($"Can not find {identifier} in {nameof(T)}s");
     }
 
-    #region Get Dictionary
-    protected virtual Result<Dictionary<Identifier, T>> GetDictionaryCreateIfNeeded<T>(bool create) where T : IStellarObject
+    #region Dictionary
+    protected virtual void CreateDictionary<T>() where T : IStellarObject
     {
-        var foundObjectType = StellarObjectType.Get(typeof(T));
-        if (!foundObjectType.Success)
+        var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
+        if (foundObjectType is null) return;
+
+        foundObjectType
+            .When(StellarObjectType.Star).Then(() => Stars ??= new())
+            .When(StellarObjectType.Planet).Then(() => Planets ??= new())
+            .When(StellarObjectType.DwarfPlanet).Then(() => DwarfPlanets ??= new())
+            .When(StellarObjectType.Satelite).Then(() => Satelites ??= new())
+            .When(StellarObjectType.Asteroid).Then(() => Asteroids ??= new())
+            .When(StellarObjectType.Comet).Then(() => Comets ??= new());
+
+    }
+
+    protected virtual Result<Dictionary<Identifier, T>> GetDictionary<T>() where T : IStellarObject
+    {
+        var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
+        if (foundObjectType is null)
             return Result.Error($"Can not find StellarObjectTypr for {nameof(T)}");
 
         Dictionary<Identifier, T>? dictionary = default;
+        foundObjectType
+                .When(StellarObjectType.Star).Then(() => dictionary = Stars as Dictionary<Identifier, T>)
+                .When(StellarObjectType.Planet).Then(() => dictionary = Planets as Dictionary<Identifier, T>)
+                .When(StellarObjectType.DwarfPlanet).Then(() => dictionary = DwarfPlanets as Dictionary<Identifier, T>)
+                .When(StellarObjectType.Satelite).Then(() => dictionary = Satelites as Dictionary<Identifier, T>)
+                .When(StellarObjectType.Asteroid).Then(() => dictionary = Asteroids as Dictionary<Identifier, T>)
+                .When(StellarObjectType.Comet).Then(() => dictionary = Comets as Dictionary<Identifier, T>);
 
-        switch (foundObjectType.Value.Name)
-        {
-            case nameof(StellarObjectType.Star):
-                if (create) Stars ??= new();
-                dictionary = Stars as Dictionary<Identifier, T>;
-                break;
-            case nameof(StellarObjectType.Planet):
-                if (create) Planets ??= new();
-                dictionary = Planets as Dictionary<Identifier, T>;
-                break;
-            case nameof(StellarObjectType.DwarfPlanet):
-                if (create) DwarfPlanets ??= new();
-                dictionary = DwarfPlanets as Dictionary<Identifier, T>;
-                break;
-            case nameof(StellarObjectType.Satelite):
-                if (create) Satelites ??= new();
-                dictionary = Satelites as Dictionary<Identifier, T>;
-                break;
-            case nameof(StellarObjectType.Asteroid):
-                if (create) Asteroids ??= new();
-                dictionary = Asteroids as Dictionary<Identifier, T>;
-                break;
-            case nameof(StellarObjectType.Comet):
-                if (create) Comets ??= new();
-                dictionary = Comets as Dictionary<Identifier, T>;
-                break;
-        };
         return dictionary!;
     }
     #endregion
