@@ -7,7 +7,10 @@ public class ObjectSerializationTests
     [Fact]
     public void EarthJsonSerialization()
     {
-        var Earth = CreateEarth();
+        StellarMap.Core.StellarMap map = new();
+        map.Name = "Earth";
+
+        var Earth = CreateEarth(map);
         var json = JsonSerializer.Serialize<Planet>(Earth);
         Assert.NotEmpty(json);
     }
@@ -15,7 +18,9 @@ public class ObjectSerializationTests
     [Fact]
     public void EarthJsonSerializationDeserialization()
     {
-        var Earth = CreateEarth();
+        StellarMap.Core.StellarMap map = new();
+        map.Name = "Earth";
+        var Earth = CreateEarth(map);
         var json = JsonSerializer.Serialize<Planet>(Earth);
         Assert.NotEmpty(json);
 
@@ -24,15 +29,27 @@ public class ObjectSerializationTests
         Assert.Equal(Earth, newEarth);
     }
 
-    private Planet CreateEarth()
+    private Planet CreateEarth(IStellarMap map)
     {
-        StellarObjectProperties properties = new()
+        Planet Earth = new()
         {
             Name = "Earth",
+            Identifier = DefaultIdentifierGenerator.Instance.GenerateIdentifier(StellarObjectType.Planet, map),
+            Map = map,
             Description = "Home of Humans",
             Designation = "SOL-3"
         };
-        Planet Earth = new(properties, DefaultIdentifierGenerator.Instance);
+        
+        Satelite Moon = new()
+        {
+            Name = "Moon",
+            Identifier = DefaultIdentifierGenerator.Instance.GenerateIdentifier(StellarObjectType.Satelite, map),
+            Map = map,
+            AlternativeName = "Luna",
+            Description = "Earth's moon",
+            Designation = "Earth-1"
+        };
+        Earth.Add(Moon);
 
         return Earth;
     }
