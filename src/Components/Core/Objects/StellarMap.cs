@@ -61,8 +61,8 @@ public class StellarMap : IStellarMap
             .When(StellarObjectType.DwarfPlanet).Then(() => DwarfPlanets ??= new())
             .When(StellarObjectType.Satelite).Then(() => Satelites ??= new())
             .When(StellarObjectType.Asteroid).Then(() => Asteroids ??= new())
-            .When(StellarObjectType.Comet).Then(() => Comets ??= new());
-
+            .When(StellarObjectType.Comet).Then(() => Comets ??= new())
+            .Default(() => { });
     }
 
     protected virtual Result<Dictionary<Identifier, T>> GetDictionary<T>() where T : IStellarObject
@@ -78,7 +78,8 @@ public class StellarMap : IStellarMap
                 .When(StellarObjectType.DwarfPlanet).Then(() => dictionary = DwarfPlanets as Dictionary<Identifier, T>)
                 .When(StellarObjectType.Satelite).Then(() => dictionary = Satelites as Dictionary<Identifier, T>)
                 .When(StellarObjectType.Asteroid).Then(() => dictionary = Asteroids as Dictionary<Identifier, T>)
-                .When(StellarObjectType.Comet).Then(() => dictionary = Comets as Dictionary<Identifier, T>);
+                .When(StellarObjectType.Comet).Then(() => dictionary = Comets as Dictionary<Identifier, T>)
+                .Default(() => { });
 
         return dictionary!;
     }
