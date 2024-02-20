@@ -3,9 +3,6 @@
 public interface IStellarObject
 {
     string? Name { get; init; }
-    string? AlternativeName { get; set; }
-    string? Description { get; set; }
-    string? Designation { get; set; }
 
     IStellarMap Map { get; init; }
 
@@ -13,6 +10,8 @@ public interface IStellarObject
     Identifier ParentIdentifier { get; set; }
 
     StellarObjectType ObjectType { get; }
+
+    Dictionary<string, string> Properties { get; init; }
 
     Result<T> Get<T>(Identifier identifier) where T : IStellarObject;
 

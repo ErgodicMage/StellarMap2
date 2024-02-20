@@ -8,16 +8,14 @@ namespace StellarMap.Core;
 public abstract class StellarObject : IStellarObject
 {
     public string? Name { get; init; }
-    public string? AlternativeName { get; set; }
-    public string? Description { get; set; }
-    public string? Designation { get; set; }
 
     public IStellarMap Map { get; init; }
-
 
     public Identifier Identifier { get; init; } = Identifier.NoIdentifier;
     public Identifier ParentIdentifier { get; set; } = Identifier.NoIdentifier;
     public StellarObjectType ObjectType { get; init;  }
+
+    public Dictionary<string, string> Properties { get; init; }
 
 #pragma warning disable CS8618
     public StellarObject() { }
@@ -29,6 +27,7 @@ public abstract class StellarObject : IStellarObject
         Identifier = identifier;
         Map = map;
         ObjectType = objectType;
+        Properties = new();
     }
 
     #region Get

@@ -45,25 +45,15 @@ public class ObjectSerializationTests
 
     private Planet CreateEarth(IStellarMap map)
     {
-        Planet Earth = new()
-        {
-            Name = "Earth",
-            Identifier = MapIdentifierGenerator.Instance.GenerateIdentifier(StellarObjectType.Planet, map),
-            Map = map,
-            Description = "Home of Humans",
-            Designation = "SOL-3"
-        };
+        Planet Earth = new("Earth", MapIdentifierGenerator.Instance.GenerateIdentifier(StellarObjectType.Planet, map), map);
+        Earth.Properties.Add(PropertiesConstant.DESCRIPTION, "Home of Humans");
+        Earth.Properties.Add(PropertiesConstant.DESIGNATION, "SOL-3");
         map.Add<Planet>(Earth);
-        
-        Satelite Moon = new()
-        {
-            Name = "Moon",
-            Identifier = MapIdentifierGenerator.Instance.GenerateIdentifier(StellarObjectType.Satelite, map),
-            Map = map,
-            AlternativeName = "Luna",
-            Description = "Earth's moon",
-            Designation = "Earth-1"
-        };
+
+        Satelite Moon = new("Moon", MapIdentifierGenerator.Instance.GenerateIdentifier(StellarObjectType.Satelite, map), map);
+        Moon.Properties.Add(PropertiesConstant.DESCRIPTION, "Earth's moon");
+        Moon.Properties.Add(PropertiesConstant.ALTERNATIVENAME, "Luna");
+        Moon.Properties.Add(PropertiesConstant.DESIGNATION, "Earth-1");
         Earth.Add(Moon);
 
         return Earth;
