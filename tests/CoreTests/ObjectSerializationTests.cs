@@ -34,16 +34,17 @@ public class ObjectSerializationTests
         Planet Earth = new()
         {
             Name = "Earth",
-            Identifier = DefaultIdentifierGenerator.Instance.GenerateIdentifier(StellarObjectType.Planet, map),
+            Identifier = MapIdentifierGenerator.Instance.GenerateIdentifier(StellarObjectType.Planet, map),
             Map = map,
             Description = "Home of Humans",
             Designation = "SOL-3"
         };
+        map.Add<Planet>(Earth);
         
         Satelite Moon = new()
         {
             Name = "Moon",
-            Identifier = DefaultIdentifierGenerator.Instance.GenerateIdentifier(StellarObjectType.Satelite, map),
+            Identifier = MapIdentifierGenerator.Instance.GenerateIdentifier(StellarObjectType.Satelite, map),
             Map = map,
             AlternativeName = "Luna",
             Description = "Earth's moon",
