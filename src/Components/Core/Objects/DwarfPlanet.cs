@@ -15,10 +15,10 @@ public class DwarfPlanet : StellarObject
     #region Get
     public Result<Satelite> GetSatelite(Identifier identifier) => Get<Satelite>(identifier);
 
-    protected override Result<IReadOnlyDictionary<string, Identifier>> GetIdentifiers<T>()
+    protected override Result<IDictionary<string, Identifier>> GetIdentifiers<T>()
     {
         if (typeof(T).Name == nameof(Satelite) && Satelites is not null)
-            return Satelites!.AsReadOnly();
+            return Satelites;
         return Result.Error(string.Empty);
     }
 

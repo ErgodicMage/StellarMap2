@@ -6,6 +6,4 @@ public class Asteroid : StellarObject
     public Asteroid() { }
 
     public Asteroid(string name, Identifier identifier, IStellarMap map) : base(name, identifier, map, StellarObjectType.Asteroid) { }
-
-    protected override Result<IReadOnlyDictionary<string, Identifier>> GetIdentifiers<T>() => Result.Error(string.Empty);
 }

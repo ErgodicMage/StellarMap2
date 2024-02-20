@@ -34,7 +34,7 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
     public Result<Comet> GetComet(Identifier identifier) => Get<Comet>(identifier);
     public Result<Comet> GetComet(string name) => Get<Comet>(name);
 
-    protected override Result<IReadOnlyDictionary<string, Identifier>> GetIdentifiers<T>()
+    protected override Result<IDictionary<string, Identifier>> GetIdentifiers<T>()
     {
         var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
         if (foundObjectType is null)
@@ -48,7 +48,7 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
                 .When(StellarObjectType.Comet).Then(() => dictionary = Comets)
                 .Default(() => { });
 
-        return dictionary!.AsReadOnly();
+        return dictionary!;
     }
     #endregion
 

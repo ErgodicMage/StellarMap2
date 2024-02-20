@@ -85,7 +85,7 @@ public abstract class StellarObject : IStellarObject
         return objects;
     }
 
-    protected abstract Result<IReadOnlyDictionary<string, Identifier>> GetIdentifiers<T>() where T : IStellarObject;
+    protected virtual Result<IDictionary<string, Identifier>> GetIdentifiers<T>() where T : IStellarObject => Result.Error(string.Empty);
     #endregion
 
     #region Add
@@ -103,6 +103,8 @@ public abstract class StellarObject : IStellarObject
             return Result.Error($"{t.GetType().Name} {t.Name} {t.Identifier} already exists in {GetType().Name} {Name} {Identifier}");
 
         t.ParentIdentifier = Identifier;
+
+        identifiers.Value.Add(t.Name!, t.Identifier);
 
         return Map.Add(t);
     }
