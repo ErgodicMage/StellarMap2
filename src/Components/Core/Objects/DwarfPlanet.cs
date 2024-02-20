@@ -26,7 +26,12 @@ public class DwarfPlanet : StellarObject
 
     #region Add
     public Result Add(Satelite satelite) => Add<Satelite>(satelite);
-
     public Result AddSatelite(Satelite satelite) => Add<Satelite>(satelite);
+
+    protected override void CreateIdentifiers<T>()
+    {
+        if (typeof(T).Name == nameof(Satelite))
+            Satelites ??= new();
+    }
     #endregion
 }

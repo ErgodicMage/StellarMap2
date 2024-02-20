@@ -64,6 +64,19 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
 
     public Result Add(Comet comet) => Add<Comet>(comet);
     public Result AddComet(Comet comet) => Add<Comet>(comet);
+
+    protected override void CreateIdentifiers<T>()
+    {
+        var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
+        if (foundObjectType is null) return;
+
+        foundObjectType
+            .When(StellarObjectType.Planet).Then(() => Planets ??= new())
+            .When(StellarObjectType.DwarfPlanet).Then(() => DwarfPlanets ??= new())
+            .When(StellarObjectType.Asteroid).Then(() => Asteroids ??= new())
+            .When(StellarObjectType.Comet).Then(() => Comets ??= new())
+            .Default(() => { });
+    }
     #endregion
 
     #region IEqualityComparer Functions

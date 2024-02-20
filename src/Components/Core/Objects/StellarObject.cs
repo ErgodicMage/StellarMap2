@@ -94,6 +94,7 @@ public abstract class StellarObject : IStellarObject
         var result = GuardClause.Null(Map).Null(Identifier);
         if (!result.Success) return result;
 
+        CreateIdentifiers<T>();
         var identifiers = GetIdentifiers<T>();
         if (!identifiers.Success)
             return Result.Error($"No {typeof(T).Name}s for {GetType().Name} {Name} {Identifier}");
@@ -105,5 +106,7 @@ public abstract class StellarObject : IStellarObject
 
         return Map.Add(t);
     }
+
+    protected virtual void CreateIdentifiers<T>() where T : IStellarObject { }
     #endregion
 }

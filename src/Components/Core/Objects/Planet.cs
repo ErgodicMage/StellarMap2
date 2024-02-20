@@ -27,6 +27,12 @@ public class Planet : StellarObject, IStellarObject, IEqualityComparer<Planet>
     #region Add
     public Result Add(Satelite satelite) => Add<Satelite>(satelite);
     public Result AddSatelite(Satelite satelite) => Add<Satelite>(satelite);
+
+    protected override void CreateIdentifiers<T>()
+    {
+        if (typeof(T).Name == nameof(Satelite))
+            Satelites ??= new();
+    }
     #endregion
 
     #region IEqualityComparer Functions
