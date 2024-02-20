@@ -9,36 +9,30 @@ public abstract class StellarObjectType : SmartEnum<StellarObjectType>
     public static readonly StellarObjectType Asteroid = new AsteroidType();
     public static readonly StellarObjectType Comet = new CometType();
 
-    public Type Type { get; protected init; }
+    protected StellarObjectType(string name, int value) : base(name, value)
+    { }
 
-
-
-    protected StellarObjectType(string name, int value, Type type) : base(name, value)
-    {
-        Type = type;
-    }
-
-    private sealed class StarType() : StellarObjectType(nameof(Star), 1, typeof(Star))
+    private sealed class StarType() : StellarObjectType(nameof(Star), 1)
     {
     }
 
-    private sealed class PlanetType() : StellarObjectType(nameof(Planet), 2, typeof(Planet))
+    private sealed class PlanetType() : StellarObjectType(nameof(Planet), 2)
     {
     }
 
-    private sealed class DwarfPlanetType() : StellarObjectType(nameof(DwarfPlanet), 3, typeof(DwarfPlanet))
+    private sealed class DwarfPlanetType() : StellarObjectType(nameof(DwarfPlanet), 3)
     {
     }
 
-    private sealed class SateliteType() : StellarObjectType(nameof(Satelite), 4, typeof(Satelite))
+    private sealed class SateliteType() : StellarObjectType(nameof(Satelite), 4)
     {
     }
 
-    private sealed class AsteroidType() : StellarObjectType(nameof(Asteroid), 5, typeof(Asteroid))
+    private sealed class AsteroidType() : StellarObjectType(nameof(Asteroid), 5)
     {
     }
 
-    private sealed class CometType() : StellarObjectType(nameof(Comet), 6, typeof(Comet))
+    private sealed class CometType() : StellarObjectType(nameof(Comet), 6)
     {
     }
 }
