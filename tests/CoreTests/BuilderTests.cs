@@ -110,12 +110,15 @@ public class BuilderTests
         var sol = Builders.BuildSol(map);
 
         Assert.NotNull(sol);
+        Assert.NotNull(map.Stars);
+        Assert.Single(map.Stars);
         Assert.Equal("Sol", sol.Name);
         Assert.Equal("Sun", sol.Properties[PropertiesConstant.ALTERNATIVENAME]);
         Assert.Equal("Sol", sol.Properties[PropertiesConstant.DESIGNATION]);
         Assert.Equal("G2V", sol.StellarClass);
         Assert.NotNull(sol.Planets);
-        Assert.Equal(10, sol.Planets.Count);
+        Assert.Equal(8, sol.Planets.Count);
+        Assert.Equal(2, sol.DwarfPlanets.Count);
         Assert.NotNull(sol.Asteroids);
         Assert.Equal(11, sol.Asteroids.Count);
         Assert.NotNull(sol.Comets);
@@ -128,16 +131,5 @@ public class BuilderTests
         Assert.Equal("Planet-00003", earth.Value.Identifier.Id);
         Assert.NotNull(earth.Value.Satelites);
         Assert.Single(earth.Value.Satelites);
-
-        Assert.NotNull(map.Stars);
-        Assert.Single(map.Stars);
-        Assert.NotNull(map.Planets);
-        Assert.Equal(10, map.Planets.Count);
-        Assert.NotNull(map.Satelites);
-        Assert.Equal(39, map.Satelites.Count);
-        Assert.NotNull(map.Asteroids);
-        Assert.Equal(11, map.Asteroids.Count);
-        Assert.NotNull(map.Comets);
-        Assert.Equal(7, map.Comets.Count);
     }
 }

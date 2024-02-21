@@ -18,12 +18,15 @@ public class StandardStellarMap : IStellarMap
     public Dictionary<string, Planet>? Planets { get; set; }
 
     [JsonPropertyOrder(5)]
-    public Dictionary<string, Satelite>? Satelites { get; set; }
+    public Dictionary<string, DwarfPlanet>? DwarfPlanets { get; set; }
 
     [JsonPropertyOrder(6)]
-    public Dictionary<string, Asteroid>? Asteroids { get; set; }
+    public Dictionary<string, Satelite>? Satelites { get; set; }
 
     [JsonPropertyOrder(7)]
+    public Dictionary<string, Asteroid>? Asteroids { get; set; }
+
+    [JsonPropertyOrder(8)]
     public Dictionary<string, Comet>? Comets { get; set; }
 
     #region Constructors
@@ -84,6 +87,7 @@ public class StandardStellarMap : IStellarMap
         foundObjectType
             .When(StellarObjectType.Star).Then(() => Stars ??= new())
             .When(StellarObjectType.Planet).Then(() => Planets ??= new())
+            .When(StellarObjectType.DwarfPlanet).Then(() => DwarfPlanets ??= new())
             .When(StellarObjectType.Satelite).Then(() => Satelites ??= new())
             .When(StellarObjectType.Asteroid).Then(() => Asteroids ??= new())
             .When(StellarObjectType.Comet).Then(() => Comets ??= new())
@@ -100,6 +104,7 @@ public class StandardStellarMap : IStellarMap
         foundObjectType
                 .When(StellarObjectType.Star).Then(() => dictionary = Stars as Dictionary<string, T>)
                 .When(StellarObjectType.Planet).Then(() => dictionary = Planets as Dictionary<string, T>)
+                .When(StellarObjectType.DwarfPlanet).Then(() => dictionary = DwarfPlanets as Dictionary<string, T>)
                 .When(StellarObjectType.Satelite).Then(() => dictionary = Satelites as Dictionary<string, T>)
                 .When(StellarObjectType.Asteroid).Then(() => dictionary = Asteroids as Dictionary<string, T>)
                 .When(StellarObjectType.Comet).Then(() => dictionary = Comets as Dictionary<string, T>)
@@ -115,7 +120,7 @@ public class StandardStellarMap : IStellarMap
     public override bool Equals(object? obj) => Equals(this, obj as IStellarMap);
 
     public int GetHashCode([DisallowNull] IStellarMap obj)
-        => HashCode.Combine(Name, MetaData, Stars, Planets, Satelites, Asteroids, Comets);
+        => HashCode.Combine(Name, MetaData, Stars, Planets, DwarfPlanets, Satelites, Asteroids, Comets);
 
     public override int GetHashCode() => GetHashCode(this);
     #endregion

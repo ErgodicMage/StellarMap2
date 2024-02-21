@@ -7,7 +7,7 @@
     "Email": "ErgodicMage@gmail.com",
     "License": "MIT License, 2024",
     "Github": "https://github.com/ErgodicMage/StellarMap2",
-    "Date": "2/27/2024"
+    "Date": "3/4/2024"
   },
   "Stars": {
     "Star-00001": {
@@ -60,12 +60,14 @@
         },
         "Neptune": {
           "Id": "Planet-00008"
-        },
+        }
+      },
+      "DwarfPlanets": {
         "Pluto": {
-          "Id": "Planet-00009"
+          "Id": "DwarfPlanet-00001"
         },
         "Ceres": {
-          "Id": "Planet-00010"
+          "Id": "DwarfPlanet-00002"
         }
       },
       "Asteroids": {
@@ -154,7 +156,6 @@
         "Gravity": 3.7,
         "EscapeVelocity": 4.25
       },
-      "IsDwarf": false,
       "Satelites": null
     },
     "Planet-00002": {
@@ -182,7 +183,6 @@
         "Gravity": 8.87,
         "EscapeVelocity": 10.36
       },
-      "IsDwarf": false,
       "Satelites": null
     },
     "Planet-00003": {
@@ -210,7 +210,6 @@
         "Gravity": 9.80665,
         "EscapeVelocity": 11.186
       },
-      "IsDwarf": false,
       "Satelites": {
         "Moon": {
           "Id": "Satelite-00001"
@@ -242,7 +241,6 @@
         "Gravity": 3.721,
         "EscapeVelocity": 5.027
       },
-      "IsDwarf": false,
       "Satelites": {
         "Phobos": {
           "Id": "Satelite-00002"
@@ -277,7 +275,6 @@
         "Gravity": 24.79,
         "EscapeVelocity": 59.5
       },
-      "IsDwarf": false,
       "Satelites": {
         "Metis": {
           "Id": "Satelite-00004"
@@ -342,7 +339,6 @@
         "Gravity": 10.44,
         "EscapeVelocity": 35.5
       },
-      "IsDwarf": false,
       "Satelites": {
         "Titan": {
           "Id": "Satelite-00016"
@@ -401,7 +397,6 @@
         "Gravity": 10.44,
         "EscapeVelocity": 35.5
       },
-      "IsDwarf": false,
       "Satelites": {
         "Titania": {
           "Id": "Satelite-00026"
@@ -445,7 +440,6 @@
         "Gravity": 11.15,
         "EscapeVelocity": 23.5
       },
-      "IsDwarf": false,
       "Satelites": {
         "Triton": {
           "Id": "Satelite-00031"
@@ -460,20 +454,22 @@
           "Id": "Satelite-00034"
         }
       }
-    },
-    "Planet-00009": {
+    }
+  },
+  "DwarfPlanets": {
+    "DwarfPlanet-00001": {
       "Name": "Pluto",
       "Identifier": {
-        "Id": "Planet-00009"
+        "Id": "DwarfPlanet-00001"
       },
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Planet",
+      "ObjectType": "DwarfPlanet",
       "Properties": {
         "Description": "The largets Dwarf Planet in the Solar System.",
-        "Designation": "SOL-09",
-        "Planet Type": "Rocky Planet"
+        "Designation": "SOL-D-01",
+        "Planet Type": "Rocky Dwarf Planet"
       },
       "PhysicalProperties": {
         "Mass": 1.303E+22,
@@ -486,7 +482,6 @@
         "Gravity": 0.62,
         "EscapeVelocity": 1.212
       },
-      "IsDwarf": true,
       "Satelites": {
         "Charon": {
           "Id": "Satelite-00035"
@@ -505,19 +500,19 @@
         }
       }
     },
-    "Planet-00010": {
+    "DwarfPlanet-00002": {
       "Name": "Ceres",
       "Identifier": {
-        "Id": "Planet-00010"
+        "Id": "DwarfPlanet-00002"
       },
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Planet",
+      "ObjectType": "DwarfPlanet",
       "Properties": {
         "Description": "Dwarf planet in the asteroid belt.",
-        "Designation": "SOL-10",
-        "Planet Type": "Rocky Planet"
+        "Designation": "SOL-D-2",
+        "Planet Type": "Rocky Dwarf Planet"
       },
       "PhysicalProperties": {
         "Mass": 9.3839E+20,
@@ -530,7 +525,6 @@
         "Gravity": 0.284,
         "EscapeVelocity": 0.516
       },
-      "IsDwarf": true,
       "Satelites": null
     }
   },
@@ -1358,7 +1352,7 @@
         "Id": "Satelite-00035"
       },
       "ParentIdentifier": {
-        "Id": "Planet-00009"
+        "Id": "DwarfPlanet-00001"
       },
       "ObjectType": "Satelite",
       "Properties": {
@@ -1382,7 +1376,7 @@
         "Id": "Satelite-00036"
       },
       "ParentIdentifier": {
-        "Id": "Planet-00009"
+        "Id": "DwarfPlanet-00001"
       },
       "ObjectType": "Satelite",
       "Properties": {},
@@ -1404,7 +1398,7 @@
         "Id": "Satelite-00037"
       },
       "ParentIdentifier": {
-        "Id": "Planet-00009"
+        "Id": "DwarfPlanet-00001"
       },
       "ObjectType": "Satelite",
       "Properties": {},
@@ -1426,7 +1420,7 @@
         "Id": "Satelite-00038"
       },
       "ParentIdentifier": {
-        "Id": "Planet-00009"
+        "Id": "DwarfPlanet-00001"
       },
       "ObjectType": "Satelite",
       "Properties": {},
@@ -1448,7 +1442,7 @@
         "Id": "Satelite-00039"
       },
       "ParentIdentifier": {
-        "Id": "Planet-00009"
+        "Id": "DwarfPlanet-00001"
       },
       "ObjectType": "Satelite",
       "Properties": {},

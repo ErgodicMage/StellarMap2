@@ -8,6 +8,7 @@ public static class PropertiesConstant
     public const string PLANETTYPE = "Planet Type";
 
     public const string ROCKYPLANET = "Rocky Planet";
+    public const string ROCKYDWARFPLANET = "Rocky Dwarf Planet";
     public const string GASPLANET = "Gas Planet";
     public const string GASGIANTPLANET = "Gas Giant Planet";
 }
