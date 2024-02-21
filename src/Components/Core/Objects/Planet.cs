@@ -38,13 +38,20 @@ public class Planet : StellarObject, IStellarObject, IEqualityComparer<Planet>
     #region IEqualityComparer Functions
     public bool Equals(Planet? x, Planet? y)
     {
-        throw new NotImplementedException();
+        if (x is null || y is null) return false;
+        if (ReferenceEquals(x, y)) return true;
+        if (!base.Equals(x, y)) return false;
+
+        if (x.Satelites is null && y.Satelites is null) return true;
+        if (x.Satelites is null || y.Satelites is null) return false;
+        return x.Satelites.Count == y.Satelites.Count && !x.Satelites.Except(y.Satelites).Any();
     }
 
-    public int GetHashCode(Planet obj)
-    {
-        throw new NotImplementedException();
-    }
+    public override bool Equals(object? obj) => Equals(this, obj as Planet);
+
+    public int GetHashCode(Planet obj) => HashCode.Combine(base.GetHashCode(obj), obj.Satelites);
+
+    public override int GetHashCode() => GetHashCode(this);
     #endregion
 
 }

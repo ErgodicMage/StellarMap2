@@ -82,12 +82,38 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
     #region IEqualityComparer Functions
     public bool Equals(Star? x, Star? y)
     {
-        throw new NotImplementedException();
+        if (x is null || y is null) return false;
+        if (ReferenceEquals(x, y)) return true;
+        if (!base.Equals(x, y)) return false;
+
+        if (!(x.Planets == null && y.Planets == null))
+        {
+            if (x.Planets == null || y.Planets is null) return false;
+            if (x.Planets.Count != y.Planets.Count || x.Planets.Except(y.Planets).Any()) return false;
+        }
+
+        if (!(x.Asteroids == null && y.Asteroids == null))
+        {
+            if (x.Asteroids == null || y.Asteroids is null) return false;
+            if (x.Asteroids.Count != y.Asteroids.Count || x.Asteroids.Except(y.Asteroids).Any()) return false;
+        }
+
+        if (!(x.Comets == null && y.Comets == null))
+        {
+            if (x.Comets == null || y.Comets is null) return false;
+            if (x.Comets.Count != y.Comets.Count || x.Comets.Except(y.Comets).Any()) return false;
+        }
+
+        return true;
     }
+
+    public override bool Equals(object? obj) => Equals(this, obj as Star);
 
     public int GetHashCode(Star obj)
     {
-        throw new NotImplementedException();
+        return HashCode.Combine(base.GetHashCode(obj), Planets, Asteroids, Comets);
     }
+
+    public override int GetHashCode() => GetHashCode(this);
     #endregion
 }

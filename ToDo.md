@@ -4,7 +4,8 @@
 * ~~Add Properties to StellarObject~~
 * ~~Remove AlternativeName, Description and Designation from StellarObject, use Properties if needed~~
 * ~~Add Common Property constants~~
-* Equality for StellarObjects
+* ~~Equality for StellarObjects~~
+* Remove DwarfePlanet and add IsDwarf parameter to Planet
 * Builders
 	* StellarObject
 	* Star

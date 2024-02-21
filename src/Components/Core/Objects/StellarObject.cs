@@ -1,4 +1,5 @@
 ﻿
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Security.AccessControl;
 using System.Xml.Serialization;
@@ -17,6 +18,7 @@ public abstract class StellarObject : IStellarObject
 
     public Dictionary<string, string> Properties { get; init; }
 
+    #region Constructors
 #pragma warning disable CS8618
     public StellarObject() { }
 #pragma warning restore CS8618
@@ -29,6 +31,7 @@ public abstract class StellarObject : IStellarObject
         ObjectType = objectType;
         Properties = new();
     }
+    #endregion
 
     #region Get
     public virtual Result<T> Get<T>(Identifier identifier) where T : IStellarObject
@@ -109,5 +112,41 @@ public abstract class StellarObject : IStellarObject
     }
 
     protected virtual void CreateIdentifiers<T>() where T : IStellarObject { }
+    #endregion
+
+    #region IEqualityComparer
+    public bool Equals(StellarObject? x, StellarObject? y)
+    {
+        if (x is null || y is null) return false;
+        if (ReferenceEquals(x, y)) return true;
+        if (x.Name is null || y.Name is null || x.Identifier is null || y.Identifier is null) return false;
+
+        if (x.Name != y.Name) return false;
+        if (x.Identifier != y.Identifier) return false;
+
+        if (!(x.ParentIdentifier is null && y.ParentIdentifier is null))
+        {
+            if (x.ParentIdentifier is null || y.ParentIdentifier is null) return false;
+            if (x.Identifier != y.Identifier) return false;
+        }
+
+        if (!(x.ObjectType is null && y.ObjectType is null))
+        {
+            if (x.ObjectType is null || y.ObjectType is null) return false;
+            if (x.ObjectType.Value != y.ObjectType.Value) return false;
+        }
+
+        return x.Properties.Count == y.Properties.Count && !x.Properties.Except(y.Properties).Any();
+
+    }
+
+    public override bool Equals(object? obj) => Equals(this, obj as StellarObject);
+
+    public int GetHashCode([DisallowNull] StellarObject obj)
+    {
+        return HashCode.Combine(obj.Name, obj,Identifier, obj.ParentIdentifier, obj.ObjectType, obj.Properties);
+    }
+
+    public override int GetHashCode() => GetHashCode(this);
     #endregion
 }
