@@ -30,3 +30,4 @@
 * ~~Update MIT License to 2024~~
 * ~~Move physical properties from StellarObject Properties into it's own class~~
 * ~~PhysicalProperties use init only properties~~
+* ~~Add back in Dwarf Planets~~

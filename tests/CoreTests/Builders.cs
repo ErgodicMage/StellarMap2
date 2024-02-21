@@ -173,7 +173,7 @@ public class Builders
         return neptune;
     }
 
-    public static Planet BuildPluto(IStellarMap map)
+    public static DwarfPlanet BuildPluto(IStellarMap map)
     {
         Satelite[] satelites =
         {
@@ -184,22 +184,20 @@ public class Builders
             SateliteBuilder.Create("Styx", MapIdentifierGenerator.Instance, map).Build()
         };
 
-        var pluto = PlanetBuilder.Create("Pluto", MapIdentifierGenerator.Instance, map)
+        var pluto = DwarfPlanetBuilder.Create("Pluto", MapIdentifierGenerator.Instance, map)
             .WithDescription("Pluto is actually a Dwarf Planet.")
             .WithProperty(PropertiesConstant.DESIGNATION, "SOL-D-01")
-            .IsDwarf(true)
             .AddSatelites(satelites)
             .Build();
 
         return pluto;
     }
 
-    public static Planet BuildCeres(IStellarMap map)
+    public static DwarfPlanet BuildCeres(IStellarMap map)
     {
-        var ceres = PlanetBuilder.Create("Ceres", MapIdentifierGenerator.Instance, map)
+        var ceres = DwarfPlanetBuilder.Create("Ceres", MapIdentifierGenerator.Instance, map)
             .WithDescription("Dwarf Planet in asteroid belt")
             .WithProperty(PropertiesConstant.DESIGNATION, "SOL-D-02")
-            .IsDwarf(true)
             .Build();
 
         return ceres;
@@ -217,7 +215,11 @@ public class Builders
             BuildJupiter(map),
             BuildSaturn(map),
             BuildUranus(map),
-            BuildNeptune(map),
+            BuildNeptune(map)
+        };
+
+        DwarfPlanet[] dwarfplanets =
+        {
             BuildPluto(map),
             BuildCeres(map)
         };
@@ -256,6 +258,7 @@ public class Builders
             .WithProperty(PropertiesConstant.ALTERNATIVENAME, "Sun")
             .AsStellarClass("G2V")
             .AddPlanets(planets)
+            .AddDwarfPlanets(dwarfplanets)
             .AddAsteroids(asteroids)
             .AddComets(comets)
             .Build();

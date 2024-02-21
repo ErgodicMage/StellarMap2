@@ -78,6 +78,28 @@ public class StarBuilder
         return this;
     }
 
+    public StarBuilder AddDwarfPlanet(DwarfPlanet dwarfplanet)
+    {
+        if (!_result.Success) return this;
+        _result = BuilderCommonFunctionality.Add<DwarfPlanet>(_star, dwarfplanet);
+        return this;
+    }
+
+    public StarBuilder AddDwarfPlanets(ICollection<DwarfPlanet> dwarfplanets)
+    {
+        if (!_result.Success) return this;
+        _result = GuardClause.Null(dwarfplanets);
+        if (!_result.Success) return this;
+
+        foreach (var dwarfplanet in dwarfplanets)
+        {
+            _result = BuilderCommonFunctionality.Add<DwarfPlanet>(_star, dwarfplanet);
+            if (!_result.Success) return this;
+        }
+
+        return this;
+    }
+
     public StarBuilder AddAsteroid(Asteroid asteroid)
     {
         if (!_result.Success) return this;

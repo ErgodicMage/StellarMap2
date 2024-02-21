@@ -28,9 +28,13 @@ public static class BuildStars
             BuildPlanets.Jupiter(map),
             BuildPlanets.Saturn(map),
             BuildPlanets.Uranus(map),
-            BuildPlanets.Neptune(map),
-            BuildPlanets.Pluto(map),
-            BuildPlanets.Ceres(map)
+            BuildPlanets.Neptune(map)
+        };
+
+        DwarfPlanet[] dwarfplanets =
+        {
+            BuildDwarfPlanets.Pluto(map),
+            BuildDwarfPlanets.Ceres(map)
         };
 
         Asteroid[] asteroids =
@@ -66,6 +70,7 @@ public static class BuildStars
             .AddPhysicalProperties(physicalProperties)
             .AsStellarClass("G2V")
             .AddPlanets(planets)
+            .AddDwarfPlanets(dwarfplanets)
             .AddAsteroids(asteroids)
             .AddComets(comets)
             .Build();

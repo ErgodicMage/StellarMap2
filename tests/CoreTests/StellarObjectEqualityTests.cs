@@ -169,13 +169,8 @@ public class StellarObjectEqualityTests
         IStellarMap map2 = new StandardStellarMap();
         var sol2 = Builders.BuildSol(map2);
         Assert.NotNull(sol2);
-        // remove Pluto and Ceres from Sol Planets
-        var planetsRemove = map2.Planets?.Where(p => p.Value.IsDwarf);
-        foreach (var planet in planetsRemove!)
-        {
-            sol2.Planets?.Remove(planet.Value.Name!);
-            map2.Planets?.Remove(planet.Value.Identifier.Id);
-        }
+        var planetBob = DwarfPlanetBuilder.Create("Bob", MapIdentifierGenerator.Instance, map2).Build();
+        sol2.AddDwarfPlanet(planetBob);
 
         Assert.NotEqual(sol1, sol2);
 

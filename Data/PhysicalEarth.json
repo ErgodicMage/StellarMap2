@@ -7,7 +7,7 @@
     "Email": "ErgodicMage@gmail.com",
     "License": "MIT License, 2024",
     "Github": "https://github.com/ErgodicMage/StellarMap2",
-    "Date": "2/25/2024"
+    "Date": "3/4/2024"
   },
   "Stars": null,
   "Planets": {
@@ -36,7 +36,6 @@
         "Gravity": 9.80665,
         "EscapeVelocity": 11.186
       },
-      "IsDwarf": false,
       "Satelites": {
         "Moon": {
           "Id": "Satelite-00001"
@@ -44,6 +43,7 @@
       }
     }
   },
+  "DwarfPlanets": null,
   "Satelites": {
     "Satelite-00001": {
       "Name": "Moon",

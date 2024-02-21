@@ -2,18 +2,18 @@
 
 namespace StellarMap.Core;
 
-public class Planet : StellarObject, IStellarObject, IEqualityComparer<Planet>
+public class DwarfPlanet : StellarObject, IStellarObject, IEqualityComparer<DwarfPlanet>
 {
     #region Properties
     [JsonPropertyOrder(11)]
-    public Dictionary<string, Identifier>? Satelites { get; set; }    
+    public Dictionary<string, Identifier>? Satelites { get; set; }
     #endregion
 
     #region Constructors
-    public Planet() { }
+    public DwarfPlanet() { }
 
-    public Planet(string name, Identifier identifier, IStellarMap map, bool isDwarf = false) 
-        : base(name, identifier, map, StellarObjectType.Planet) 
+    public DwarfPlanet(string name, Identifier identifier, IStellarMap map)
+        : base(name, identifier, map, StellarObjectType.DwarfPlanet)
     { }
     #endregion
 
@@ -42,7 +42,7 @@ public class Planet : StellarObject, IStellarObject, IEqualityComparer<Planet>
     #endregion
 
     #region IEqualityComparer Functions
-    public bool Equals(Planet? x, Planet? y)
+    public bool Equals(DwarfPlanet? x, DwarfPlanet? y)
     {
         if (x is null || y is null) return false;
         if (ReferenceEquals(x, y)) return true;
@@ -50,9 +50,9 @@ public class Planet : StellarObject, IStellarObject, IEqualityComparer<Planet>
         return CommonFunctionality.CompareDictionaries(x.Satelites, y.Satelites);
     }
 
-    public override bool Equals(object? obj) => Equals(this, obj as Planet);
+    public override bool Equals(object? obj) => Equals(this, obj as DwarfPlanet);
 
-    public int GetHashCode(Planet obj) => HashCode.Combine(base.GetHashCode(obj), obj.Satelites);
+    public int GetHashCode(DwarfPlanet obj) => HashCode.Combine(base.GetHashCode(obj), obj.Satelites);
 
     public override int GetHashCode() => GetHashCode(this);
     #endregion

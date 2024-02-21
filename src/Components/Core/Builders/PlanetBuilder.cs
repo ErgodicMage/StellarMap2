@@ -1,6 +1,4 @@
-﻿using System.Xml.XPath;
-
-namespace StellarMap.Core;
+﻿namespace StellarMap.Core;
 
 public class PlanetBuilder
 {
@@ -37,13 +35,6 @@ public class PlanetBuilder
     }
 
     public PlanetBuilder WithDescription(string description) => WithProperty(PropertiesConstant.DESCRIPTION, description);
-
-    public PlanetBuilder IsDwarf(bool isDwarf)
-    {
-        if (!_result.Success) return this;
-        _planet.IsDwarf = isDwarf;
-        return this;
-    }
 
     public PlanetBuilder AddPhysicalProperties(PhysicalProperties properties)
     {
