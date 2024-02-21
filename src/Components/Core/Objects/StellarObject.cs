@@ -136,7 +136,7 @@ public abstract class StellarObject : IStellarObject
             if (x.ObjectType.Value != y.ObjectType.Value) return false;
         }
 
-        return x.Properties.Count == y.Properties.Count && !x.Properties.Except(y.Properties).Any();
+        return CommonFunctionality.CompareDictionaries(x.Properties, y.Properties);
 
     }
 

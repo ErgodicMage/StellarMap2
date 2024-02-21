@@ -41,10 +41,7 @@ public class Planet : StellarObject, IStellarObject, IEqualityComparer<Planet>
         if (x is null || y is null) return false;
         if (ReferenceEquals(x, y)) return true;
         if (!base.Equals(x, y)) return false;
-
-        if (x.Satelites is null && y.Satelites is null) return true;
-        if (x.Satelites is null || y.Satelites is null) return false;
-        return x.Satelites.Count == y.Satelites.Count && !x.Satelites.Except(y.Satelites).Any();
+        return CommonFunctionality.CompareDictionaries(x.Satelites, y.Satelites);
     }
 
     public override bool Equals(object? obj) => Equals(this, obj as Planet);

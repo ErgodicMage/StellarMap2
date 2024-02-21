@@ -86,23 +86,9 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
         if (ReferenceEquals(x, y)) return true;
         if (!base.Equals(x, y)) return false;
 
-        if (!(x.Planets == null && y.Planets == null))
-        {
-            if (x.Planets == null || y.Planets is null) return false;
-            if (x.Planets.Count != y.Planets.Count || x.Planets.Except(y.Planets).Any()) return false;
-        }
-
-        if (!(x.Asteroids == null && y.Asteroids == null))
-        {
-            if (x.Asteroids == null || y.Asteroids is null) return false;
-            if (x.Asteroids.Count != y.Asteroids.Count || x.Asteroids.Except(y.Asteroids).Any()) return false;
-        }
-
-        if (!(x.Comets == null && y.Comets == null))
-        {
-            if (x.Comets == null || y.Comets is null) return false;
-            if (x.Comets.Count != y.Comets.Count || x.Comets.Except(y.Comets).Any()) return false;
-        }
+        if (!CommonFunctionality.CompareDictionaries(x.Planets, y.Planets)) return false;
+        if (!CommonFunctionality.CompareDictionaries(x.Asteroids, y.Asteroids)) return false;
+        if (!CommonFunctionality.CompareDictionaries(x.Comets, y.Comets)) return false;
 
         return true;
     }
