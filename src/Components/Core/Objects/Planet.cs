@@ -4,12 +4,18 @@ public class Planet : StellarObject, IStellarObject, IEqualityComparer<Planet>
 {
     #region Properties
     public Dictionary<string, Identifier>? Satelites { get; set; }
+    
+    public bool IsDwarf {get; set; }
     #endregion
 
     #region Constructors
     public Planet() { }
 
-    public Planet(string name, Identifier identifier, IStellarMap map) : base(name, identifier, map, StellarObjectType.Planet) { }
+    public Planet(string name, Identifier identifier, IStellarMap map, bool isDwarf = false) 
+        : base(name, identifier, map, StellarObjectType.Planet) 
+    { 
+        this.IsDwarf = isDwarf;
+    }
     #endregion
 
     #region Get

@@ -25,9 +25,6 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
     public Result<Planet> GetPlanet(Identifier identifier) => Get<Planet>(identifier);
     public Result<Planet> GetPlanet(string name) => Get<Planet>(name);
 
-    public Result<DwarfPlanet> GetDwarfPlanet(Identifier identifier) => Get<DwarfPlanet>(identifier);
-    public Result<DwarfPlanet> GetDwarfPlanet(string name) => Get<DwarfPlanet>(name);
-
     public Result<Asteroid> GetAsteroid(Identifier identifier) => Get<Asteroid>(identifier);
     public Result<Asteroid> GetAsteroid(string name) => Get<Asteroid>(name);
 
@@ -43,7 +40,6 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
         Dictionary<string, Identifier>? dictionary = default;
         foundObjectType
                 .When(StellarObjectType.Planet).Then(() => dictionary = Planets)
-                .When(StellarObjectType.DwarfPlanet).Then(() => dictionary = DwarfPlanets)
                 .When(StellarObjectType.Asteroid).Then(() => dictionary = Asteroids)
                 .When(StellarObjectType.Comet).Then(() => dictionary = Comets)
                 .Default(() => { });
@@ -55,9 +51,6 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
     #region Add
     public Result Add(Planet planet) => Add<Planet>(planet);
     public Result AddPlanet(Planet planet) => Add<Planet>(planet);
-
-    public Result Add(DwarfPlanet dwarfPlanet) => Add<DwarfPlanet>(dwarfPlanet);
-    public Result AddDwarfPlanet(DwarfPlanet dwarfPlanet) => Add<DwarfPlanet>(dwarfPlanet);
 
     public Result Add(Asteroid asteroid) => Add<Asteroid>(asteroid);
     public Result AddAsteroid(Asteroid asteroid) => Add<Asteroid>(asteroid);
@@ -72,7 +65,6 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
 
         foundObjectType
             .When(StellarObjectType.Planet).Then(() => Planets ??= new())
-            .When(StellarObjectType.DwarfPlanet).Then(() => DwarfPlanets ??= new())
             .When(StellarObjectType.Asteroid).Then(() => Asteroids ??= new())
             .When(StellarObjectType.Comet).Then(() => Comets ??= new())
             .Default(() => { });

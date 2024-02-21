@@ -6,7 +6,6 @@ public interface IStellarMap
     Dictionary<string, string> MetaData { get; }
     Dictionary<Identifier, Star>? Stars { get; set; }
     Dictionary<Identifier, Planet>? Planets { get; set; }
-    Dictionary<Identifier, DwarfPlanet>? DwarfPlanets { get; set; }
     Dictionary<Identifier, Satelite>? Satelites { get; set; }
     Dictionary<Identifier, Asteroid>? Asteroids { get; set; }
     Dictionary<Identifier, Comet>? Comets { get; set; }

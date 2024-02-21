@@ -7,7 +7,6 @@ public class StellarMap : IStellarMap
     public Dictionary<Identifier, Star>? Stars { get; set; }
     public Dictionary<Identifier, Planet>? Planets { get; set; }
     public Dictionary<Identifier, Satelite>? Satelites { get; set; }
-    public Dictionary<Identifier, DwarfPlanet>? DwarfPlanets { get; set; }
     public Dictionary<Identifier, Asteroid>? Asteroids { get; set; }
     public Dictionary<Identifier, Comet>? Comets { get; set; }
 
@@ -58,7 +57,6 @@ public class StellarMap : IStellarMap
         foundObjectType
             .When(StellarObjectType.Star).Then(() => Stars ??= new())
             .When(StellarObjectType.Planet).Then(() => Planets ??= new())
-            .When(StellarObjectType.DwarfPlanet).Then(() => DwarfPlanets ??= new())
             .When(StellarObjectType.Satelite).Then(() => Satelites ??= new())
             .When(StellarObjectType.Asteroid).Then(() => Asteroids ??= new())
             .When(StellarObjectType.Comet).Then(() => Comets ??= new())
@@ -75,7 +73,6 @@ public class StellarMap : IStellarMap
         foundObjectType
                 .When(StellarObjectType.Star).Then(() => dictionary = Stars as Dictionary<Identifier, T>)
                 .When(StellarObjectType.Planet).Then(() => dictionary = Planets as Dictionary<Identifier, T>)
-                .When(StellarObjectType.DwarfPlanet).Then(() => dictionary = DwarfPlanets as Dictionary<Identifier, T>)
                 .When(StellarObjectType.Satelite).Then(() => dictionary = Satelites as Dictionary<Identifier, T>)
                 .When(StellarObjectType.Asteroid).Then(() => dictionary = Asteroids as Dictionary<Identifier, T>)
                 .When(StellarObjectType.Comet).Then(() => dictionary = Comets as Dictionary<Identifier, T>)
