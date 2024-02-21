@@ -29,9 +29,9 @@ public class StellarMap : IStellarMap
         CreateDictionary<T>();
         var dict = GetDictionary<T>();
         if (!dict.Success) return dict;
-        
+
         if (dict.Value.ContainsKey(t.Identifier))
-            return Result.Error($"{t.Identifier} already exists in {nameof(T)}s");
+            return Result.Ok(); // if it already exists then don't add it
         
         dict.Value.Add(t.Identifier, t);
         return Result.Ok();
