@@ -2,8 +2,9 @@
 
 namespace StellarMap.Core;
 
-public class SateliteBuilder : StellarObjectBuilder
+public class SateliteBuilder
 {
+    protected Result _result = Result.Ok();
     protected Satelite _satelite;
 
     public static SateliteBuilder Create(string name, Identifier identifier, IStellarMap map)
@@ -25,14 +26,13 @@ public class SateliteBuilder : StellarObjectBuilder
     public Result<Satelite> Build()
     {
         if (!_result.Success) return _result;
-        _result = _satelite.Map.Add<Satelite>(_satelite);
-        return _result.Success ? _satelite : _result;
+        return BuilderCommonFunctionality.Build<Satelite>(_satelite);
     }
 
     public SateliteBuilder WithProperty(string name, string value)
     {
         if (!_result.Success) return this;
-        _result = AddToProperties(_satelite, name, value);
+        _result = BuilderCommonFunctionality.AddToProperties(_satelite, name, value);
         return this;
     }
 

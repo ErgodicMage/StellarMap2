@@ -1,7 +1,8 @@
 ﻿namespace StellarMap.Core;
 
-public class CometBuilder : StellarObjectBuilder
+public class CometBuilder
 {
+    protected Result _result = Result.Ok();
     protected Comet _comet;
 
     public static CometBuilder Create(string name, Identifier identifier, IStellarMap map)
@@ -23,14 +24,13 @@ public class CometBuilder : StellarObjectBuilder
     public Result<Comet> Build()
     {
         if (!_result.Success) return _result;
-        _result = _comet.Map.Add<Comet>(_comet);
-        return _result.Success ? _comet : _result;
+        return BuilderCommonFunctionality.Build<Comet>(_comet);
     }
 
     public CometBuilder WithProperty(string name, string value)
     {
         if (!_result.Success) return this;
-        _result = AddToProperties(_comet, name, value);
+        _result = BuilderCommonFunctionality.AddToProperties(_comet, name, value);
         return this;
     }
 

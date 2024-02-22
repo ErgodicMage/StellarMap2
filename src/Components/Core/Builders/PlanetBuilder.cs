@@ -1,8 +1,9 @@
 ﻿namespace StellarMap.Core;
 
-public class PlanetBuilder : StellarObjectBuilder
+public class PlanetBuilder
 {
-    internal Planet _planet;
+    protected Result _result = Result.Ok();
+    protected Planet _planet;
 
     public static PlanetBuilder Create(string name, Identifier identifier, IStellarMap map, bool isDwarf = false)
     {
@@ -20,12 +21,16 @@ public class PlanetBuilder : StellarObjectBuilder
         return planetBuilder;
     }
 
-    public Result<Planet> Build() => Build<Planet>(_planet);
+    public Result<Planet> Build()
+    {
+        if (!_result.Success) return _result;
+        return BuilderCommonFunctionality.Build<Planet>(_planet);
+    }
 
     public PlanetBuilder WithProperty(string name, string value)
     {
         if (!_result.Success) return this;
-        _result = AddToProperties(_planet, name, value);
+        _result = BuilderCommonFunctionality.AddToProperties(_planet, name, value);
         return this;
     }
 
@@ -39,6 +44,11 @@ public class PlanetBuilder : StellarObjectBuilder
     }
 
     // just store the satelites will add to _planet later to resolve identifiers
-    public PlanetBuilder AddSatelite(Satelite satelite) => Add(_planet, satelite) as PlanetBuilder;
+    public PlanetBuilder AddSatelite(Satelite satelite) //=> Add(_planet, satelite) as PlanetBuilder;
+    {
+        if (!_result.Success) return this;
+        _result = BuilderCommonFunctionality.Add<Satelite>(_planet, satelite);
+        return this;
+    }
 
 }

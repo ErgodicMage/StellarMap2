@@ -2,8 +2,9 @@
 
 namespace StellarMap.Core;
 
-public class StarBuilder : StellarObjectBuilder
+public class StarBuilder
 {
+    protected Result _result = Result.Ok();
     protected Star _star;
 
     public static StarBuilder Create(string name, Identifier identifier, IStellarMap map)
@@ -21,12 +22,16 @@ public class StarBuilder : StellarObjectBuilder
         return starBuilder;
     }
 
-    public Result<Star> Build() => Build<Star>(_star);
+    public Result<Star> Build()
+    {
+        if (!_result.Success) return _result;
+        return BuilderCommonFunctionality.Build<Star>(_star);
+    }
 
     public StarBuilder WithProperty(string name, string value)
     {
         if (!_result.Success) return this;
-        _result = AddToProperties(_star, name, value);
+        _result = BuilderCommonFunctionality.AddToProperties(_star, name, value);
         return this;
     }
 
@@ -34,9 +39,24 @@ public class StarBuilder : StellarObjectBuilder
         => WithProperty(PropertiesConstant.DESCRIPTION, description);
 
 
-    public StarBuilder AddPlanet(Planet planet) => Add(_star, planet) as StarBuilder;
+    public StarBuilder AddPlanet(Planet planet)
+    {
+        if (!_result.Success) return this;
+        _result = BuilderCommonFunctionality.Add<Planet>(_star, planet);
+        return this;
+    }
 
-    public StarBuilder AddAsteroid(Asteroid asteroid) => Add(_star, asteroid) as StarBuilder;
+    public StarBuilder AddAsteroid(Asteroid asteroid)
+    {
+        if (!_result.Success) return this;
+        _result = BuilderCommonFunctionality.Add<Asteroid>(_star, asteroid);
+        return this;
+    }
 
-    public StarBuilder AddComet(Comet comet) => Add(_star, comet) as StarBuilder;
+    public StarBuilder AddComet(Comet comet)
+    {
+        if (!_result.Success) return this;
+        _result = BuilderCommonFunctionality.Add<Comet>(_star, comet);
+        return this;
+    }
 }
