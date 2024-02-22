@@ -20,6 +20,7 @@ public class Planet : StellarObject, IStellarObject, IEqualityComparer<Planet>
 
     #region Get
     public Result<Satelite> GetSatelite(Identifier identifier) => Get<Satelite>(identifier);
+    public Result<Satelite> GetSatelite(string name) => Get<Satelite>(name);
 
     protected override Result<IDictionary<string, Identifier>> GetIdentifiers<T>()
     {
