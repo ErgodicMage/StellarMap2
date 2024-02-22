@@ -63,7 +63,7 @@ public abstract class StellarObject : IStellarObject
         if (identifier is null)
             return Result.Error($"{typeof(T).Name} {name} not found for {GetType().Name} {Name} {Identifier}");
 
-        return Map.Get<T>(Identifier);
+        return Map.Get<T>(identifier);
     }
 
     public virtual Result<IReadOnlyList<T>> GetAll<T>() where T : IStellarObject
