@@ -27,13 +27,14 @@ public class AsteroidBuilder : StellarObjectBuilder
         return _result.Success ? _asteroid : _result;
     }
 
-    public AsteroidBuilder AddProperty(string name, string value)
+    public AsteroidBuilder WithProperty(string name, string value)
     {
         if (!_result.Success) return this;
         _result = AddToProperties(_asteroid, name, value);
         return this;
     }
 
-    public AsteroidBuilder Description(string description) => AddProperty(PropertiesConstant.DESCRIPTION, description);
+    public AsteroidBuilder WithDescription(string description) => 
+        WithProperty(PropertiesConstant.DESCRIPTION, description);
 
 }

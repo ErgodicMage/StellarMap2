@@ -23,14 +23,15 @@ public class StarBuilder : StellarObjectBuilder
 
     public Result<Star> Build() => Build<Star>(_star);
 
-    public StarBuilder AddProperty(string name, string value)
+    public StarBuilder WithProperty(string name, string value)
     {
         if (!_result.Success) return this;
         _result = AddToProperties(_star, name, value);
         return this;
     }
 
-    public StarBuilder Description(string description) => AddProperty(PropertiesConstant.DESCRIPTION, description);
+    public StarBuilder WithDescription(string description) 
+        => WithProperty(PropertiesConstant.DESCRIPTION, description);
 
 
     public StarBuilder AddPlanet(Planet planet) => Add(planet) as StarBuilder;

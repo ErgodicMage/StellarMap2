@@ -27,13 +27,13 @@ public class CometBuilder : StellarObjectBuilder
         return _result.Success ? _comet : _result;
     }
 
-    public CometBuilder AddProperty(string name, string value)
+    public CometBuilder WithProperty(string name, string value)
     {
         if (!_result.Success) return this;
         _result = AddToProperties(_comet, name, value);
         return this;
     }
 
-    public CometBuilder Description(string description) => AddProperty(PropertiesConstant.DESCRIPTION, description);
+    public CometBuilder WithDescription(string description) => WithProperty(PropertiesConstant.DESCRIPTION, description);
 
 }

@@ -29,12 +29,13 @@ public class SateliteBuilder : StellarObjectBuilder
         return _result.Success ? _satelite : _result;
     }
 
-    public SateliteBuilder AddProperty(string name, string value)
+    public SateliteBuilder WithProperty(string name, string value)
     {
         if (!_result.Success) return this;
         _result = AddToProperties(_satelite, name, value);
         return this;
     }
 
-    public SateliteBuilder Description(string description) => AddProperty(PropertiesConstant.DESCRIPTION, description);
+    public SateliteBuilder WithDescription(string description) => 
+        WithProperty(PropertiesConstant.DESCRIPTION, description);
 }

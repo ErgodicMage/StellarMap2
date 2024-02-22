@@ -22,14 +22,14 @@ public class PlanetBuilder : StellarObjectBuilder
 
     public Result<Planet> Build() => Build<Planet>(_planet);
 
-    public PlanetBuilder AddProperty(string name, string value)
+    public PlanetBuilder WithProperty(string name, string value)
     {
         if (!_result.Success) return this;
         _result = AddToProperties(_planet, name, value);
         return this;
     }
 
-    public PlanetBuilder Description(string description) => AddProperty(PropertiesConstant.DESCRIPTION, description);
+    public PlanetBuilder WithDescription(string description) => WithProperty(PropertiesConstant.DESCRIPTION, description);
 
     public PlanetBuilder IsDwarf(bool isDwarf)
     {
