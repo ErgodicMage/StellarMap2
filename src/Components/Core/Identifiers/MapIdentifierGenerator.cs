@@ -21,6 +21,6 @@ public sealed class MapIdentifierGenerator : IIdentifierGenerator
             .When(StellarObjectType.Asteroid).Then(() => count = map?.Asteroids is null ? 0 : map.Asteroids.Count)
             .When(StellarObjectType.Comet).Then(() => count = map?.Comets is null ? 0 : map.Comets.Count);
 
-        return new Identifier($"{type.Name}-({count + 1:D5})");
+        return new Identifier($"{type.Name}-{count + 1:D5}");
     }
 }
