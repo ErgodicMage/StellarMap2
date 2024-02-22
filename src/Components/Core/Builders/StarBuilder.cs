@@ -34,9 +34,9 @@ public class StarBuilder : StellarObjectBuilder
         => WithProperty(PropertiesConstant.DESCRIPTION, description);
 
 
-    public StarBuilder AddPlanet(Planet planet) => Add(planet) as StarBuilder;
+    public StarBuilder AddPlanet(Planet planet) => Add(_star, planet) as StarBuilder;
 
-    public StarBuilder AddAsteroid(Asteroid asteroid) => Add(asteroid) as StarBuilder;
+    public StarBuilder AddAsteroid(Asteroid asteroid) => Add(_star, asteroid) as StarBuilder;
 
-    public StarBuilder AddComet(Comet comet) => Add(comet) as StarBuilder;
+    public StarBuilder AddComet(Comet comet) => Add(_star, comet) as StarBuilder;
 }

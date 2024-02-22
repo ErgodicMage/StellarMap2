@@ -28,13 +28,13 @@ public abstract class StellarObjectBuilder
         return _result.Success ? stellarObject : _result;
     }
 
-    protected StellarObjectBuilder Add<T>(T stellarObject) where T : IStellarObject
+    protected StellarObjectBuilder Add<T>(StellarObject parent, T objToAdd) where T : IStellarObject
     {
         if (!_result.Success) return this;
-        _result = GuardClause.Null(stellarObject).Null(stellarObject.Map);
+        _result = GuardClause.Null(objToAdd).Null(objToAdd.Map);
         if (!_result.Success) return this;
 
-        _result = stellarObject.Add<T>(stellarObject);
+        _result = parent.Add<T>(objToAdd);
         return this;
     }
 

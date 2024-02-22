@@ -39,6 +39,6 @@ public class PlanetBuilder : StellarObjectBuilder
     }
 
     // just store the satelites will add to _planet later to resolve identifiers
-    public PlanetBuilder AddSatelite(Satelite satelite) => Add(satelite) as PlanetBuilder;
+    public PlanetBuilder AddSatelite(Satelite satelite) => Add(_planet, satelite) as PlanetBuilder;
 
 }
