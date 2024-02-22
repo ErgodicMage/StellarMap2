@@ -9,7 +9,7 @@ public interface IStellarObject : IEqualityComparer<StellarObject>
     Identifier Identifier { get; init; }
     Identifier ParentIdentifier { get; set; }
 
-    StellarObjectType ObjectType { get; }
+    StellarObjectType ObjectType { get; init; }
 
     Dictionary<string, string> Properties { get; init; }
 

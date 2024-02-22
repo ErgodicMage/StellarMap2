@@ -9,11 +9,10 @@
 * Builders
 	* StellarObject
 	* Star
-	* Planet
-	* DwarfPlanet
-	* Satelite
-	* Asteroid
-	* Comet
+	* ~~Planet~~
+	* ~~Satelite~~
+	* ~~Asteroid~~
+	* ~~Comet~~
 * Get StellarObjectType to work with Json serializer
 * Get StallarMap Dictionary<Identifier, T> to work with Json serializer
 * 
