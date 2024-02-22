@@ -17,7 +17,7 @@ public class SateliteBuilder : StellarObjectBuilder
         bool isDwarf = false)
     {
         SateliteBuilder sateliteBuilder = new();
-        Identifier identifier = generator.GenerateIdentifier(StellarObjectType.Planet, map);
+        Identifier identifier = generator.GenerateIdentifier(StellarObjectType.Satelite, map);
         sateliteBuilder._satelite = new(name, identifier, map);
         return sateliteBuilder;
     }
