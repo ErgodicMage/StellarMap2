@@ -6,14 +6,14 @@
 * ~~Add Common Property constants~~
 * ~~Equality for StellarObjects~~
 * ~~Remove DwarfePlanet and add IsDwarf parameter to Planet~~
-* Builders
+* ~~Builders~~
 	* ~~StellarObject~~
 	* ~~Star~~
 	* ~~Planet~~
 	* ~~Satelite~~
 	* ~~Asteroid~~
 	* ~~Comet~~
-* Rename StellarMap to StandardStellarMap so it doesn't confict with the namespace.
+* ~~Rename StellarMap to StandardStellarMap so it doesn't confict with the namespace.~~
 * Get StellarObjectType to work with Json serializer
 * Get StallarMap Dictionary<Identifier, T> to work with Json serializer
 * 

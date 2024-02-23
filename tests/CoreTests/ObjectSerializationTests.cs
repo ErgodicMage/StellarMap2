@@ -8,7 +8,7 @@ public class ObjectSerializationTests
     [Fact]
     public void EarthJsonSerialization()
     {
-        StellarMap.Core.StellarMap map = new();
+        StandardStellarMap map = new();
         map.Name = "Earth";
 
         var Earth = CreateEarth(map);
@@ -25,7 +25,7 @@ public class ObjectSerializationTests
     [Fact]
     public void EarthJsonSerializationDeserialization()
     {
-        StellarMap.Core.StellarMap map = new();
+        StandardStellarMap map = new();
         map.Name = "Earth";
         var Earth = CreateEarth(map);
 

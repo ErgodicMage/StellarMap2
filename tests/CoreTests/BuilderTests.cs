@@ -5,7 +5,7 @@ public class BuilderTests
     [Fact]
     public void BuildEarth()
     {
-        IStellarMap map = new StellarMap.Core.StellarMap();
+        IStellarMap map = new StandardStellarMap();
         var earth = Builders.BuildEarth(map);
 
         Assert.NotNull(earth);
@@ -30,7 +30,7 @@ public class BuilderTests
     [Fact]
     public void BuildEarthFail()
     {
-        IStellarMap map = new StellarMap.Core.StellarMap();
+        IStellarMap map = new StandardStellarMap();
         var moon = StellarObjectBuilder.CreateSatelite("Moon", MapIdentifierGenerator.Instance, map).Build();
         
         Assert.True(moon.Success);
@@ -53,7 +53,7 @@ public class BuilderTests
     [Fact]
     public void BuildMercury()
     {
-        IStellarMap map = new StellarMap.Core.StellarMap();
+        IStellarMap map = new StandardStellarMap();
 
         var mercury = Builders.BuildMercury(map);
 
@@ -79,7 +79,7 @@ public class BuilderTests
     [Fact]
     public void BuildJupiter()
     {
-        IStellarMap map = new StellarMap.Core.StellarMap();
+        IStellarMap map = new StandardStellarMap();
         var jupiter = Builders.BuildJupiter(map);
 
         Assert.NotNull(jupiter);
@@ -106,7 +106,7 @@ public class BuilderTests
     [Fact]
     public void BuildSolarSystem()
     {
-        IStellarMap map = new StellarMap.Core.StellarMap();
+        IStellarMap map = new StandardStellarMap();
         var sol = Builders.BuildSol(map);
 
         Assert.NotNull(sol);

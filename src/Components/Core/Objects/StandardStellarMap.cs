@@ -1,6 +1,6 @@
 ﻿namespace StellarMap.Core;
 
-public class StellarMap : IStellarMap
+public class StandardStellarMap : IStellarMap
 {
     public string Name { get; set; }
     public Dictionary<string, string> MetaData { get; }
@@ -12,10 +12,10 @@ public class StellarMap : IStellarMap
 
     #region Constructors
 #pragma warning disable CS8618
-    public StellarMap() { }
+    public StandardStellarMap() { }
 #pragma warning restore CS8618
 
-    public StellarMap(string name)
+    public StandardStellarMap(string name)
     {
         Name = name;
         MetaData = new();
