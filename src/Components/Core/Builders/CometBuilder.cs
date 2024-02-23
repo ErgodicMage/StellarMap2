@@ -16,7 +16,7 @@ public class CometBuilder
         bool isDwarf = false)
     {
         CometBuilder cometBuilder = new();
-        Identifier identifier = generator.GenerateIdentifier(StellarObjectType.Planet, map);
+        Identifier identifier = generator.GenerateIdentifier(StellarObjectType.Comet, map);
         cometBuilder._comet = new(name, identifier, map);
         return cometBuilder;
     }

@@ -16,7 +16,7 @@ public class AsteroidBuilder
         bool isDwarf = false)
     {
         AsteroidBuilder asteroidBuilder = new();
-        Identifier identifier = generator.GenerateIdentifier(StellarObjectType.Planet, map);
+        Identifier identifier = generator.GenerateIdentifier(StellarObjectType.Asteroid, map);
         asteroidBuilder._asteroid = new(name, identifier, map);
         return asteroidBuilder;
     }
