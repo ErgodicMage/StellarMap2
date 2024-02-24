@@ -8,68 +8,69 @@ public class ObjectSerializationTests
     [Fact]
     public void EarthJsonSerialization()
     {
-        StandardStellarMap map = new();
-        map.Name = "Earth";
+        StandardStellarMap map = new()
+        {
+            Name = "Earth",
+        };
 
-        var Earth = CreateEarth(map);
+        var earth = Builders.BuildEarth(map);
+        Assert.NotNull(earth);
 
         var jsonOptions = new JsonSerializerOptions()
         {
-            //Converters = { new IdentifierJsonConverter() },
             WriteIndented = true
         };
-        var json = JsonSerializer.Serialize<Planet>(Earth, jsonOptions);
-        Assert.NotEmpty(json);
+        
+        var json = JsonSerializer.Serialize<Planet>(earth, jsonOptions);
+        Assert.NotNull(json);
+        Assert.False(string.IsNullOrEmpty(json));
     }
 
     [Fact]
     public void EarthJsonSerializationDeserialization()
     {
-        StandardStellarMap map = new();
-        map.Name = "Earth";
-        var Earth = CreateEarth(map);
+        StandardStellarMap map = new()
+        {
+            Name = "Earth",
+        };
+
+        var earth = Builders.BuildEarth(map);
+        Assert.NotNull(earth);
 
         var jsonOptions = new JsonSerializerOptions()
         {
-            //Converters = { new IdentifierJsonConverter() },
             WriteIndented = true
         };
 
-        var json = JsonSerializer.Serialize<Planet>(Earth, jsonOptions);
-        Assert.NotEmpty(json);
+        var json = JsonSerializer.Serialize<Planet>(earth, jsonOptions);
+        Assert.NotNull(json);
+        Assert.False(string.IsNullOrEmpty(json));
 
         var newEarth = JsonSerializer.Deserialize<Planet>(json, jsonOptions);
         Assert.NotNull(newEarth);
         //Assert.Equal(Earth, newEarth);
     }
 
-    private Planet CreateEarth(IStellarMap map)
+    [Fact]
+    public void MapSerialization()
     {
-        Planet Earth = new("Earth", MapIdentifierGenerator.Instance.GenerateIdentifier(StellarObjectType.Planet, map), map);
-        Earth.Properties.Add(PropertiesConstant.DESCRIPTION, "Home of Humans");
-        Earth.Properties.Add(PropertiesConstant.DESIGNATION, "SOL-3");
-        map.Add<Planet>(Earth);
-
-        Satelite Moon = new("Moon", MapIdentifierGenerator.Instance.GenerateIdentifier(StellarObjectType.Satelite, map), map);
-        Moon.Properties.Add(PropertiesConstant.DESCRIPTION, "Earth's moon");
-        Moon.Properties.Add(PropertiesConstant.ALTERNATIVENAME, "Luna");
-        Moon.Properties.Add(PropertiesConstant.DESIGNATION, "Earth-1");
-        Earth.Add(Moon);
-
-        return Earth;
-    }
-
-    public sealed class IdentifierJsonConverter : JsonConverter<Identifier>
-    {
-        public override Identifier? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        StandardStellarMap map = new()
         {
-            string? json = reader.GetString();
-            return json is null ? null : new Identifier(json);
-        }
+            Name = "Earth",
+        };
 
-        public override void Write(Utf8JsonWriter writer, Identifier value, JsonSerializerOptions options)
+        var sol = Builders.BuildSol(map);
+        Assert.NotNull(sol);
+        var jsonOptions = new JsonSerializerOptions()
         {
-            writer.WriteString("Identifier", value?.ToString());
-        }
+            WriteIndented = true
+        };
+
+        var json = JsonSerializer.Serialize<IStellarMap>(map, jsonOptions);
+        Assert.NotNull(json);
+        Assert.False(string.IsNullOrEmpty(json));
+
+        var newMap = JsonSerializer.Deserialize<StandardStellarMap>(json, jsonOptions);
+        Assert.NotNull(newMap);
     }
 }

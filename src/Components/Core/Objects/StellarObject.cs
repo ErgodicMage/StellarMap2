@@ -1,8 +1,6 @@
 ﻿
 using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
-using System.Security.AccessControl;
-using System.Xml.Serialization;
+using System.Text.Json.Serialization;
 
 namespace StellarMap.Core;
 
@@ -10,10 +8,13 @@ public abstract class StellarObject : IStellarObject
 {
     public string? Name { get; init; }
 
+    [JsonIgnore]
     public IStellarMap Map { get; init; }
 
     public Identifier Identifier { get; init; } = Identifier.NoIdentifier;
     public Identifier ParentIdentifier { get; set; } = Identifier.NoIdentifier;
+    
+    [JsonIgnore]
     public StellarObjectType ObjectType { get; init;  }
 
     public Dictionary<string, string> Properties { get; init; }

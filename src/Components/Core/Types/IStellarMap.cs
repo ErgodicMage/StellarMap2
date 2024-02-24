@@ -4,11 +4,13 @@ public interface IStellarMap
 {
     string Name { get; set; }
     Dictionary<string, string> MetaData { get; }
-    Dictionary<Identifier, Star>? Stars { get; set; }
-    Dictionary<Identifier, Planet>? Planets { get; set; }
-    Dictionary<Identifier, Satelite>? Satelites { get; set; }
-    Dictionary<Identifier, Asteroid>? Asteroids { get; set; }
-    Dictionary<Identifier, Comet>? Comets { get; set; }
+
+    // I had to switch from Identifier to strings for the Dictionary key so it works easier with System.Text.Json serialization
+    Dictionary<string, Star>? Stars { get; set; }
+    Dictionary<string, Planet>? Planets { get; set; }
+    Dictionary<string, Satelite>? Satelites { get; set; }
+    Dictionary<string, Asteroid>? Asteroids { get; set; }
+    Dictionary<string, Comet>? Comets { get; set; }
 
     Result Add<T>(T t) where T : IStellarObject;
     
