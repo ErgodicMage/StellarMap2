@@ -134,7 +134,7 @@ public abstract class StellarObject : IStellarObject
         if (!(x.ParentIdentifier is null && y.ParentIdentifier is null))
         {
             if (x.ParentIdentifier is null || y.ParentIdentifier is null) return false;
-            if (x.Identifier != y.Identifier) return false;
+            if (x.ParentIdentifier != y.ParentIdentifier) return false;
         }
 
         if (!(x.ObjectType is null && y.ObjectType is null))
