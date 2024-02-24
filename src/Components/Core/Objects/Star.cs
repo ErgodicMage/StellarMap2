@@ -82,6 +82,8 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
         if (x is null || y is null) return false;
         if (ReferenceEquals(x, y)) return true;
         if (!base.Equals(x, y)) return false;
+        
+        if (x.StellarClass != y.StellarClass) return false;
 
         if (!CommonFunctionality.CompareDictionaries(x.Planets, y.Planets)) return false;
         if (!CommonFunctionality.CompareDictionaries(x.Asteroids, y.Asteroids)) return false;
