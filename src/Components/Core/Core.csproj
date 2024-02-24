@@ -5,6 +5,7 @@
 
   <ItemGroup>
     <PackageReference Include="Ardalis.SmartEnum" Version="8.0.0" />
+    <PackageReference Include="Ardalis.SmartEnum.SystemTextJson" Version="8.0.0" />
   </ItemGroup>
  
 </Project>

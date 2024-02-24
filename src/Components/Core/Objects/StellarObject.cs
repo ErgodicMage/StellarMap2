@@ -18,8 +18,8 @@ public abstract class StellarObject : IStellarObject
     [JsonPropertyOrder(3)]
     public Identifier ParentIdentifier { get; set; } = Identifier.NoIdentifier;
     
-    [JsonIgnore]
     [JsonPropertyOrder(4)]
+    [JsonConverter(typeof(StellarObjectTypeConverter))]
     public StellarObjectType ObjectType { get; init;  }
 
     [JsonPropertyOrder(5)]

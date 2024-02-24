@@ -1,4 +1,6 @@
-﻿namespace StellarMap.Core;
+﻿using Ardalis.SmartEnum.SystemTextJson;
+
+namespace StellarMap.Core;
 
 public abstract class StellarObjectType : SmartEnum<StellarObjectType>
 {
@@ -42,4 +44,8 @@ public abstract class StellarObjectType : SmartEnum<StellarObjectType>
         public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
             => new Comet(name, identifier, map);
     }
+}
+
+public class StellarObjectTypeConverter : SmartEnumNameConverter<StellarObjectType, int>
+{
 }
