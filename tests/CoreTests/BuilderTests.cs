@@ -113,7 +113,7 @@ public class BuilderTests
         Assert.Equal("Sol", sol.Name);
         Assert.Equal("Sun", sol.Properties[PropertiesConstant.ALTERNATIVENAME]);
         Assert.Equal("Sol", sol.Properties[PropertiesConstant.DESIGNATION]);
-        Assert.Equal("G2V", sol.Properties[PropertiesConstant.STELLARCLASS]);
+        Assert.Equal("G2V", sol.StellarClass);
         Assert.NotNull(sol.Planets);
         Assert.Equal(10, sol.Planets.Count);
         Assert.NotNull(sol.Asteroids);

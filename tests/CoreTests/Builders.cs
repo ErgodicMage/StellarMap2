@@ -236,7 +236,7 @@ public class Builders
             .WithDescription("The star at the center of the Solar System.")
             .WithProperty(PropertiesConstant.DESIGNATION, "Sol")
             .WithProperty(PropertiesConstant.ALTERNATIVENAME, "Sun")
-            .WithProperty(PropertiesConstant.STELLARCLASS, "G2V")
+            .AsStellarClass("G2V")
             .AddPlanet(mercury)
             .AddPlanet(venus)
             .AddPlanet(earth)

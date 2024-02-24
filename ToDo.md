@@ -18,3 +18,4 @@
 	* I ended up changing IStellarMap from Dictionary<Identifier, T> to Dictionary<string, T>. This was much easier to get the map serialization to work without having to write a complete JsonConverter for Dictionary<Identifier, T>.
 * ~~Order objects for serialization for better reading~~
 * ~~Get StellarObjectType to work with Json serializer~~
+* Move StellarClass from Properties to Star property

@@ -10,7 +10,6 @@ public static class PropertiesConstant
     public const string DESCRIPTION = "Description";
     public const string ALTERNATIVENAME = "AlternativeName";
     public const string DESIGNATION = "Designation";
-    public const string STELLARCLASS = "StellarClass";
 
     public const string RADIUS = "Radius";
     public const string AREA = "Area";

@@ -38,6 +38,15 @@ public class StarBuilder
     public StarBuilder WithDescription(string description) 
         => WithProperty(PropertiesConstant.DESCRIPTION, description);
 
+    public StarBuilder AsStellarClass(string stellarClass)
+    {
+        if (!_result.Success) return this;
+        _result = GuardClause.NullOrWhiteSpace(stellarClass);
+        if (!_result) return this;
+        _star.StellarClass = stellarClass;
+        return this;
+    }
+
 
     public StarBuilder AddPlanet(Planet planet)
     {
