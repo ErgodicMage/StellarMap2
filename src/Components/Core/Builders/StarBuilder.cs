@@ -55,6 +55,21 @@ public class StarBuilder
         return this;
     }
 
+    public StarBuilder AddPlanets(ICollection<Planet> planets)
+    {
+        if (!_result.Success) return this;
+        _result = GuardClause.Null(planets);
+        if (!_result.Success) return this;
+
+        foreach (var planet in planets)
+        {
+            _result = BuilderCommonFunctionality.Add<Planet>(_star, planet);
+            if (!_result.Success) return this;
+        }
+
+        return this;
+    }
+
     public StarBuilder AddAsteroid(Asteroid asteroid)
     {
         if (!_result.Success) return this;
@@ -62,10 +77,40 @@ public class StarBuilder
         return this;
     }
 
+    public StarBuilder AddAsteroids(ICollection<Asteroid> asteroids)
+    {
+        if (!_result.Success) return this;
+        _result = GuardClause.Null(asteroids);
+        if (!_result.Success) return this;
+
+        foreach (var asteroid in asteroids)
+        {
+            _result = BuilderCommonFunctionality.Add<Asteroid>(_star, asteroid);
+            if (!_result.Success) return this;
+        }
+
+        return this;
+    }
+
     public StarBuilder AddComet(Comet comet)
     {
         if (!_result.Success) return this;
         _result = BuilderCommonFunctionality.Add<Comet>(_star, comet);
+        return this;
+    }
+
+    public StarBuilder AddComets(ICollection<Comet> comets)
+    {
+        if (!_result.Success) return this;
+        _result = GuardClause.Null(comets);
+        if (!_result.Success) return this;
+
+        foreach (var comet in comets)
+        {
+            _result = BuilderCommonFunctionality.Add<Comet>(_star, comet);
+            if (!_result.Success) return this;
+        }
+
         return this;
     }
 }
