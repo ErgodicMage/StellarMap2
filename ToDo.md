@@ -1,7 +1,8 @@
 ## To Do
-* Force StandardStellarMap equality to always return false
 * Add Collections of StellarObjects to builders for more flexibility
 * Add metadata to StandardStellarMap
+* Move physical properties from StellarObject Properties into it's own class
+* Utility application to build realistic Solar System and save in json. Add json as resource to Core with deserialization for common use.
 
 
 ## Done
@@ -26,4 +27,4 @@
 * ~~Get StellarObjectType to work with Json serializer~~
 * ~~Move StellarClass from Properties to Star property~~
 * ~~Equality tests for stellar objects~~
-
+* ~~Force StandardStellarMap equality to always return false~~
