@@ -1,11 +1,15 @@
-﻿namespace StellarMap.Core;
+﻿using System.Text.Json.Serialization;
+
+namespace StellarMap.Core;
 
 public class Planet : StellarObject, IStellarObject, IEqualityComparer<Planet>
 {
     #region Properties
+    [JsonPropertyOrder(11)]
+    public bool IsDwarf { get; set; }
+
+    [JsonPropertyOrder(12)]
     public Dictionary<string, Identifier>? Satelites { get; set; }
-    
-    public bool IsDwarf {get; set; }
     #endregion
 
     #region Constructors

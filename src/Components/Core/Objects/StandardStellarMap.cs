@@ -1,14 +1,28 @@
-﻿namespace StellarMap.Core;
+﻿using System.Text.Json.Serialization;
+
+namespace StellarMap.Core;
 
 public class StandardStellarMap : IStellarMap
 {
+    [JsonPropertyOrder(1)]
     public string Name { get; set; }
 
+    [JsonPropertyOrder(2)]
     public Dictionary<string, string> MetaData { get; }
+
+    [JsonPropertyOrder(3)]
     public Dictionary<string, Star>? Stars { get; set; }
+
+    [JsonPropertyOrder(4)]
     public Dictionary<string, Planet>? Planets { get; set; }
+
+    [JsonPropertyOrder(5)]
     public Dictionary<string, Satelite>? Satelites { get; set; }
+
+    [JsonPropertyOrder(6)]
     public Dictionary<string, Asteroid>? Asteroids { get; set; }
+
+    [JsonPropertyOrder(7)]
     public Dictionary<string, Comet>? Comets { get; set; }
 
     #region Constructors

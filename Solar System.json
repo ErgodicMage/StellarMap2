@@ -1,0 +1,967 @@
+{
+  "Name": "Solar System",
+  "MetaData": null,
+  "Stars": {
+    "Star-00001": {
+      "Name": "Sol",
+      "Identifier": {
+        "Id": "Star-00001"
+      },
+      "ParentIdentifier": {
+        "Id": ""
+      },
+      "Properties": {
+        "Description": "The star at the center of the Solar System.",
+        "Designation": "Sol",
+        "AlternativeName": "Sun",
+        "StellarClass": "G2V"
+      },
+      "Planets": {
+        "Mercury": {
+          "Id": "Planet-00001"
+        },
+        "Venus": {
+          "Id": "Planet-00002"
+        },
+        "Earth": {
+          "Id": "Planet-00003"
+        },
+        "Mars": {
+          "Id": "Planet-00004"
+        },
+        "Jupiter": {
+          "Id": "Planet-00005"
+        },
+        "Saturn": {
+          "Id": "Planet-00006"
+        },
+        "Uranus": {
+          "Id": "Planet-00007"
+        },
+        "Neptune": {
+          "Id": "Planet-00008"
+        },
+        "Pluto": {
+          "Id": "Planet-00009"
+        },
+        "Ceres": {
+          "Id": "Planet-00010"
+        }
+      },
+      "DwarfPlanets": null,
+      "Asteroids": {
+        "Vesta": {
+          "Id": "Asteroid-00001"
+        },
+        "Pallas": {
+          "Id": "Asteroid-00002"
+        },
+        "Hygiea": {
+          "Id": "Asteroid-00003"
+        },
+        "Euphrosyne": {
+          "Id": "Asteroid-00004"
+        },
+        "Interamnia": {
+          "Id": "Asteroid-00005"
+        },
+        "Davida": {
+          "Id": "Asteroid-00006"
+        },
+        "Herculina": {
+          "Id": "Asteroid-00007"
+        },
+        "Eunomia": {
+          "Id": "Asteroid-00008"
+        },
+        "Juno": {
+          "Id": "Asteroid-00009"
+        },
+        "Psyche": {
+          "Id": "Asteroid-00010"
+        },
+        "Europa": {
+          "Id": "Asteroid-00011"
+        }
+      },
+      "Comets": {
+        "Haley\u0027s": {
+          "Id": "Comet-00001"
+        },
+        "Caeser\u0027s": {
+          "Id": "Comet-00002"
+        },
+        "Encke\u0027s": {
+          "Id": "Comet-00003"
+        },
+        "Biela\u0027s": {
+          "Id": "Comet-00004"
+        },
+        "Faye\u0027s": {
+          "Id": "Comet-00005"
+        },
+        "Brorsen\u0027s": {
+          "Id": "Comet-00006"
+        },
+        "d\u0027Arrest\u0027s": {
+          "Id": "Comet-00007"
+        }
+      }
+    }
+  },
+  "Planets": {
+    "Planet-00001": {
+      "Name": "Mercury",
+      "Identifier": {
+        "Id": "Planet-00001"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {
+        "Description": "The first planet in the Solar System.",
+        "Designation": "SOL-01"
+      },
+      "IsDwarf": false,
+      "Satelites": null
+    },
+    "Planet-00002": {
+      "Name": "Venus",
+      "Identifier": {
+        "Id": "Planet-00002"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {
+        "Description": "The 2nd planet in the Solar System.",
+        "Designation": "SOL-02"
+      },
+      "IsDwarf": false,
+      "Satelites": null
+    },
+    "Planet-00003": {
+      "Name": "Earth",
+      "Identifier": {
+        "Id": "Planet-00003"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {
+        "Description": "The 3nd planet in the Solar System",
+        "Designation": "SOL-03"
+      },
+      "IsDwarf": false,
+      "Satelites": {
+        "Moon": {
+          "Id": "Satelite-00001"
+        }
+      }
+    },
+    "Planet-00004": {
+      "Name": "Mars",
+      "Identifier": {
+        "Id": "Planet-00004"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {
+        "Description": "The 4th planet in the Solar System.",
+        "Designation": "SOL-04"
+      },
+      "IsDwarf": false,
+      "Satelites": {
+        "Phobos": {
+          "Id": "Satelite-00002"
+        },
+        "Deimos": {
+          "Id": "Satelite-00003"
+        }
+      }
+    },
+    "Planet-00005": {
+      "Name": "Jupiter",
+      "Identifier": {
+        "Id": "Planet-00005"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {
+        "Description": "The fifth and largets planet in the Solar System.",
+        "Designation": "SOL-05"
+      },
+      "IsDwarf": false,
+      "Satelites": {
+        "Metis": {
+          "Id": "Satelite-00004"
+        },
+        "Adrastea": {
+          "Id": "Satelite-00005"
+        },
+        "Amalthea": {
+          "Id": "Satelite-00006"
+        },
+        "Thebe": {
+          "Id": "Satelite-00007"
+        },
+        "Io": {
+          "Id": "Satelite-00008"
+        },
+        "Europa": {
+          "Id": "Satelite-00009"
+        },
+        "Ganymede": {
+          "Id": "Satelite-00010"
+        },
+        "Callisto": {
+          "Id": "Satelite-00011"
+        },
+        "Himalia": {
+          "Id": "Satelite-00012"
+        },
+        "Elara": {
+          "Id": "Satelite-00013"
+        },
+        "Pasiphae": {
+          "Id": "Satelite-00014"
+        },
+        "Carme": {
+          "Id": "Satelite-00015"
+        }
+      }
+    },
+    "Planet-00006": {
+      "Name": "Saturn",
+      "Identifier": {
+        "Id": "Planet-00006"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {
+        "Description": "The 6th planet in the Solar System.",
+        "Designation": "SOL-06"
+      },
+      "IsDwarf": false,
+      "Satelites": {
+        "Titan": {
+          "Id": "Satelite-00016"
+        },
+        "Rhea": {
+          "Id": "Satelite-00017"
+        },
+        "Iapetus": {
+          "Id": "Satelite-00018"
+        },
+        "Dione": {
+          "Id": "Satelite-00019"
+        },
+        "Tethys": {
+          "Id": "Satelite-00020"
+        },
+        "Enceladus": {
+          "Id": "Satelite-00021"
+        },
+        "Mimas": {
+          "Id": "Satelite-00022"
+        },
+        "Hyperion": {
+          "Id": "Satelite-00023"
+        },
+        "Phoebe": {
+          "Id": "Satelite-00024"
+        },
+        "Janus": {
+          "Id": "Satelite-00025"
+        }
+      }
+    },
+    "Planet-00007": {
+      "Name": "Uranus",
+      "Identifier": {
+        "Id": "Planet-00007"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {
+        "Description": "The 7th planet in the Solar System.",
+        "Designation": "SOL-07"
+      },
+      "IsDwarf": false,
+      "Satelites": {
+        "Titania": {
+          "Id": "Satelite-00026"
+        },
+        "Oberon": {
+          "Id": "Satelite-00027"
+        },
+        "Umbriel": {
+          "Id": "Satelite-00028"
+        },
+        "Ariel": {
+          "Id": "Satelite-00029"
+        },
+        "Miranda": {
+          "Id": "Satelite-00030"
+        }
+      }
+    },
+    "Planet-00008": {
+      "Name": "Neptune",
+      "Identifier": {
+        "Id": "Planet-00008"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {
+        "Description": "The 8th planet in the Solar System.",
+        "Designation": "SOL-08"
+      },
+      "IsDwarf": false,
+      "Satelites": {
+        "Triton": {
+          "Id": "Satelite-00031"
+        },
+        "Proteus": {
+          "Id": "Satelite-00032"
+        },
+        "Nereid": {
+          "Id": "Satelite-00033"
+        },
+        "Larissa": {
+          "Id": "Satelite-00034"
+        }
+      }
+    },
+    "Planet-00009": {
+      "Name": "Pluto",
+      "Identifier": {
+        "Id": "Planet-00009"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {
+        "Description": "Pluto is actually a Dwarf Planet.",
+        "Designation": "SOL-D-01"
+      },
+      "IsDwarf": true,
+      "Satelites": {
+        "Charon": {
+          "Id": "Satelite-00035"
+        },
+        "Nix": {
+          "Id": "Satelite-00036"
+        },
+        "Hydra": {
+          "Id": "Satelite-00037"
+        },
+        "Kerberos": {
+          "Id": "Satelite-00038"
+        },
+        "Styx": {
+          "Id": "Satelite-00039"
+        }
+      }
+    },
+    "Planet-00010": {
+      "Name": "Ceres",
+      "Identifier": {
+        "Id": "Planet-00010"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {
+        "Description": "Dwarf Planet in asteroid belt",
+        "Designation": "SOL-D-02"
+      },
+      "IsDwarf": true,
+      "Satelites": null
+    }
+  },
+  "Satelites": {
+    "Satelite-00001": {
+      "Name": "Moon",
+      "Identifier": {
+        "Id": "Satelite-00001"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00003"
+      },
+      "Properties": {
+        "Description": "Earth\u0027s moon",
+        "AlternativeName": "Luna"
+      }
+    },
+    "Satelite-00002": {
+      "Name": "Phobos",
+      "Identifier": {
+        "Id": "Satelite-00002"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00004"
+      },
+      "Properties": {}
+    },
+    "Satelite-00003": {
+      "Name": "Deimos",
+      "Identifier": {
+        "Id": "Satelite-00003"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00004"
+      },
+      "Properties": {}
+    },
+    "Satelite-00004": {
+      "Name": "Metis",
+      "Identifier": {
+        "Id": "Satelite-00004"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "Properties": {}
+    },
+    "Satelite-00005": {
+      "Name": "Adrastea",
+      "Identifier": {
+        "Id": "Satelite-00005"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "Properties": {}
+    },
+    "Satelite-00006": {
+      "Name": "Amalthea",
+      "Identifier": {
+        "Id": "Satelite-00006"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "Properties": {}
+    },
+    "Satelite-00007": {
+      "Name": "Thebe",
+      "Identifier": {
+        "Id": "Satelite-00007"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "Properties": {}
+    },
+    "Satelite-00008": {
+      "Name": "Io",
+      "Identifier": {
+        "Id": "Satelite-00008"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "Properties": {}
+    },
+    "Satelite-00009": {
+      "Name": "Europa",
+      "Identifier": {
+        "Id": "Satelite-00009"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "Properties": {}
+    },
+    "Satelite-00010": {
+      "Name": "Ganymede",
+      "Identifier": {
+        "Id": "Satelite-00010"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "Properties": {}
+    },
+    "Satelite-00011": {
+      "Name": "Callisto",
+      "Identifier": {
+        "Id": "Satelite-00011"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "Properties": {}
+    },
+    "Satelite-00012": {
+      "Name": "Himalia",
+      "Identifier": {
+        "Id": "Satelite-00012"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "Properties": {}
+    },
+    "Satelite-00013": {
+      "Name": "Elara",
+      "Identifier": {
+        "Id": "Satelite-00013"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "Properties": {}
+    },
+    "Satelite-00014": {
+      "Name": "Pasiphae",
+      "Identifier": {
+        "Id": "Satelite-00014"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "Properties": {}
+    },
+    "Satelite-00015": {
+      "Name": "Carme",
+      "Identifier": {
+        "Id": "Satelite-00015"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "Properties": {}
+    },
+    "Satelite-00016": {
+      "Name": "Titan",
+      "Identifier": {
+        "Id": "Satelite-00016"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "Properties": {}
+    },
+    "Satelite-00017": {
+      "Name": "Rhea",
+      "Identifier": {
+        "Id": "Satelite-00017"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "Properties": {}
+    },
+    "Satelite-00018": {
+      "Name": "Iapetus",
+      "Identifier": {
+        "Id": "Satelite-00018"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "Properties": {}
+    },
+    "Satelite-00019": {
+      "Name": "Dione",
+      "Identifier": {
+        "Id": "Satelite-00019"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "Properties": {}
+    },
+    "Satelite-00020": {
+      "Name": "Tethys",
+      "Identifier": {
+        "Id": "Satelite-00020"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "Properties": {}
+    },
+    "Satelite-00021": {
+      "Name": "Enceladus",
+      "Identifier": {
+        "Id": "Satelite-00021"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "Properties": {}
+    },
+    "Satelite-00022": {
+      "Name": "Mimas",
+      "Identifier": {
+        "Id": "Satelite-00022"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "Properties": {}
+    },
+    "Satelite-00023": {
+      "Name": "Hyperion",
+      "Identifier": {
+        "Id": "Satelite-00023"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "Properties": {}
+    },
+    "Satelite-00024": {
+      "Name": "Phoebe",
+      "Identifier": {
+        "Id": "Satelite-00024"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "Properties": {}
+    },
+    "Satelite-00025": {
+      "Name": "Janus",
+      "Identifier": {
+        "Id": "Satelite-00025"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "Properties": {}
+    },
+    "Satelite-00026": {
+      "Name": "Titania",
+      "Identifier": {
+        "Id": "Satelite-00026"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00007"
+      },
+      "Properties": {}
+    },
+    "Satelite-00027": {
+      "Name": "Oberon",
+      "Identifier": {
+        "Id": "Satelite-00027"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00007"
+      },
+      "Properties": {}
+    },
+    "Satelite-00028": {
+      "Name": "Umbriel",
+      "Identifier": {
+        "Id": "Satelite-00028"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00007"
+      },
+      "Properties": {}
+    },
+    "Satelite-00029": {
+      "Name": "Ariel",
+      "Identifier": {
+        "Id": "Satelite-00029"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00007"
+      },
+      "Properties": {}
+    },
+    "Satelite-00030": {
+      "Name": "Miranda",
+      "Identifier": {
+        "Id": "Satelite-00030"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00007"
+      },
+      "Properties": {}
+    },
+    "Satelite-00031": {
+      "Name": "Triton",
+      "Identifier": {
+        "Id": "Satelite-00031"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00008"
+      },
+      "Properties": {}
+    },
+    "Satelite-00032": {
+      "Name": "Proteus",
+      "Identifier": {
+        "Id": "Satelite-00032"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00008"
+      },
+      "Properties": {}
+    },
+    "Satelite-00033": {
+      "Name": "Nereid",
+      "Identifier": {
+        "Id": "Satelite-00033"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00008"
+      },
+      "Properties": {}
+    },
+    "Satelite-00034": {
+      "Name": "Larissa",
+      "Identifier": {
+        "Id": "Satelite-00034"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00008"
+      },
+      "Properties": {}
+    },
+    "Satelite-00035": {
+      "Name": "Charon",
+      "Identifier": {
+        "Id": "Satelite-00035"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00009"
+      },
+      "Properties": {}
+    },
+    "Satelite-00036": {
+      "Name": "Nix",
+      "Identifier": {
+        "Id": "Satelite-00036"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00009"
+      },
+      "Properties": {}
+    },
+    "Satelite-00037": {
+      "Name": "Hydra",
+      "Identifier": {
+        "Id": "Satelite-00037"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00009"
+      },
+      "Properties": {}
+    },
+    "Satelite-00038": {
+      "Name": "Kerberos",
+      "Identifier": {
+        "Id": "Satelite-00038"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00009"
+      },
+      "Properties": {}
+    },
+    "Satelite-00039": {
+      "Name": "Styx",
+      "Identifier": {
+        "Id": "Satelite-00039"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00009"
+      },
+      "Properties": {}
+    }
+  },
+  "Asteroids": {
+    "Asteroid-00001": {
+      "Name": "Vesta",
+      "Identifier": {
+        "Id": "Asteroid-00001"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {}
+    },
+    "Asteroid-00002": {
+      "Name": "Pallas",
+      "Identifier": {
+        "Id": "Asteroid-00002"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {}
+    },
+    "Asteroid-00003": {
+      "Name": "Hygiea",
+      "Identifier": {
+        "Id": "Asteroid-00003"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {}
+    },
+    "Asteroid-00004": {
+      "Name": "Euphrosyne",
+      "Identifier": {
+        "Id": "Asteroid-00004"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {}
+    },
+    "Asteroid-00005": {
+      "Name": "Interamnia",
+      "Identifier": {
+        "Id": "Asteroid-00005"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {}
+    },
+    "Asteroid-00006": {
+      "Name": "Davida",
+      "Identifier": {
+        "Id": "Asteroid-00006"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {}
+    },
+    "Asteroid-00007": {
+      "Name": "Herculina",
+      "Identifier": {
+        "Id": "Asteroid-00007"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {}
+    },
+    "Asteroid-00008": {
+      "Name": "Eunomia",
+      "Identifier": {
+        "Id": "Asteroid-00008"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {}
+    },
+    "Asteroid-00009": {
+      "Name": "Juno",
+      "Identifier": {
+        "Id": "Asteroid-00009"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {}
+    },
+    "Asteroid-00010": {
+      "Name": "Psyche",
+      "Identifier": {
+        "Id": "Asteroid-00010"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {}
+    },
+    "Asteroid-00011": {
+      "Name": "Europa",
+      "Identifier": {
+        "Id": "Asteroid-00011"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {}
+    }
+  },
+  "Comets": {
+    "Comet-00001": {
+      "Name": "Haley\u0027s",
+      "Identifier": {
+        "Id": "Comet-00001"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {}
+    },
+    "Comet-00002": {
+      "Name": "Caeser\u0027s",
+      "Identifier": {
+        "Id": "Comet-00002"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {}
+    },
+    "Comet-00003": {
+      "Name": "Encke\u0027s",
+      "Identifier": {
+        "Id": "Comet-00003"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {}
+    },
+    "Comet-00004": {
+      "Name": "Biela\u0027s",
+      "Identifier": {
+        "Id": "Comet-00004"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {}
+    },
+    "Comet-00005": {
+      "Name": "Faye\u0027s",
+      "Identifier": {
+        "Id": "Comet-00005"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {}
+    },
+    "Comet-00006": {
+      "Name": "Brorsen\u0027s",
+      "Identifier": {
+        "Id": "Comet-00006"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {}
+    },
+    "Comet-00007": {
+      "Name": "d\u0027Arrest\u0027s",
+      "Identifier": {
+        "Id": "Comet-00007"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "Properties": {}
+    }
+  }
+}

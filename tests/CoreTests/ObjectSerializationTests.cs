@@ -56,7 +56,7 @@ public class ObjectSerializationTests
     {
         StandardStellarMap map = new()
         {
-            Name = "Earth",
+            Name = "Solar System",
         };
 
         var sol = Builders.BuildSol(map);

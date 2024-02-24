@@ -6,17 +6,23 @@ namespace StellarMap.Core;
 
 public abstract class StellarObject : IStellarObject
 {
+    [JsonPropertyOrder(1)]
     public string? Name { get; init; }
 
     [JsonIgnore]
     public IStellarMap Map { get; init; }
 
+    [JsonPropertyOrder(2)]
     public Identifier Identifier { get; init; } = Identifier.NoIdentifier;
+
+    [JsonPropertyOrder(3)]
     public Identifier ParentIdentifier { get; set; } = Identifier.NoIdentifier;
     
     [JsonIgnore]
+    [JsonPropertyOrder(4)]
     public StellarObjectType ObjectType { get; init;  }
 
+    [JsonPropertyOrder(5)]
     public Dictionary<string, string> Properties { get; init; }
 
     #region Constructors
