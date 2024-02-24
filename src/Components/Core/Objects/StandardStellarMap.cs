@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Text.Json.Serialization;
 
 namespace StellarMap.Core;
 
@@ -95,5 +96,16 @@ public class StandardStellarMap : IStellarMap
 
         return dictionary!;
     }
+    #endregion
+
+    #region IEqualityComparer
+    public bool Equals(IStellarMap? x, IStellarMap? y) => ReferenceEquals(x, y);
+
+    public override bool Equals(object? obj) => Equals(this, obj as IStellarMap);
+
+    public int GetHashCode([DisallowNull] IStellarMap obj)
+        => HashCode.Combine(Name, MetaData, Stars, Planets, Satelites, Asteroids, Comets);
+
+    public override int GetHashCode() => GetHashCode(this);
     #endregion
 }

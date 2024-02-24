@@ -1,6 +1,6 @@
 ﻿namespace StellarMap.Core;
 
-public interface IStellarMap
+public interface IStellarMap : IEqualityComparer<IStellarMap>
 {
     string Name { get; set; }
     Dictionary<string, string> MetaData { get; }

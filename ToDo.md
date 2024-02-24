@@ -1,4 +1,10 @@
 ## To Do
+* Force StandardStellarMap equality to always return false
+* Add Collections of StellarObjects to builders for more flexibility
+* Add metadata to StandardStellarMap
+
+
+## Done
 * ~~Remove Type from StellarObjectType~~
 * ~~Add Create to StellarObjectType~~
 * ~~Add Properties to StellarObject~~
@@ -18,4 +24,6 @@
 	* I ended up changing IStellarMap from Dictionary<Identifier, T> to Dictionary<string, T>. This was much easier to get the map serialization to work without having to write a complete JsonConverter for Dictionary<Identifier, T>.
 * ~~Order objects for serialization for better reading~~
 * ~~Get StellarObjectType to work with Json serializer~~
-* Move StellarClass from Properties to Star property
+* ~~Move StellarClass from Properties to Star property~~
+* ~~Equality tests for stellar objects~~
+
