@@ -1,0 +1,76 @@
+{
+  "Name": "Earth",
+  "MetaData": {
+    "Map": "StandardStellarMap",
+    "Version": "0.1",
+    "Author": "ErogicMage",
+    "Email": "ErgodicMage@gmail.com",
+    "License": "MIT License, 2024",
+    "Github": "https://github.com/ErgodicMage/StellarMap2",
+    "Date": "2/25/2024"
+  },
+  "Stars": null,
+  "Planets": {
+    "Planet-00001": {
+      "Name": "Earth",
+      "Identifier": {
+        "Id": "Planet-00001"
+      },
+      "ParentIdentifier": {
+        "Id": ""
+      },
+      "ObjectType": "Planet",
+      "Properties": {
+        "Description": "The 3nd planet in the Solar System",
+        "Designation": "SOL-03",
+        "Planet Type": "Rocky Planet"
+      },
+      "PhysicalProperties": {
+        "Mass": 5.97237E+24,
+        "Radius": 6371,
+        "Dimensions": "",
+        "Area": 510072000,
+        "Volume": 1083210000000,
+        "Flattening": 0.0033528,
+        "Density": 5.97237E+24,
+        "Gravity": 9.80665,
+        "EscapeVelocity": 11.186
+      },
+      "IsDwarf": false,
+      "Satelites": {
+        "Moon": {
+          "Id": "Satelite-00001"
+        }
+      }
+    }
+  },
+  "Satelites": {
+    "Satelite-00001": {
+      "Name": "Moon",
+      "Identifier": {
+        "Id": "Satelite-00001"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00001"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "Earth\u0027s moon",
+        "AlternativeName": "Luna"
+      },
+      "PhysicalProperties": {
+        "Mass": 5.97237E+24,
+        "Radius": 7.342E+22,
+        "Dimensions": "",
+        "Area": 37930000,
+        "Volume": 21958000000,
+        "Flattening": 0.0012,
+        "Density": 3.344,
+        "Gravity": 1.62,
+        "EscapeVelocity": 2.38
+      }
+    }
+  },
+  "Asteroids": null,
+  "Comets": null
+}

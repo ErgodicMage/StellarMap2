@@ -1,0 +1,173 @@
+{
+  "Name": "Sol",
+  "MetaData": {
+    "Map": "StandardStellarMap",
+    "Version": "0.1",
+    "Author": "ErogicMage",
+    "Email": "ErgodicMage@gmail.com",
+    "License": "MIT License, 2024",
+    "Github": "https://github.com/ErgodicMage/StellarMap2",
+    "Date": "2/25/2024"
+  },
+  "Stars": {
+    "Star-00001": {
+      "Name": "Sol",
+      "Identifier": {
+        "Id": "Star-00001"
+      },
+      "ParentIdentifier": {
+        "Id": ""
+      },
+      "ObjectType": "Star",
+      "Properties": {
+        "Description": "The star at the center of the Solar System.",
+        "Designation": "Sol",
+        "AlternativeName": "Sun"
+      },
+      "PhysicalProperties": {
+        "Mass": 1.9891E+30,
+        "Radius": 695700,
+        "Dimensions": "",
+        "Area": 6090000000000,
+        "Volume": 1.41E+18,
+        "Flattening": 9E-06,
+        "Density": 1.408,
+        "Gravity": 274,
+        "EscapeVelocity": 617.7
+      },
+      "StellarClass": "G2V",
+      "Planets": {
+        "Mercury": {
+          "Id": "Planet-00001"
+        },
+        "Venus": {
+          "Id": "Planet-00002"
+        },
+        "Earth": {
+          "Id": "Planet-00003"
+        }
+      },
+      "Asteroids": null,
+      "Comets": null
+    }
+  },
+  "Planets": {
+    "Planet-00001": {
+      "Name": "Mercury",
+      "Identifier": {
+        "Id": "Planet-00001"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Planet",
+      "Properties": {
+        "Description": "The first planet in the Solar System.",
+        "Designation": "SOL-01",
+        "Planet Type": "Rocky Planet"
+      },
+      "PhysicalProperties": {
+        "Mass": 3.3011E+23,
+        "Radius": 2439.7,
+        "Dimensions": "",
+        "Area": 74800000,
+        "Volume": 60830000000,
+        "Flattening": 0,
+        "Density": 5.427,
+        "Gravity": 3.7,
+        "EscapeVelocity": 4.25
+      },
+      "IsDwarf": false,
+      "Satelites": null
+    },
+    "Planet-00002": {
+      "Name": "Venus",
+      "Identifier": {
+        "Id": "Planet-00002"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Planet",
+      "Properties": {
+        "Description": "The 2nd planet in the Solar System.",
+        "Designation": "SOL-02",
+        "Planet Type": "Rocky Planet"
+      },
+      "PhysicalProperties": {
+        "Mass": 4.8675E+24,
+        "Radius": 6051.8,
+        "Dimensions": "",
+        "Area": 460230000,
+        "Volume": 928430000000,
+        "Flattening": 0,
+        "Density": 5.243,
+        "Gravity": 8.87,
+        "EscapeVelocity": 10.36
+      },
+      "IsDwarf": false,
+      "Satelites": null
+    },
+    "Planet-00003": {
+      "Name": "Earth",
+      "Identifier": {
+        "Id": "Planet-00003"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Planet",
+      "Properties": {
+        "Description": "The 3nd planet in the Solar System",
+        "Designation": "SOL-03",
+        "Planet Type": "Rocky Planet"
+      },
+      "PhysicalProperties": {
+        "Mass": 5.97237E+24,
+        "Radius": 6371,
+        "Dimensions": "",
+        "Area": 510072000,
+        "Volume": 1083210000000,
+        "Flattening": 0.0033528,
+        "Density": 5.97237E+24,
+        "Gravity": 9.80665,
+        "EscapeVelocity": 11.186
+      },
+      "IsDwarf": false,
+      "Satelites": {
+        "Moon": {
+          "Id": "Satelite-00001"
+        }
+      }
+    }
+  },
+  "Satelites": {
+    "Satelite-00001": {
+      "Name": "Moon",
+      "Identifier": {
+        "Id": "Satelite-00001"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00003"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "Earth\u0027s moon",
+        "AlternativeName": "Luna"
+      },
+      "PhysicalProperties": {
+        "Mass": 5.97237E+24,
+        "Radius": 7.342E+22,
+        "Dimensions": "",
+        "Area": 37930000,
+        "Volume": 21958000000,
+        "Flattening": 0.0012,
+        "Density": 3.344,
+        "Gravity": 1.62,
+        "EscapeVelocity": 2.38
+      }
+    }
+  },
+  "Asteroids": null,
+  "Comets": null
+}
