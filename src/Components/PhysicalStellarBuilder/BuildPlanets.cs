@@ -52,7 +52,7 @@ public static class BuildPlanets
 
     public static Result<Planet> Earth(IStellarMap map)
     {
-        var moon = BuildSatelites.Moon(map);
+        var moon = BuildSatelites.EarthMoon(map);
         if (!moon.Success) return Result.Error(moon.ErrorMessage);
 
         PhysicalProperties physicalProperties = new()
@@ -75,5 +75,35 @@ public static class BuildPlanets
             .AddSatelite(moon)
             .Build();
         return earth;
+    }
+
+    public static Result<Planet> Mars(IStellarMap map)
+    {
+        Satelite[] satelites =
+        {
+            BuildSatelites.MarsPhobos(map),
+            BuildSatelites.MarsDeimos(map),
+        };
+
+        PhysicalProperties physicalProperties = new()
+        {
+            Mass = 6.4171E23,
+            Radius = 3389.5,
+            Area = 1.448E8,
+            Volume = 1.6318E11,
+            Flattening = 0.00589,
+            Density = 3.9335,
+            Gravity = 3.721,
+            EscapeVelocity = 5.027
+        };
+
+        var mars = StellarObjectBuilder.CreatePlanet("Mars", MapIdentifierGenerator.Instance, map)
+            .WithDescription("The 4th planet in the Solar System.")
+            .WithProperty(PropertiesConstant.DESIGNATION, "SOL-04")
+            .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.ROCKYPLANET)
+            .AddPhysicalProperties(physicalProperties)
+            .AddSatelites(satelites)
+            .Build();
+        return mars;
     }
 }
