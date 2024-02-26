@@ -1,5 +1,4 @@
 ## To Do
-* Update MIT License to 2024
 * Move physical properties from StellarObject Properties into it's own class
 * Utility application to build realistic Solar System and save in json. Add json as resource to Core with deserialization for common use.
 
@@ -29,3 +28,4 @@
 * ~~Force StandardStellarMap equality to always return false~~
 * ~~Add Collections of StellarObjects to builders for more flexibility~~
 * ~~Add metadata to StandardStellarMap~~
+* ~~Update MIT License to 2024~~
