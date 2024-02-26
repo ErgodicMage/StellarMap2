@@ -124,18 +124,25 @@ public class StellarObjectEqualityTests
 
         IStellarMap map2 = new StandardStellarMap();
         var planetEarth2 = Builders.BuildEarth(map2);
-        planetEarth2.Properties[PropertiesConstant.DESCRIPTION] = "Earth of course";
         Assert.NotNull(planetEarth2);
+        planetEarth2.Properties[PropertiesConstant.DESCRIPTION] = "Earth of course";
 
         Assert.NotEqual(planetEarth1, planetEarth2);
 
         IStellarMap map3 = new StandardStellarMap();
         var planetEarth3 = Builders.BuildEarth(map3);
+        Assert.NotNull(planetEarth3);
         var newSatelite = StellarObjectBuilder.CreateSatelite("Not Moon", MapIdentifierGenerator.Instance, map3).Build();
         planetEarth3.AddSatelite(newSatelite);
-        Assert.NotNull(planetEarth3);
 
         Assert.NotEqual(planetEarth1, planetEarth3);
+
+        IStellarMap map4 = new StandardStellarMap();
+        var planetEarth4 = Builders.BuildEarth(map4);
+        Assert.NotNull(planetEarth4);
+        planetEarth4.PhysicalProperties = planetEarth4.PhysicalProperties! with { Dimensions = "These dimensions" };
+
+        Assert.NotEqual(planetEarth1, planetEarth4);
     }
 
     [Fact]

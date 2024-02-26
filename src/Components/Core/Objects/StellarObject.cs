@@ -25,6 +25,9 @@ public abstract class StellarObject : IStellarObject
     [JsonPropertyOrder(5)]
     public Dictionary<string, string> Properties { get; init; }
 
+    [JsonPropertyOrder(6)]
+    public PhysicalProperties? PhysicalProperties {get; set; }
+
     #region Constructors
 #pragma warning disable CS8618
     public StellarObject() { }
@@ -143,6 +146,12 @@ public abstract class StellarObject : IStellarObject
             if (x.ObjectType.Value != y.ObjectType.Value) return false;
         }
 
+        if (!(x.PhysicalProperties is null && y.PhysicalProperties is null))
+        {
+            if (x.PhysicalProperties is null || y.PhysicalProperties is null) return false;
+            if (x.PhysicalProperties != y.PhysicalProperties) return false;
+        }
+
         return CommonFunctionality.CompareDictionaries(x.Properties, y.Properties);
 
     }
@@ -151,7 +160,7 @@ public abstract class StellarObject : IStellarObject
 
     public int GetHashCode([DisallowNull] StellarObject obj)
     {
-        return HashCode.Combine(obj.Name, obj,Identifier, obj.ParentIdentifier, obj.ObjectType, obj.Properties);
+        return HashCode.Combine(obj.Name, obj,Identifier, obj.ParentIdentifier, obj.ObjectType, obj.Properties, obj.PhysicalProperties);
     }
 
     public override int GetHashCode() => GetHashCode(this);

@@ -45,6 +45,15 @@ public class PlanetBuilder
         return this;
     }
 
+    public PlanetBuilder AddPhysicalProperties(PhysicalProperties properties)
+    {
+        if (!_result.Success) return this;
+        _result = GuardClause.Null(properties);
+        if (!_result.Success) return this;
+        _planet.PhysicalProperties = properties;
+        return this;
+    }
+
     // just store the satelites will add to _planet later to resolve identifiers
     public PlanetBuilder AddSatelite(Satelite satelite) //=> Add(_planet, satelite) as PlanetBuilder;
     {

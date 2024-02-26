@@ -36,4 +36,12 @@ public class CometBuilder
 
     public CometBuilder WithDescription(string description) => WithProperty(PropertiesConstant.DESCRIPTION, description);
 
+    public CometBuilder AddPhysicalProperties(PhysicalProperties properties)
+    {
+        if (!_result.Success) return this;
+        _result = GuardClause.Null(properties);
+        if (!_result.Success) return this;
+        _comet.PhysicalProperties = properties;
+        return this;
+    }
 }

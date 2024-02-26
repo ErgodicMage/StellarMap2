@@ -47,6 +47,14 @@ public class StarBuilder
         return this;
     }
 
+    public StarBuilder AddPhysicalProperties(PhysicalProperties properties)
+    {
+        if (!_result.Success) return this;
+        _result = GuardClause.Null(properties);
+        if (!_result.Success) return this;
+        _star.PhysicalProperties = properties;
+        return this;
+    }
 
     public StarBuilder AddPlanet(Planet planet)
     {

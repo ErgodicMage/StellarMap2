@@ -37,4 +37,12 @@ public class AsteroidBuilder
     public AsteroidBuilder WithDescription(string description) => 
         WithProperty(PropertiesConstant.DESCRIPTION, description);
 
+    public AsteroidBuilder AddPhysicalProperties(PhysicalProperties properties)
+    {
+        if (!_result.Success) return this;
+        _result = GuardClause.Null(properties);
+        if (!_result.Success) return this;
+        _asteroid.PhysicalProperties = properties;
+        return this;
+    }
 }

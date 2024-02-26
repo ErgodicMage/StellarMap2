@@ -38,4 +38,13 @@ public class SateliteBuilder
 
     public SateliteBuilder WithDescription(string description) => 
         WithProperty(PropertiesConstant.DESCRIPTION, description);
+
+    public SateliteBuilder AddPhysicalProperties(PhysicalProperties properties)
+    {
+        if (!_result.Success) return this;
+        _result = GuardClause.Null(properties);
+        if (!_result.Success) return this;
+        _satelite.PhysicalProperties = properties;
+        return this;
+    }
 }
