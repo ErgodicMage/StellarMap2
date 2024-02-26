@@ -9,7 +9,7 @@ public class StandardStellarMap : IStellarMap
     public string Name { get; set; }
 
     [JsonPropertyOrder(2)]
-    public Dictionary<string, string> MetaData { get; }
+    public Dictionary<string, string> MetaData { get; set; }
 
     [JsonPropertyOrder(3)]
     public Dictionary<string, Star>? Stars { get; set; }
@@ -37,6 +37,17 @@ public class StandardStellarMap : IStellarMap
         MetaData = new();
     }
     #endregion
+
+    public virtual void DefaultMetaData()
+    {
+        MetaData.Add("Map", "StandardStellarMap");
+        MetaData.Add("Version", "0.1");
+        MetaData.Add("Author", "ErogicMage");
+        MetaData.Add("Email", "ErgodicMage@gmail.com");
+        MetaData.Add("License", "MIT License, 2024");
+        MetaData.Add("Github", "https://github.com/ErgodicMage/StellarMap2");
+        MetaData.Add("Date", DateOnly.FromDateTime(DateTime.Now).ToString());
+    }
 
     public Result Add<T>(T t) where T : IStellarObject
     {

@@ -22,7 +22,6 @@ public class ObjectSerializationTests
         };
         
         var json = JsonSerializer.Serialize<Planet>(earth, jsonOptions);
-        Assert.NotNull(json);
         Assert.False(string.IsNullOrEmpty(json));
     }
 
@@ -43,7 +42,6 @@ public class ObjectSerializationTests
         };
 
         var json = JsonSerializer.Serialize<Planet>(earth, jsonOptions);
-        Assert.NotNull(json);
         Assert.False(string.IsNullOrEmpty(json));
 
         var newEarth = JsonSerializer.Deserialize<Planet>(json, jsonOptions);
@@ -54,10 +52,8 @@ public class ObjectSerializationTests
     [Fact]
     public void MapSerialization()
     {
-        StandardStellarMap map = new()
-        {
-            Name = "Solar System",
-        };
+        StandardStellarMap map = new("Solar System");
+        map.DefaultMetaData();
 
         var sol = Builders.BuildSol(map);
         Assert.NotNull(sol);
@@ -67,7 +63,6 @@ public class ObjectSerializationTests
         };
 
         var json = JsonSerializer.Serialize<IStellarMap>(map, jsonOptions);
-        Assert.NotNull(json);
         Assert.False(string.IsNullOrEmpty(json));
 
         var newMap = JsonSerializer.Deserialize<StandardStellarMap>(json, jsonOptions);
