@@ -6,18 +6,18 @@ public static class BuildStars
 {
     public static Result<Star> Sol(IStellarMap map)
     {
-        PhysicalProperties physicalProperties = new
-        (
-            Mass: 1.9891E30,
-            Radius: 695700,
-            Dimensions: string.Empty,
-            Area: 6.09E12,
-            Volume: 1.41E18,
-            Flattening: 9E-6,
-            Density: 1.408,
-            Gravity: 274,
-            EscapeVelocity: 617.7
-        );
+        PhysicalProperties physicalProperties = new()
+        {
+            Mass = 1.9891E30,
+            Radius = 695700,
+            Dimensions = string.Empty,
+            Area = 6.09E12,
+            Volume = 1.41E18,
+            Flattening = 9E-6,
+            Density = 1.408,
+            Gravity = 274,
+            EscapeVelocity = 617.7
+        };
 
         Planet[] planets =
         {

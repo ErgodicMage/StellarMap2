@@ -22,18 +22,18 @@ public class Builders
 
     public static Planet BuildEarth(IStellarMap map)
     {
-        PhysicalProperties physicalProperties = new
-        (
-            Mass : 5.97237E24,
-            Radius : 7.342E22,
-            Dimensions : string.Empty,
-            Area : 3.793E7,
-            Volume : 2.1958E10,
-            Flattening : 0.0012,
-            Density : 3.344,
-            Gravity : 1.62,
-            EscapeVelocity : 2.38
-        );
+        PhysicalProperties physicalProperties = new()
+        {
+            Mass = 5.97237E24,
+            Radius = 7.342E22,
+            Dimensions = string.Empty,
+            Area = 3.793E7,
+            Volume = 2.1958E10,
+            Flattening = 0.0012,
+            Density = 3.344,
+            Gravity = 1.62,
+            EscapeVelocity = 2.38
+        };
 
         var moon = StellarObjectBuilder.CreateSatelite("Moon", MapIdentifierGenerator.Instance, map)
             .WithDescription("Earth's moon")
@@ -41,18 +41,18 @@ public class Builders
             .AddPhysicalProperties(physicalProperties)
             .Build();
 
-        physicalProperties = new
-            (
-                Mass : 5.97237E24,
-                Radius : 6371.0, 
-                Dimensions : string.Empty,
-                Area : 5.10072E8, 
-                Volume : 1.08321E12,
-                Flattening : .0033528,
-                Density : 5.97237E24,
-                Gravity : 9.80665,
-                EscapeVelocity : 11.186
-            );
+        physicalProperties = new()
+        {
+            Mass = 5.97237E24,
+            Radius = 6371.0,
+            Dimensions = string.Empty,
+            Area = 5.10072E8,
+            Volume = 1.08321E12,
+            Flattening = .0033528,
+            Density = 5.97237E24,
+            Gravity = 9.80665,
+            EscapeVelocity = 11.186
+        };
 
         var earth = PlanetBuilder.Create("Earth", MapIdentifierGenerator.Instance, map)
             .WithDescription("The 3nd planet in the Solar System")
