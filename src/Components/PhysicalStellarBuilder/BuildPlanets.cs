@@ -97,7 +97,7 @@ public static class BuildPlanets
             EscapeVelocity = 5.027
         };
 
-        var mars = StellarObjectBuilder.CreatePlanet("Mars", MapIdentifierGenerator.Instance, map)
+        var mars = PlanetBuilder.Create("Mars", MapIdentifierGenerator.Instance, map)
             .WithDescription("The 4th planet in the Solar System.")
             .WithProperty(PropertiesConstant.DESIGNATION, "SOL-04")
             .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.ROCKYPLANET)
@@ -105,5 +105,45 @@ public static class BuildPlanets
             .AddSatelites(satelites)
             .Build();
         return mars;
+    }
+
+    public static Result<Planet> Jupiter(IStellarMap map)
+    {
+        Satelite[] satelites =
+{
+            BuildSatelites.JupiterMetis(map),
+            BuildSatelites.JupiterAdrastea(map),
+            BuildSatelites.JupiterAmalthea(map),
+            BuildSatelites.JupiterThebe(map),
+            BuildSatelites.JupiterIo(map),
+            BuildSatelites.JupiterEuropa(map),
+            BuildSatelites.JupiterGanymede(map),
+            BuildSatelites.JupiterCallisto(map),
+            BuildSatelites.JupiterHimalia(map),
+            BuildSatelites.JupiterElara(map),
+            BuildSatelites.JupiterPasiphae(map),
+            BuildSatelites.JupiterCarme(map)
+        };
+
+        PhysicalProperties physicalProperties = new()
+        {
+            Mass = 1.9882E27,
+            Radius = 69911,
+            Area = 6.1419E10,
+            Volume = 1.4313E15,
+            Flattening = 0.06487,
+            Density = 1.326,
+            Gravity = 24.79,
+            EscapeVelocity = 59.5
+        };
+
+        var jupiter = PlanetBuilder.Create("Jupiter", MapIdentifierGenerator.Instance, map)
+            .WithDescription("The fifth and largets planet in the Solar System.")
+            .WithProperty(PropertiesConstant.DESIGNATION, "SOL-05")
+            .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.GASGIANTPLANET)
+            .AddPhysicalProperties(physicalProperties)
+            .AddSatelites(satelites)
+            .Build();
+        return jupiter;
     }
 }
