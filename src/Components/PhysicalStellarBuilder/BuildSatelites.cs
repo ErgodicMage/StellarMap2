@@ -291,4 +291,108 @@ public static class BuildSatelites
             .Build();
         return carme;
     }
+
+    public static Result<Satelite> UranusTitania(IStellarMap map)
+    {
+        PhysicalProperties physicalProperties = new()
+        {
+            Mass = 3.4E21,
+            Radius = 788.4,
+            Dimensions = "203x185x152.6",
+            Area = 7.82E6,
+            Volume = 2.065E9,
+            Density = 1.711,
+            Gravity = 0.379,
+            EscapeVelocity = 7.73E-2
+        };
+
+        var titania = SateliteBuilder.Create("Titania", MapIdentifierGenerator.Instance, map)
+            .WithDescription("The largest natural satellite of Uranus.")
+            .AddPhysicalProperties(physicalProperties)
+            .Build();
+        return titania;
+    }
+
+    public static Result<Satelite> UranusOberon(IStellarMap map)
+    {
+        PhysicalProperties physicalProperties = new()
+        {
+            Mass = 3.076E21,
+            Radius = 761.4,
+            Dimensions = "203x185x152.6",
+            Area = 7.285E6,
+            Volume = 1.849E9,
+            Density = 1.63,
+            Gravity = 0.346,
+            EscapeVelocity = 7.27E-2
+        };
+
+        var oberon = SateliteBuilder.Create("Oberon", MapIdentifierGenerator.Instance, map)
+            .WithDescription("The 2nd largest natural satellite of Uranus.")
+            .AddPhysicalProperties(physicalProperties)
+            .Build();
+        return oberon;
+    }
+
+    public static Result<Satelite> UranusUmbriel(IStellarMap map)
+    {
+        PhysicalProperties physicalProperties = new()
+        {
+            Mass = 1.275E21,
+            Radius = 584.7,
+            Area = 4.296E6,
+            Volume = 8.373E8,
+            Density = 1.39,
+            Gravity = 0.2,
+            EscapeVelocity = 5.2E-2
+        };
+
+        var umbriel = SateliteBuilder.Create("Umbriel", MapIdentifierGenerator.Instance, map)
+            .WithDescription("The 3rd largest natural satellite of Uranus.")
+            .AddPhysicalProperties(physicalProperties)
+            .Build();
+        return umbriel;
+    }
+
+    public static Result<Satelite> UranusAriel(IStellarMap map)
+    {
+        PhysicalProperties physicalProperties = new()
+        {
+            Mass = 1.251E21,
+            Radius = 578.9,
+            Dimensions = "1162.2x1155.8x11155.4",
+            Area = 4.211E6,
+            Volume = 8.126E8,
+            Density = 1.592,
+            Gravity = 0.269,
+            EscapeVelocity = 5.59E-2
+        };
+
+        var ariel = SateliteBuilder.Create("Ariel", MapIdentifierGenerator.Instance, map)
+            .WithDescription("The 4th largest natural satellite of Uranus.")
+            .AddPhysicalProperties(physicalProperties)
+            .Build();
+        return ariel;
+    }
+
+    public static Result<Satelite> UranusMiranda(IStellarMap map)
+    {
+        PhysicalProperties physicalProperties = new()
+        {
+            Mass = 6.4E19,
+            Radius = 235.8,
+            Dimensions = "480x468.4x465.8",
+            Area = 7.0E5,
+            Volume = 5.485E7,
+            Density = 1.2,
+            Gravity = 0.079,
+            EscapeVelocity = 1.93E-2
+        };
+
+        var miranda = SateliteBuilder.Create("Ariel", MapIdentifierGenerator.Instance, map)
+            .WithDescription("The 5th largest natural satellite of Uranus.")
+            .AddPhysicalProperties(physicalProperties)
+            .Build();
+        return miranda;
+    }
 }

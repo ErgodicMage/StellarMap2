@@ -146,4 +146,37 @@ public static class BuildPlanets
             .Build();
         return jupiter;
     }
+
+    public static Result<Planet> Uranus(IStellarMap map)
+    {
+        Satelite[] satelites =
+        {
+            BuildSatelites.UranusTitania(map),
+            BuildSatelites.UranusOberon(map),
+            BuildSatelites.UranusUmbriel(map),
+            BuildSatelites.UranusAriel(map),
+            BuildSatelites.UranusMiranda(map)
+        };
+
+        PhysicalProperties physicalProperties = new()
+        {
+            Mass = 5.6834E26,
+            Radius = 58232,
+            Area = 4.27E10,
+            Volume = 8.2713E14,
+            Flattening = 0.09796,
+            Density = 0.867,
+            Gravity = 10.44,
+            EscapeVelocity = 35.5
+        };
+
+        var uranus = PlanetBuilder.Create("Uranus", MapIdentifierGenerator.Instance, map)
+            .WithDescription("The 7th planet in the Solar System.")
+            .WithProperty(PropertiesConstant.DESIGNATION, "SOL-07")
+            .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.GASGIANTPLANET)
+            .AddPhysicalProperties(physicalProperties)
+            .AddSatelites(satelites)
+            .Build();
+        return uranus;
+    }
 }

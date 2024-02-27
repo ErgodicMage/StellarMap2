@@ -25,7 +25,8 @@ public static class BuildStars
             BuildPlanets.Venus(map),
             BuildPlanets.Earth(map),
             BuildPlanets.Mars(map),
-            BuildPlanets.Jupiter(map)
+            BuildPlanets.Jupiter(map),
+            BuildPlanets.Uranus(map)
         };
 
         var sol = StarBuilder.Create("Sol", MapIdentifierGenerator.Instance, map)
