@@ -68,7 +68,41 @@
           "Id": "Planet-00010"
         }
       },
-      "Asteroids": null,
+      "Asteroids": {
+        "Vesta": {
+          "Id": "Asteroid-00001"
+        },
+        "Pallas": {
+          "Id": "Asteroid-00002"
+        },
+        "Hygiea": {
+          "Id": "Asteroid-00003"
+        },
+        "Euphrosyne": {
+          "Id": "Asteroid-00004"
+        },
+        "Interamnia": {
+          "Id": "Asteroid-00005"
+        },
+        "Davida": {
+          "Id": "Asteroid-00006"
+        },
+        "Herculina": {
+          "Id": "Asteroid-00007"
+        },
+        "Eunomia": {
+          "Id": "Asteroid-00008"
+        },
+        "Juno": {
+          "Id": "Asteroid-00009"
+        },
+        "Psyche": {
+          "Id": "Asteroid-00010"
+        },
+        "Europa": {
+          "Id": "Asteroid-00011"
+        }
+      },
       "Comets": null
     }
   },
@@ -1409,6 +1443,181 @@
       }
     }
   },
-  "Asteroids": null,
+  "Asteroids": {
+    "Asteroid-00001": {
+      "Name": "Vesta",
+      "Identifier": {
+        "Id": "Asteroid-00001"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Asteroid",
+      "Properties": {
+        "Description": "One of the largest asteroids in the Solar System."
+      },
+      "PhysicalProperties": {
+        "Mass": 2.59E+20,
+        "Radius": 525.4,
+        "Dimensions": "572.6x557.2x446.4",
+        "Area": 866000,
+        "Volume": 74970000,
+        "Flattening": 0.2204,
+        "Density": 3.456,
+        "Gravity": 0.25,
+        "EscapeVelocity": 0.36
+      }
+    },
+    "Asteroid-00002": {
+      "Name": "Pallas",
+      "Identifier": {
+        "Id": "Asteroid-00002"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Asteroid",
+      "Properties": {},
+      "PhysicalProperties": {
+        "Mass": 2.04E+20,
+        "Radius": 511,
+        "Dimensions": "568x532x448",
+        "Area": 830000,
+        "Volume": 70600000,
+        "Flattening": 0,
+        "Density": 2.92,
+        "Gravity": 0.21,
+        "EscapeVelocity": 0.324
+      }
+    },
+    "Asteroid-00003": {
+      "Name": "Hygiea",
+      "Identifier": {
+        "Id": "Asteroid-00003"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Asteroid",
+      "Properties": {},
+      "PhysicalProperties": {
+        "Mass": 8.74E+19,
+        "Radius": 433,
+        "Dimensions": "450x430x424",
+        "Area": 0,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 2.06,
+        "Gravity": 0,
+        "EscapeVelocity": 0
+      }
+    },
+    "Asteroid-00004": {
+      "Name": "Euphrosyne",
+      "Identifier": {
+        "Id": "Asteroid-00004"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Asteroid",
+      "Properties": {},
+      "PhysicalProperties": {
+        "Mass": 1.65E+19,
+        "Radius": 268,
+        "Dimensions": "294x280x248",
+        "Area": 0,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 1.64,
+        "Gravity": 0,
+        "EscapeVelocity": 0
+      }
+    },
+    "Asteroid-00005": {
+      "Name": "Interamnia",
+      "Identifier": {
+        "Id": "Asteroid-00005"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Asteroid",
+      "Properties": {},
+      "PhysicalProperties": null
+    },
+    "Asteroid-00006": {
+      "Name": "Davida",
+      "Identifier": {
+        "Id": "Asteroid-00006"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Asteroid",
+      "Properties": {},
+      "PhysicalProperties": null
+    },
+    "Asteroid-00007": {
+      "Name": "Herculina",
+      "Identifier": {
+        "Id": "Asteroid-00007"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Asteroid",
+      "Properties": {},
+      "PhysicalProperties": null
+    },
+    "Asteroid-00008": {
+      "Name": "Eunomia",
+      "Identifier": {
+        "Id": "Asteroid-00008"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Asteroid",
+      "Properties": {},
+      "PhysicalProperties": null
+    },
+    "Asteroid-00009": {
+      "Name": "Juno",
+      "Identifier": {
+        "Id": "Asteroid-00009"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Asteroid",
+      "Properties": {},
+      "PhysicalProperties": null
+    },
+    "Asteroid-00010": {
+      "Name": "Psyche",
+      "Identifier": {
+        "Id": "Asteroid-00010"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Asteroid",
+      "Properties": {},
+      "PhysicalProperties": null
+    },
+    "Asteroid-00011": {
+      "Name": "Europa",
+      "Identifier": {
+        "Id": "Asteroid-00011"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Asteroid",
+      "Properties": {},
+      "PhysicalProperties": null
+    }
+  },
   "Comets": null
 }

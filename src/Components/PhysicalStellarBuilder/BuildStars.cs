@@ -33,6 +33,21 @@ public static class BuildStars
             BuildPlanets.Ceres(map)
         };
 
+        Asteroid[] asteroids =
+        {
+            BuildAsteroids.Vesta(map),
+            BuildAsteroids.Pallas(map),
+            BuildAsteroids.Hygiea(map),
+            BuildAsteroids.Euphrosyne(map),
+            BuildAsteroids.Interamnia(map),
+            BuildAsteroids.Davida(map),
+            BuildAsteroids.Herculina(map),
+            BuildAsteroids.Eunomia(map),
+            BuildAsteroids.Juno(map),
+            BuildAsteroids.Psyche(map),
+            BuildAsteroids.Europa(map)
+        };
+
         var sol = StarBuilder.Create("Sol", MapIdentifierGenerator.Instance, map)
             .WithDescription("The star at the center of the Solar System.")
             .WithProperty(PropertiesConstant.DESIGNATION, "Sol")
@@ -40,6 +55,7 @@ public static class BuildStars
             .AddPhysicalProperties(physicalProperties)
             .AsStellarClass("G2V")
             .AddPlanets(planets)
+            .AddAsteroids(asteroids)
             .Build();
 
         return sol;
