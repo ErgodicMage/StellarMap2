@@ -103,7 +103,29 @@
           "Id": "Asteroid-00011"
         }
       },
-      "Comets": null
+      "Comets": {
+        "Haley\u0027s": {
+          "Id": "Comet-00001"
+        },
+        "Caeser\u0027s": {
+          "Id": "Comet-00002"
+        },
+        "Encke\u0027s": {
+          "Id": "Comet-00003"
+        },
+        "Biela\u0027s": {
+          "Id": "Comet-00004"
+        },
+        "Faye\u0027s": {
+          "Id": "Comet-00005"
+        },
+        "Brorsen\u0027s": {
+          "Id": "Comet-00006"
+        },
+        "d\u0027Arrest\u0027s": {
+          "Id": "Comet-00007"
+        }
+      }
     }
   },
   "Planets": {
@@ -1619,5 +1641,114 @@
       "PhysicalProperties": null
     }
   },
-  "Comets": null
+  "Comets": {
+    "Comet-00001": {
+      "Name": "Haley\u0027s",
+      "Identifier": {
+        "Id": "Comet-00001"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Comet",
+      "Properties": {
+        "Description": "Haley\u0027s Comet"
+      },
+      "PhysicalProperties": {
+        "Mass": 220000000000000,
+        "Radius": 11,
+        "Dimensions": "15x8",
+        "Area": 0,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 0.6,
+        "Gravity": 0,
+        "EscapeVelocity": 0
+      }
+    },
+    "Comet-00002": {
+      "Name": "Caeser\u0027s",
+      "Identifier": {
+        "Id": "Comet-00002"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Comet",
+      "Properties": {
+        "Description": "Caeser\u0027s Comet"
+      },
+      "PhysicalProperties": null
+    },
+    "Comet-00003": {
+      "Name": "Encke\u0027s",
+      "Identifier": {
+        "Id": "Comet-00003"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Comet",
+      "Properties": {
+        "Description": "Encke\u0027s Comet"
+      },
+      "PhysicalProperties": null
+    },
+    "Comet-00004": {
+      "Name": "Biela\u0027s",
+      "Identifier": {
+        "Id": "Comet-00004"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Comet",
+      "Properties": {
+        "Description": "Biela\u0027s Comet"
+      },
+      "PhysicalProperties": null
+    },
+    "Comet-00005": {
+      "Name": "Faye\u0027s",
+      "Identifier": {
+        "Id": "Comet-00005"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Comet",
+      "Properties": {
+        "Description": "Faye\u0027s Comet"
+      },
+      "PhysicalProperties": null
+    },
+    "Comet-00006": {
+      "Name": "Brorsen\u0027s",
+      "Identifier": {
+        "Id": "Comet-00006"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Comet",
+      "Properties": {
+        "Description": "Brorsen\u0027s Comet"
+      },
+      "PhysicalProperties": null
+    },
+    "Comet-00007": {
+      "Name": "d\u0027Arrest\u0027s",
+      "Identifier": {
+        "Id": "Comet-00007"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Comet",
+      "Properties": {
+        "Description": "d\u0027Arrest\u0027s Comet"
+      },
+      "PhysicalProperties": null
+    }
+  }
 }

@@ -48,6 +48,17 @@ public static class BuildStars
             BuildAsteroids.Europa(map)
         };
 
+        Comet[] comets =
+        {
+            BuildComets.Haleys(map),
+            BuildComets.Caesers(map),
+            BuildComets.Enckes(map),
+            BuildComets.Bielas(map),
+            BuildComets.Fayes(map),
+            BuildComets.Brorsens(map),
+            BuildComets.dArrests(map)
+        };
+
         var sol = StarBuilder.Create("Sol", MapIdentifierGenerator.Instance, map)
             .WithDescription("The star at the center of the Solar System.")
             .WithProperty(PropertiesConstant.DESIGNATION, "Sol")
@@ -56,6 +67,7 @@ public static class BuildStars
             .AsStellarClass("G2V")
             .AddPlanets(planets)
             .AddAsteroids(asteroids)
+            .AddComets(comets)
             .Build();
 
         return sol;
