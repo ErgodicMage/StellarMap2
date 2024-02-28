@@ -147,6 +147,44 @@ public static class BuildPlanets
         return jupiter;
     }
 
+    public static Result<Planet> Saturn(IStellarMap map)
+    {
+        Satelite[] satelites =
+        {
+            BuildSatelites.SaturnTitan(map),
+            BuildSatelites.SaturnRhea(map),
+            BuildSatelites.SaturnIapetus(map),
+            BuildSatelites.SaturnDione(map),
+            BuildSatelites.SaturnTethys(map),
+            BuildSatelites.SaturnEnceladus(map),
+            BuildSatelites.SaturnMimas(map),
+            BuildSatelites.SaturnHyperion(map),
+            BuildSatelites.SaturnPhoebe(map),
+            BuildSatelites.SaturnJanus(map)
+        };
+
+        PhysicalProperties physicalProperties = new()
+        {
+            Mass = 5.6834E26,
+            Radius = 58232,
+            Area = 4.27E10,
+            Volume = 8.2713E14,
+            Flattening = 0.09796,
+            Density = 0.867,
+            Gravity = 10.44,
+            EscapeVelocity = 35.5
+        };
+
+        var saturn = PlanetBuilder.Create("Saturn", MapIdentifierGenerator.Instance, map)
+            .WithDescription("The sixth planet in the Solar System.")
+            .WithProperty(PropertiesConstant.DESIGNATION, "SOL-06")
+            .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.GASGIANTPLANET)
+            .AddPhysicalProperties(physicalProperties)
+            .AddSatelites(satelites)
+            .Build();
+        return saturn;
+    }
+
     public static Result<Planet> Uranus(IStellarMap map)
     {
         Satelite[] satelites =
@@ -178,5 +216,95 @@ public static class BuildPlanets
             .AddSatelites(satelites)
             .Build();
         return uranus;
+    }
+
+    public static Result<Planet> Neptune(IStellarMap map)
+    {
+        Satelite[] satelites =
+        {
+            BuildSatelites.NeptuneTriton(map),
+            BuildSatelites.NeptuneProteus(map),
+            BuildSatelites.NeptuneNereid(map),
+            BuildSatelites.NeptuneLarissa(map)
+        };
+
+        PhysicalProperties physicalProperties = new()
+        {
+            Mass = 1.024E26,
+            Radius = 24622,
+            Area = 4.27E9,
+            Volume = 6.254E13,
+            Flattening = 0.09796,
+            Density = 1.638,
+            Gravity = 11.15,
+            EscapeVelocity = 23.5
+        };
+
+        var neptune = PlanetBuilder.Create("Neptune", MapIdentifierGenerator.Instance, map)
+            .WithDescription("The 8th planet in the Solar System.")
+            .WithProperty(PropertiesConstant.DESIGNATION, "SOL-08")
+            .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.GASGIANTPLANET)
+            .AddPhysicalProperties(physicalProperties)
+            .AddSatelites(satelites)
+            .Build();
+        return neptune;
+    }
+
+    public static Result<Planet> Pluto(IStellarMap map)
+    {
+        Satelite[] satelites =
+        {
+            BuildSatelites.PlutoCharon(map),
+            BuildSatelites.PlutoNix(map),
+            BuildSatelites.PlutoHydra(map),
+            BuildSatelites.PlutoKerberos(map),
+            BuildSatelites.PlutoStyx(map)
+        };
+
+        PhysicalProperties physicalProperties = new()
+        {
+            Mass = 1.303E22,
+            Radius = 2376.6,
+            Area = 1.774E7,
+            Volume = 7.057E9,
+            Density = 1.854,
+            Gravity = 0.620,
+            EscapeVelocity = 1.212
+        };
+
+        var pluto = PlanetBuilder.Create("Pluto", MapIdentifierGenerator.Instance, map)
+            .WithDescription("The largets Dwarf Planet in the Solar System.")
+            .IsDwarf(true)
+            .WithProperty(PropertiesConstant.DESIGNATION, "SOL-09")
+            .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.ROCKYPLANET)
+            .AddPhysicalProperties(physicalProperties)
+            .AddSatelites(satelites)
+            .Build();
+        return pluto;
+    }
+
+    public static Result<Planet> Ceres(IStellarMap map)
+    {
+
+        PhysicalProperties physicalProperties = new()
+        {
+            Mass = 9.3839E20,
+            Radius = 939.4,
+            Dimensions = "966.2x962.0x891.8",
+            Area = 2.772E6,
+            Volume = 4.34E8,
+            Density = 2.1616,
+            Gravity = 0.284,
+            EscapeVelocity = 0.516
+        };
+
+        var ceres = PlanetBuilder.Create("Ceres", MapIdentifierGenerator.Instance, map)
+            .WithDescription("Dwarf planet in the asteroid belt.")
+            .IsDwarf(true)
+            .WithProperty(PropertiesConstant.DESIGNATION, "SOL-10")
+            .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.ROCKYPLANET)
+            .AddPhysicalProperties(physicalProperties)
+            .Build();
+        return ceres;
     }
 }

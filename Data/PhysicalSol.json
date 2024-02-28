@@ -7,7 +7,7 @@
     "Email": "ErgodicMage@gmail.com",
     "License": "MIT License, 2024",
     "Github": "https://github.com/ErgodicMage/StellarMap2",
-    "Date": "2/25/2024"
+    "Date": "2/27/2024"
   },
   "Stars": {
     "Star-00001": {
@@ -45,6 +45,27 @@
         },
         "Earth": {
           "Id": "Planet-00003"
+        },
+        "Mars": {
+          "Id": "Planet-00004"
+        },
+        "Jupiter": {
+          "Id": "Planet-00005"
+        },
+        "Saturn": {
+          "Id": "Planet-00006"
+        },
+        "Uranus": {
+          "Id": "Planet-00007"
+        },
+        "Neptune": {
+          "Id": "Planet-00008"
+        },
+        "Pluto": {
+          "Id": "Planet-00009"
+        },
+        "Ceres": {
+          "Id": "Planet-00010"
         }
       },
       "Asteroids": null,
@@ -139,6 +160,322 @@
           "Id": "Satelite-00001"
         }
       }
+    },
+    "Planet-00004": {
+      "Name": "Mars",
+      "Identifier": {
+        "Id": "Planet-00004"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Planet",
+      "Properties": {
+        "Description": "The 4th planet in the Solar System.",
+        "Designation": "SOL-04",
+        "Planet Type": "Rocky Planet"
+      },
+      "PhysicalProperties": {
+        "Mass": 6.4171E+23,
+        "Radius": 3389.5,
+        "Dimensions": "",
+        "Area": 144800000,
+        "Volume": 163180000000,
+        "Flattening": 0.00589,
+        "Density": 3.9335,
+        "Gravity": 3.721,
+        "EscapeVelocity": 5.027
+      },
+      "IsDwarf": false,
+      "Satelites": {
+        "Phobos": {
+          "Id": "Satelite-00002"
+        },
+        "Deimos": {
+          "Id": "Satelite-00003"
+        }
+      }
+    },
+    "Planet-00005": {
+      "Name": "Jupiter",
+      "Identifier": {
+        "Id": "Planet-00005"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Planet",
+      "Properties": {
+        "Description": "The fifth and largets planet in the Solar System.",
+        "Designation": "SOL-05",
+        "Planet Type": "Gas Giant Planet"
+      },
+      "PhysicalProperties": {
+        "Mass": 1.9882E+27,
+        "Radius": 69911,
+        "Dimensions": "",
+        "Area": 61419000000,
+        "Volume": 1431300000000000,
+        "Flattening": 0.06487,
+        "Density": 1.326,
+        "Gravity": 24.79,
+        "EscapeVelocity": 59.5
+      },
+      "IsDwarf": false,
+      "Satelites": {
+        "Metis": {
+          "Id": "Satelite-00004"
+        },
+        "Adrastea": {
+          "Id": "Satelite-00005"
+        },
+        "Amalthea": {
+          "Id": "Satelite-00006"
+        },
+        "Thebe": {
+          "Id": "Satelite-00007"
+        },
+        "Io": {
+          "Id": "Satelite-00008"
+        },
+        "Europa": {
+          "Id": "Satelite-00009"
+        },
+        "Ganymede": {
+          "Id": "Satelite-00010"
+        },
+        "Callisto": {
+          "Id": "Satelite-00011"
+        },
+        "Himalia": {
+          "Id": "Satelite-00012"
+        },
+        "Elara": {
+          "Id": "Satelite-00013"
+        },
+        "Pasiphae": {
+          "Id": "Satelite-00014"
+        },
+        "Carme": {
+          "Id": "Satelite-00015"
+        }
+      }
+    },
+    "Planet-00006": {
+      "Name": "Saturn",
+      "Identifier": {
+        "Id": "Planet-00006"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Planet",
+      "Properties": {
+        "Description": "The sixth planet in the Solar System.",
+        "Designation": "SOL-06",
+        "Planet Type": "Gas Giant Planet"
+      },
+      "PhysicalProperties": {
+        "Mass": 5.6834E+26,
+        "Radius": 58232,
+        "Dimensions": "",
+        "Area": 42700000000,
+        "Volume": 827130000000000,
+        "Flattening": 0.09796,
+        "Density": 0.867,
+        "Gravity": 10.44,
+        "EscapeVelocity": 35.5
+      },
+      "IsDwarf": false,
+      "Satelites": {
+        "Titan": {
+          "Id": "Satelite-00016"
+        },
+        "Rhea": {
+          "Id": "Satelite-00017"
+        },
+        "Iapetus": {
+          "Id": "Satelite-00018"
+        },
+        "Dione": {
+          "Id": "Satelite-00019"
+        },
+        "Tethys": {
+          "Id": "Satelite-00020"
+        },
+        "Enceladus": {
+          "Id": "Satelite-00021"
+        },
+        "Mimas": {
+          "Id": "Satelite-00022"
+        },
+        "Hyperion": {
+          "Id": "Satelite-00023"
+        },
+        "Phoebe": {
+          "Id": "Satelite-00024"
+        },
+        "Janus": {
+          "Id": "Satelite-00025"
+        }
+      }
+    },
+    "Planet-00007": {
+      "Name": "Uranus",
+      "Identifier": {
+        "Id": "Planet-00007"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Planet",
+      "Properties": {
+        "Description": "The 7th planet in the Solar System.",
+        "Designation": "SOL-07",
+        "Planet Type": "Gas Giant Planet"
+      },
+      "PhysicalProperties": {
+        "Mass": 5.6834E+26,
+        "Radius": 58232,
+        "Dimensions": "",
+        "Area": 42700000000,
+        "Volume": 827130000000000,
+        "Flattening": 0.09796,
+        "Density": 0.867,
+        "Gravity": 10.44,
+        "EscapeVelocity": 35.5
+      },
+      "IsDwarf": false,
+      "Satelites": {
+        "Titania": {
+          "Id": "Satelite-00026"
+        },
+        "Oberon": {
+          "Id": "Satelite-00027"
+        },
+        "Umbriel": {
+          "Id": "Satelite-00028"
+        },
+        "Ariel": {
+          "Id": "Satelite-00029"
+        },
+        "Miranda": {
+          "Id": "Satelite-00030"
+        }
+      }
+    },
+    "Planet-00008": {
+      "Name": "Neptune",
+      "Identifier": {
+        "Id": "Planet-00008"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Planet",
+      "Properties": {
+        "Description": "The 8th planet in the Solar System.",
+        "Designation": "SOL-08",
+        "Planet Type": "Gas Giant Planet"
+      },
+      "PhysicalProperties": {
+        "Mass": 1.024E+26,
+        "Radius": 24622,
+        "Dimensions": "",
+        "Area": 4270000000,
+        "Volume": 62540000000000,
+        "Flattening": 0.09796,
+        "Density": 1.638,
+        "Gravity": 11.15,
+        "EscapeVelocity": 23.5
+      },
+      "IsDwarf": false,
+      "Satelites": {
+        "Triton": {
+          "Id": "Satelite-00031"
+        },
+        "Proteus": {
+          "Id": "Satelite-00032"
+        },
+        "Nereid": {
+          "Id": "Satelite-00033"
+        },
+        "Larissa": {
+          "Id": "Satelite-00034"
+        }
+      }
+    },
+    "Planet-00009": {
+      "Name": "Pluto",
+      "Identifier": {
+        "Id": "Planet-00009"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Planet",
+      "Properties": {
+        "Description": "The largets Dwarf Planet in the Solar System.",
+        "Designation": "SOL-09",
+        "Planet Type": "Rocky Planet"
+      },
+      "PhysicalProperties": {
+        "Mass": 1.303E+22,
+        "Radius": 2376.6,
+        "Dimensions": "",
+        "Area": 17740000,
+        "Volume": 7057000000,
+        "Flattening": 0,
+        "Density": 1.854,
+        "Gravity": 0.62,
+        "EscapeVelocity": 1.212
+      },
+      "IsDwarf": true,
+      "Satelites": {
+        "Charon": {
+          "Id": "Satelite-00035"
+        },
+        "Nix": {
+          "Id": "Satelite-00036"
+        },
+        "Hydra": {
+          "Id": "Satelite-00037"
+        },
+        "Kerberos": {
+          "Id": "Satelite-00038"
+        },
+        "Styx": {
+          "Id": "Satelite-00039"
+        }
+      }
+    },
+    "Planet-00010": {
+      "Name": "Ceres",
+      "Identifier": {
+        "Id": "Planet-00010"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00001"
+      },
+      "ObjectType": "Planet",
+      "Properties": {
+        "Description": "Dwarf planet in the asteroid belt.",
+        "Designation": "SOL-10",
+        "Planet Type": "Rocky Planet"
+      },
+      "PhysicalProperties": {
+        "Mass": 9.3839E+20,
+        "Radius": 939.4,
+        "Dimensions": "966.2x962.0x891.8",
+        "Area": 2772000,
+        "Volume": 434000000,
+        "Flattening": 0,
+        "Density": 2.1616,
+        "Gravity": 0.284,
+        "EscapeVelocity": 0.516
+      },
+      "IsDwarf": true,
+      "Satelites": null
     }
   },
   "Satelites": {
@@ -165,6 +502,910 @@
         "Density": 3.344,
         "Gravity": 1.62,
         "EscapeVelocity": 2.38
+      }
+    },
+    "Satelite-00002": {
+      "Name": "Phobos",
+      "Identifier": {
+        "Id": "Satelite-00002"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00004"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "First and largest natural satellite of Mars."
+      },
+      "PhysicalProperties": {
+        "Mass": 10659000000000000,
+        "Radius": 11.2667,
+        "Dimensions": "27x22X18",
+        "Area": 1548.3,
+        "Volume": 5783.6,
+        "Flattening": 0,
+        "Density": 1.876,
+        "Gravity": 0.0057,
+        "EscapeVelocity": 0.01139
+      }
+    },
+    "Satelite-00003": {
+      "Name": "Deimos",
+      "Identifier": {
+        "Id": "Satelite-00003"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00004"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "Second natural satellite of Mars."
+      },
+      "PhysicalProperties": {
+        "Mass": 1476200000000000,
+        "Radius": 6.2,
+        "Dimensions": "15x12.2x11",
+        "Area": 495.155,
+        "Volume": 999.78,
+        "Flattening": 0,
+        "Density": 1.471,
+        "Gravity": 0.003,
+        "EscapeVelocity": 0.005556
+      }
+    },
+    "Satelite-00004": {
+      "Name": "Metis",
+      "Identifier": {
+        "Id": "Satelite-00004"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "First inner natural satellite of Jupiter."
+      },
+      "PhysicalProperties": {
+        "Mass": 0,
+        "Radius": 21.5,
+        "Dimensions": "60x40x34",
+        "Area": 5800,
+        "Volume": 42700,
+        "Flattening": 0,
+        "Density": 0,
+        "Gravity": 0,
+        "EscapeVelocity": 0
+      }
+    },
+    "Satelite-00005": {
+      "Name": "Adrastea",
+      "Identifier": {
+        "Id": "Satelite-00005"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "Second inner natural satellite of Jupiter."
+      },
+      "PhysicalProperties": {
+        "Mass": 0,
+        "Radius": 18.2,
+        "Dimensions": "20x16x14",
+        "Area": 0,
+        "Volume": 2345,
+        "Flattening": 0,
+        "Density": 0,
+        "Gravity": 0,
+        "EscapeVelocity": 0
+      }
+    },
+    "Satelite-00006": {
+      "Name": "Amalthea",
+      "Identifier": {
+        "Id": "Satelite-00006"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "Third inner natural satellite and the 5th largest of Jupiter."
+      },
+      "PhysicalProperties": {
+        "Mass": 2.08E+18,
+        "Radius": 83.5,
+        "Dimensions": "250x146x128",
+        "Area": 0,
+        "Volume": 2430000,
+        "Flattening": 0,
+        "Density": 0.857,
+        "Gravity": 0.02,
+        "EscapeVelocity": 5.8E-05
+      }
+    },
+    "Satelite-00007": {
+      "Name": "Thebe",
+      "Identifier": {
+        "Id": "Satelite-00007"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "Fourth inner natural satellite and the 7th largest of Jupiter."
+      },
+      "PhysicalProperties": {
+        "Mass": 0,
+        "Radius": 49.3,
+        "Dimensions": "116x98x84",
+        "Area": 0,
+        "Volume": 500000,
+        "Flattening": 0,
+        "Density": 0,
+        "Gravity": 0.04,
+        "EscapeVelocity": 0.025
+      }
+    },
+    "Satelite-00008": {
+      "Name": "Io",
+      "Identifier": {
+        "Id": "Satelite-00008"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "First Galilean and the 3rd largest natural satellite of Jupiter."
+      },
+      "PhysicalProperties": {
+        "Mass": 8.932E+22,
+        "Radius": 1821.6,
+        "Dimensions": "",
+        "Area": 41910000,
+        "Volume": 25300000000,
+        "Flattening": 0,
+        "Density": 3.528,
+        "Gravity": 1.796,
+        "EscapeVelocity": 2.558
+      }
+    },
+    "Satelite-00009": {
+      "Name": "Europa",
+      "Identifier": {
+        "Id": "Satelite-00009"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "Second Galilean and 4th largest natural satellite of Jupiter."
+      },
+      "PhysicalProperties": {
+        "Mass": 4.798E+22,
+        "Radius": 1560.8,
+        "Dimensions": "",
+        "Area": 30900000,
+        "Volume": 15930000000,
+        "Flattening": 0,
+        "Density": 3.013,
+        "Gravity": 1.314,
+        "EscapeVelocity": 2.025
+      }
+    },
+    "Satelite-00010": {
+      "Name": "Ganymede",
+      "Identifier": {
+        "Id": "Satelite-00010"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "Third Galilean and largest natural satellite of Jupiter."
+      },
+      "PhysicalProperties": {
+        "Mass": 1.4819E+23,
+        "Radius": 2634.1,
+        "Dimensions": "",
+        "Area": 87200000,
+        "Volume": 76600000000,
+        "Flattening": 0,
+        "Density": 1.936,
+        "Gravity": 1.428,
+        "EscapeVelocity": 2.741
+      }
+    },
+    "Satelite-00011": {
+      "Name": "Callisto",
+      "Identifier": {
+        "Id": "Satelite-00011"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "Fourth Galilean and 2nd largest natural satellite of Jupiter."
+      },
+      "PhysicalProperties": {
+        "Mass": 1.076E+23,
+        "Radius": 2410.3,
+        "Dimensions": "",
+        "Area": 73000000,
+        "Volume": 59000000000,
+        "Flattening": 0,
+        "Density": 1.8344,
+        "Gravity": 1.235,
+        "EscapeVelocity": 2.44
+      }
+    },
+    "Satelite-00012": {
+      "Name": "Himalia",
+      "Identifier": {
+        "Id": "Satelite-00012"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "11th natural and 6th largest satellite of Jupiter."
+      },
+      "PhysicalProperties": {
+        "Mass": 4.2E+18,
+        "Radius": 85,
+        "Dimensions": "205.6x141.4x?",
+        "Area": 91000,
+        "Volume": 2600000,
+        "Flattening": 0,
+        "Density": 2.6,
+        "Gravity": 0.062,
+        "EscapeVelocity": 0.1
+      }
+    },
+    "Satelite-00013": {
+      "Name": "Elara",
+      "Identifier": {
+        "Id": "Satelite-00013"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "Fourth inner natural satellite of Jupiter."
+      },
+      "PhysicalProperties": {
+        "Mass": 8.7E+17,
+        "Radius": 40,
+        "Dimensions": "unknown",
+        "Area": 0,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 2.6,
+        "Gravity": 0,
+        "EscapeVelocity": 0
+      }
+    },
+    "Satelite-00014": {
+      "Name": "Pasiphae",
+      "Identifier": {
+        "Id": "Satelite-00014"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "60th and 9th largest inner natural satellite of Jupiter."
+      },
+      "PhysicalProperties": {
+        "Mass": 3E+17,
+        "Radius": 28.9,
+        "Dimensions": "unknown",
+        "Area": 0,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 2.6,
+        "Gravity": 0.022,
+        "EscapeVelocity": 0.036
+      }
+    },
+    "Satelite-00015": {
+      "Name": "Carme",
+      "Identifier": {
+        "Id": "Satelite-00015"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00005"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "74th and 10th largest natural satellite of Jupiter."
+      },
+      "PhysicalProperties": {
+        "Mass": 0,
+        "Radius": 23.35,
+        "Dimensions": "unknown",
+        "Area": 0,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 2.6,
+        "Gravity": 0,
+        "EscapeVelocity": 0
+      }
+    },
+    "Satelite-00016": {
+      "Name": "Titan",
+      "Identifier": {
+        "Id": "Satelite-00016"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "Largest natural satellite of Saturn and second largest in the Solar System."
+      },
+      "PhysicalProperties": {
+        "Mass": 1.3452E+23,
+        "Radius": 2574.73,
+        "Dimensions": "",
+        "Area": 83000000,
+        "Volume": 71600000000,
+        "Flattening": 0,
+        "Density": 1.8798,
+        "Gravity": 1.352,
+        "EscapeVelocity": 0.002639
+      }
+    },
+    "Satelite-00017": {
+      "Name": "Rhea",
+      "Identifier": {
+        "Id": "Satelite-00017"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "2nd largest natural satellite of Saturn."
+      },
+      "PhysicalProperties": {
+        "Mass": 2.3E+21,
+        "Radius": 763.8,
+        "Dimensions": "",
+        "Area": 7337000,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 1.236,
+        "Gravity": 0.264,
+        "EscapeVelocity": 0.000635
+      }
+    },
+    "Satelite-00018": {
+      "Name": "Iapetus",
+      "Identifier": {
+        "Id": "Satelite-00018"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "3rd largest natural satellite of Saturn."
+      },
+      "PhysicalProperties": {
+        "Mass": 1.806E+21,
+        "Radius": 734.5,
+        "Dimensions": "",
+        "Area": 6700000,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 1.088,
+        "Gravity": 0.223,
+        "EscapeVelocity": 0.000573
+      }
+    },
+    "Satelite-00019": {
+      "Name": "Dione",
+      "Identifier": {
+        "Id": "Satelite-00019"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "4th largest natural satellite of Saturn."
+      },
+      "PhysicalProperties": {
+        "Mass": 1.095E+21,
+        "Radius": 561.4,
+        "Dimensions": "",
+        "Area": 3960000,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 1.478,
+        "Gravity": 0.232,
+        "EscapeVelocity": 0.00051
+      }
+    },
+    "Satelite-00020": {
+      "Name": "Tethys",
+      "Identifier": {
+        "Id": "Satelite-00020"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "5th largest natural satellite of Saturn."
+      },
+      "PhysicalProperties": {
+        "Mass": 6.174E+20,
+        "Radius": 531.1,
+        "Dimensions": "1076.8x1057.4x1052.6",
+        "Area": 0,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 0.984,
+        "Gravity": 0.146,
+        "EscapeVelocity": 0.000394
+      }
+    },
+    "Satelite-00021": {
+      "Name": "Enceladus",
+      "Identifier": {
+        "Id": "Satelite-00021"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "6th largest natural satellite of Saturn."
+      },
+      "PhysicalProperties": {
+        "Mass": 1.08E+20,
+        "Radius": 252.1,
+        "Dimensions": "513.2x502.8x496.6",
+        "Area": 0,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 1.609,
+        "Gravity": 0.113,
+        "EscapeVelocity": 0.0002394
+      }
+    },
+    "Satelite-00022": {
+      "Name": "Mimas",
+      "Identifier": {
+        "Id": "Satelite-00022"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "7th largest natural satellite of Saturn."
+      },
+      "PhysicalProperties": {
+        "Mass": 3.749E+19,
+        "Radius": 198.2,
+        "Dimensions": "513.2x502.8x496.6",
+        "Area": 490000,
+        "Volume": 32000000,
+        "Flattening": 0,
+        "Density": 1.148,
+        "Gravity": 0.064,
+        "EscapeVelocity": 0.000159
+      }
+    },
+    "Satelite-00023": {
+      "Name": "Hyperion",
+      "Identifier": {
+        "Id": "Satelite-00023"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "8th largest natural satellite of Saturn."
+      },
+      "PhysicalProperties": {
+        "Mass": 5.62E+18,
+        "Radius": 270,
+        "Dimensions": "360.2x266.0x205.4",
+        "Area": 0,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 0.544,
+        "Gravity": 0.021,
+        "EscapeVelocity": 9.99E-05
+      }
+    },
+    "Satelite-00024": {
+      "Name": "Phoebe",
+      "Identifier": {
+        "Id": "Satelite-00024"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "9th largest natural satellite of Saturn."
+      },
+      "PhysicalProperties": {
+        "Mass": 8.292E+18,
+        "Radius": 106.5,
+        "Dimensions": "218.8x217.0x203.6",
+        "Area": 0,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 1.638,
+        "Gravity": 0.039,
+        "EscapeVelocity": 0.0001
+      }
+    },
+    "Satelite-00025": {
+      "Name": "Janus",
+      "Identifier": {
+        "Id": "Satelite-00025"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00006"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "10th largest natural satellite of Saturn."
+      },
+      "PhysicalProperties": {
+        "Mass": 1.8975E+18,
+        "Radius": 89.5,
+        "Dimensions": "",
+        "Area": 0,
+        "Volume": 3000000,
+        "Flattening": 0,
+        "Density": 0.63,
+        "Gravity": 0.017,
+        "EscapeVelocity": 0
+      }
+    },
+    "Satelite-00026": {
+      "Name": "Titania",
+      "Identifier": {
+        "Id": "Satelite-00026"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00007"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "The largest natural satellite of Uranus."
+      },
+      "PhysicalProperties": {
+        "Mass": 3.4E+21,
+        "Radius": 788.4,
+        "Dimensions": "203x185x152.6",
+        "Area": 7820000,
+        "Volume": 2065000000,
+        "Flattening": 0,
+        "Density": 1.711,
+        "Gravity": 0.379,
+        "EscapeVelocity": 0.0773
+      }
+    },
+    "Satelite-00027": {
+      "Name": "Oberon",
+      "Identifier": {
+        "Id": "Satelite-00027"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00007"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "The 2nd largest natural satellite of Uranus."
+      },
+      "PhysicalProperties": {
+        "Mass": 3.076E+21,
+        "Radius": 761.4,
+        "Dimensions": "203x185x152.6",
+        "Area": 7285000,
+        "Volume": 1849000000,
+        "Flattening": 0,
+        "Density": 1.63,
+        "Gravity": 0.346,
+        "EscapeVelocity": 0.0727
+      }
+    },
+    "Satelite-00028": {
+      "Name": "Umbriel",
+      "Identifier": {
+        "Id": "Satelite-00028"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00007"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "The 3rd largest natural satellite of Uranus."
+      },
+      "PhysicalProperties": {
+        "Mass": 1.275E+21,
+        "Radius": 584.7,
+        "Dimensions": "",
+        "Area": 4296000,
+        "Volume": 837300000,
+        "Flattening": 0,
+        "Density": 1.39,
+        "Gravity": 0.2,
+        "EscapeVelocity": 0.052
+      }
+    },
+    "Satelite-00029": {
+      "Name": "Ariel",
+      "Identifier": {
+        "Id": "Satelite-00029"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00007"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "The 4th largest natural satellite of Uranus."
+      },
+      "PhysicalProperties": {
+        "Mass": 1.251E+21,
+        "Radius": 578.9,
+        "Dimensions": "1162.2x1155.8x11155.4",
+        "Area": 4211000,
+        "Volume": 812600000,
+        "Flattening": 0,
+        "Density": 1.592,
+        "Gravity": 0.269,
+        "EscapeVelocity": 0.0559
+      }
+    },
+    "Satelite-00030": {
+      "Name": "Miranda",
+      "Identifier": {
+        "Id": "Satelite-00030"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00007"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "The 5th largest natural satellite of Uranus."
+      },
+      "PhysicalProperties": {
+        "Mass": 6.4E+19,
+        "Radius": 235.8,
+        "Dimensions": "480x468.4x465.8",
+        "Area": 700000,
+        "Volume": 54850000,
+        "Flattening": 0,
+        "Density": 1.2,
+        "Gravity": 0.079,
+        "EscapeVelocity": 0.0193
+      }
+    },
+    "Satelite-00031": {
+      "Name": "Triton",
+      "Identifier": {
+        "Id": "Satelite-00031"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00008"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "Largest natural satellite of Neptune."
+      },
+      "PhysicalProperties": {
+        "Mass": 2.139E+21,
+        "Radius": 1353.4,
+        "Dimensions": "",
+        "Area": 23020000,
+        "Volume": 10380000000,
+        "Flattening": 0,
+        "Density": 2.061,
+        "Gravity": 0.779,
+        "EscapeVelocity": 0.001445
+      }
+    },
+    "Satelite-00032": {
+      "Name": "Proteus",
+      "Identifier": {
+        "Id": "Satelite-00032"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00008"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "The 2nd largest natural satellite of Neptune."
+      },
+      "PhysicalProperties": {
+        "Mass": 4.4E+19,
+        "Radius": 210,
+        "Dimensions": "424x390x396",
+        "Area": 554000,
+        "Volume": 34000000,
+        "Flattening": 0,
+        "Density": 1.3,
+        "Gravity": 0.07,
+        "EscapeVelocity": 0.000117
+      }
+    },
+    "Satelite-00033": {
+      "Name": "Nereid",
+      "Identifier": {
+        "Id": "Satelite-00033"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00008"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "The 3rd largest natural satellite of Neptune."
+      },
+      "PhysicalProperties": {
+        "Mass": 0,
+        "Radius": 178.5,
+        "Dimensions": "",
+        "Area": 0,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 0,
+        "Gravity": 0,
+        "EscapeVelocity": 0
+      }
+    },
+    "Satelite-00034": {
+      "Name": "Larissa",
+      "Identifier": {
+        "Id": "Satelite-00034"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00008"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "Largest natural satellite of Neptune."
+      },
+      "PhysicalProperties": {
+        "Mass": 4.2E+18,
+        "Radius": 97,
+        "Dimensions": "216x204x168",
+        "Area": 118200,
+        "Volume": 3500000,
+        "Flattening": 0,
+        "Density": 1.2,
+        "Gravity": 0.03,
+        "EscapeVelocity": 7.6E-05
+      }
+    },
+    "Satelite-00035": {
+      "Name": "Charon",
+      "Identifier": {
+        "Id": "Satelite-00035"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00009"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {
+        "Description": "Largest natural satellite of Pluto."
+      },
+      "PhysicalProperties": {
+        "Mass": 1.586E+21,
+        "Radius": 606,
+        "Dimensions": "",
+        "Area": 4600000,
+        "Volume": 932000000,
+        "Flattening": 0,
+        "Density": 1.702,
+        "Gravity": 0.288,
+        "EscapeVelocity": 0.59
+      }
+    },
+    "Satelite-00036": {
+      "Name": "Nix",
+      "Identifier": {
+        "Id": "Satelite-00036"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00009"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {},
+      "PhysicalProperties": {
+        "Mass": 26000000000000000,
+        "Radius": 0,
+        "Dimensions": "49.8x33.2x31.1",
+        "Area": 0,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 1.031,
+        "Gravity": 0.0028,
+        "EscapeVelocity": 0.0118
+      }
+    },
+    "Satelite-00037": {
+      "Name": "Hydra",
+      "Identifier": {
+        "Id": "Satelite-00037"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00009"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {},
+      "PhysicalProperties": {
+        "Mass": 30100000000000000,
+        "Radius": 0,
+        "Dimensions": "50.9x36.1x30.9",
+        "Area": 0,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 1.22,
+        "Gravity": 0.0052,
+        "EscapeVelocity": 0
+      }
+    },
+    "Satelite-00038": {
+      "Name": "Kerberos",
+      "Identifier": {
+        "Id": "Satelite-00038"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00009"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {},
+      "PhysicalProperties": {
+        "Mass": 16500000000000000,
+        "Radius": 0,
+        "Dimensions": "19x10x9",
+        "Area": 0,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 0,
+        "Gravity": 0,
+        "EscapeVelocity": 0
+      }
+    },
+    "Satelite-00039": {
+      "Name": "Styx",
+      "Identifier": {
+        "Id": "Satelite-00039"
+      },
+      "ParentIdentifier": {
+        "Id": "Planet-00009"
+      },
+      "ObjectType": "Satelite",
+      "Properties": {},
+      "PhysicalProperties": {
+        "Mass": 7500000000000000,
+        "Radius": 0,
+        "Dimensions": "16x9x8",
+        "Area": 0,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 0,
+        "Gravity": 0,
+        "EscapeVelocity": 0
       }
     }
   },
