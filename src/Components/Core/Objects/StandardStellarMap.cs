@@ -12,21 +12,24 @@ public class StandardStellarMap : IStellarMap
     public Dictionary<string, string> MetaData { get; set; }
 
     [JsonPropertyOrder(3)]
-    public Dictionary<string, Star>? Stars { get; set; }
+    public Dictionary<string, StarSystem> StarSystems { get; set; }
 
     [JsonPropertyOrder(4)]
-    public Dictionary<string, Planet>? Planets { get; set; }
+    public Dictionary<string, Star>? Stars { get; set; }
 
     [JsonPropertyOrder(5)]
-    public Dictionary<string, DwarfPlanet>? DwarfPlanets { get; set; }
+    public Dictionary<string, Planet>? Planets { get; set; }
 
     [JsonPropertyOrder(6)]
-    public Dictionary<string, Satelite>? Satelites { get; set; }
+    public Dictionary<string, DwarfPlanet>? DwarfPlanets { get; set; }
 
     [JsonPropertyOrder(7)]
-    public Dictionary<string, Asteroid>? Asteroids { get; set; }
+    public Dictionary<string, Satelite>? Satelites { get; set; }
 
     [JsonPropertyOrder(8)]
+    public Dictionary<string, Asteroid>? Asteroids { get; set; }
+
+    [JsonPropertyOrder(9)]
     public Dictionary<string, Comet>? Comets { get; set; }
 
     #region Constructors
@@ -85,6 +88,7 @@ public class StandardStellarMap : IStellarMap
         if (foundObjectType is null) return;
 
         foundObjectType
+            .When(StellarObjectType.StarSystem).Then(() => StarSystems ??= new())
             .When(StellarObjectType.Star).Then(() => Stars ??= new())
             .When(StellarObjectType.Planet).Then(() => Planets ??= new())
             .When(StellarObjectType.DwarfPlanet).Then(() => DwarfPlanets ??= new())
@@ -102,6 +106,7 @@ public class StandardStellarMap : IStellarMap
 
         Dictionary<string, T>? dictionary = default;
         foundObjectType
+                .When(StellarObjectType.StarSystem).Then(() => dictionary = StarSystems as Dictionary<string, T>)
                 .When(StellarObjectType.Star).Then(() => dictionary = Stars as Dictionary<string, T>)
                 .When(StellarObjectType.Planet).Then(() => dictionary = Planets as Dictionary<string, T>)
                 .When(StellarObjectType.DwarfPlanet).Then(() => dictionary = DwarfPlanets as Dictionary<string, T>)
@@ -120,7 +125,7 @@ public class StandardStellarMap : IStellarMap
     public override bool Equals(object? obj) => Equals(this, obj as IStellarMap);
 
     public int GetHashCode([DisallowNull] IStellarMap obj)
-        => HashCode.Combine(Name, MetaData, Stars, Planets, DwarfPlanets, Satelites, Asteroids, Comets);
+        => Name.GetHashCode() ^ HashCode.Combine(MetaData, StarSystems, Stars, Planets, DwarfPlanets, Satelites, Asteroids, Comets);
 
     public override int GetHashCode() => GetHashCode(this);
     #endregion

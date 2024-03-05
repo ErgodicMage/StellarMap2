@@ -1,5 +1,5 @@
 ## To Do
-* Utility application to build realistic Solar System and save in json. Add json as resource to Core with deserialization for common use.
+* Add Physical Stars and Star Systems
 
 
 ## Done
@@ -31,3 +31,5 @@
 * ~~Move physical properties from StellarObject Properties into it's own class~~
 * ~~PhysicalProperties use init only properties~~
 * ~~Add back in Dwarf Planets~~
+* ~~Utility application to build realistic Solar System and save in json. Add json as resource to Core with deserialization for common use.~~
+* ~~Add StarSystem to group gravitational bound stars~~

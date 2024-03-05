@@ -1,6 +1,4 @@
-﻿using StellarMap.Core;
-
-namespace StellarMap.PhysicalStellarBuilder;
+﻿namespace StellarMap.PhysicalStellarBuilder;
 
 public static class BuildStars
 {
