@@ -10,4 +10,19 @@ public static class BuildStarSystems
             .Build();
         return solarsystem;
     }
+
+    public static Result<StarSystem> AlphsCentauri(IStellarMap map)
+    {
+        Star[] stars =
+        {
+            BuildStars.ProximaCentauri(map),
+            BuildStars.RigilKentaurus(map),
+            BuildStars.Toliman(map)
+        };
+
+        var solarsystem = StarSystemBuilder.Create("Alpha Centauri", MapIdentifierGenerator.Instance, map)
+            .AddStars(stars)
+            .Build();
+        return solarsystem;
+    }
 }
