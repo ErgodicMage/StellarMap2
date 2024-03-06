@@ -43,7 +43,7 @@ public class StarSystemBuilder
         return this;
     }
 
-    public StarSystemBuilder AddPlanets(ICollection<Star> stars)
+    public StarSystemBuilder AddStars(ICollection<Star> stars)
     {
         if (!_result.Success) return this;
         _result = GuardClause.Null(stars);
