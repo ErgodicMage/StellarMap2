@@ -4,6 +4,11 @@ namespace StellarMap.Core;
 
 public static class StellarObjectBuilder
 {
+    public static StarSystemBuilder CreateStarSystem(string name, IIdentifierGenerator generator, IStellarMap map)
+    => StarSystemBuilder.Create(name, generator, map);
+    public static StarSystemBuilder CreateStarSystem(string name, Identifier identifier, IStellarMap map)
+        => StarSystemBuilder.Create(name, identifier, map);
+
     public static StarBuilder CreateStar(string name, IIdentifierGenerator generator, IStellarMap map)
         => StarBuilder.Create(name, generator, map);
     public static StarBuilder CreateStar(string name, Identifier identifier, IStellarMap map)
