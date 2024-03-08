@@ -15,7 +15,7 @@ public class StarSystemBuilder
     public static StarSystemBuilder Create(string name, IIdentifierGenerator generator, IStellarMap map)
     {
         StarSystemBuilder starsystemBuilder = new();
-        Identifier identifier = generator.GenerateIdentifier(StellarObjectType.Star, map);
+        Identifier identifier = generator.GenerateIdentifier(StellarObjectType.StarSystem, map);
         starsystemBuilder._starsystem = new(name, identifier, map);
         return starsystemBuilder;
     }

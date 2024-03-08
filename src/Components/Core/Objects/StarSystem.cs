@@ -21,7 +21,7 @@ public class StarSystem : StellarObject, IStellarObject, IEqualityComparer<StarS
 
     protected override Result<IDictionary<string, Identifier>> GetIdentifiers<T>()
     {
-        if (typeof(T).Name == nameof(Satelite) && Stars is not null)
+        if (typeof(T).Name == nameof(Star) && Stars is not null)
             return Stars!;
         return Result.Error(string.Empty);
     }

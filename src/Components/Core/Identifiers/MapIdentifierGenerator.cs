@@ -15,6 +15,7 @@ public sealed class MapIdentifierGenerator : IIdentifierGenerator
 
         int count = 0;
         type
+            .When(StellarObjectType.StarSystem).Then(() => count = map?.StarSystems is null ? 0 : map.StarSystems.Count)
             .When(StellarObjectType.Star).Then(() => count = map?.Stars is null ? 0 : map.Stars.Count)
             .When(StellarObjectType.Planet).Then(() => count = map?.Planets is null ? 0 : map.Planets.Count)
             .When(StellarObjectType.DwarfPlanet).Then(() => count = map?.DwarfPlanets is null ? 0 : map.DwarfPlanets.Count)

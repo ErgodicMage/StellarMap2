@@ -1,5 +1,5 @@
 {
-  "Name": "Sol",
+  "Name": "Nearest Stars",
   "MetaData": {
     "Map": "StandardStellarMap",
     "Version": "0.1",
@@ -9,7 +9,31 @@
     "Github": "https://github.com/ErgodicMage/StellarMap2",
     "Date": "3/7/2024"
   },
-  "StarSystems": null,
+  "StarSystems": {
+    "StarSystem-00001": {
+      "Name": "Alpha Centauri",
+      "Identifier": {
+        "Id": "StarSystem-00001"
+      },
+      "ParentIdentifier": {
+        "Id": ""
+      },
+      "ObjectType": "StarSystem",
+      "Properties": {},
+      "PhysicalProperties": null,
+      "Stars": {
+        "Proxima Centauri": {
+          "Id": "Star-00002"
+        },
+        "Rigil Kentaurus": {
+          "Id": "Star-00003"
+        },
+        "Toliman": {
+          "Id": "Star-00004"
+        }
+      }
+    }
+  },
   "Stars": {
     "Star-00001": {
       "Name": "Sol",
@@ -131,6 +155,98 @@
           "Id": "Comet-00007"
         }
       }
+    },
+    "Star-00002": {
+      "Name": "Proxima Centauri",
+      "Identifier": {
+        "Id": "Star-00002"
+      },
+      "ParentIdentifier": {
+        "Id": "StarSystem-00001"
+      },
+      "ObjectType": "Star",
+      "Properties": {
+        "Description": "The closest star to Sol.",
+        "Designation": "Alf Cen C, Alpha Centauri C, V645 Centauri, GJ 551, HIP 70890",
+        "AlternativeName": "Alpha Centauri C",
+        "AbsoluteMagnitude": "4.83",
+        "Luminosity": "3.828E26 W",
+        "Sinbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=V645\u002BCen"
+      },
+      "PhysicalProperties": {
+        "Mass": 2.48E+29,
+        "Radius": 107277,
+        "Dimensions": "",
+        "Area": 0,
+        "Volume": 0,
+        "Flattening": 0,
+        "Density": 0,
+        "Gravity": 0,
+        "EscapeVelocity": 0
+      },
+      "StellarClass": "M5.5Ve",
+      "Planets": {
+        "Proxima Centauri d": {
+          "Id": "Planet-00009"
+        },
+        "Proxima Centauri b": {
+          "Id": "Planet-00010"
+        },
+        "Proxima Centauri c": {
+          "Id": "Planet-00011"
+        }
+      },
+      "DwarfPlanets": null,
+      "Asteroids": null,
+      "Comets": null
+    },
+    "Star-00003": {
+      "Name": "Rigil Kentaurus",
+      "Identifier": {
+        "Id": "Star-00003"
+      },
+      "ParentIdentifier": {
+        "Id": "StarSystem-00001"
+      },
+      "ObjectType": "Star",
+      "Properties": {
+        "Description": "Largest star in Alpha Centauri.",
+        "Designation": "alf Cen A, Gl 559 A, Hip 71863",
+        "AlternativeName": "Alpha Centauri A",
+        "Sinbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=TYC\u002B9007-5849-1"
+      },
+      "PhysicalProperties": null,
+      "StellarClass": "G2V",
+      "Planets": {
+        "Alfa Centauri A b": {
+          "Id": "Planet-00012"
+        }
+      },
+      "DwarfPlanets": null,
+      "Asteroids": null,
+      "Comets": null
+    },
+    "Star-00004": {
+      "Name": "Toliman",
+      "Identifier": {
+        "Id": "Star-00004"
+      },
+      "ParentIdentifier": {
+        "Id": "StarSystem-00001"
+      },
+      "ObjectType": "Star",
+      "Properties": {
+        "Description": "Second largest star in Alpha Centauri.",
+        "Designation": "alf Cen B, Gl 559 B, Hip 71861",
+        "AlternativeName": "Alpha Centauri B",
+        "Sinbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=TYC\u002B9007-5848-1"
+      },
+      "PhysicalProperties": null,
+      "StellarClass": "K1V",
+      "Planets": null,
+      "DwarfPlanets": null,
+      "Asteroids": null,
+      "Comets": null
     }
   },
   "Planets": {
@@ -457,6 +573,62 @@
           "Id": "Satelite-00034"
         }
       }
+    },
+    "Planet-00009": {
+      "Name": "Proxima Centauri d",
+      "Identifier": {
+        "Id": "Planet-00009"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00002"
+      },
+      "ObjectType": "Planet",
+      "Properties": {},
+      "PhysicalProperties": null,
+      "Satelites": null
+    },
+    "Planet-00010": {
+      "Name": "Proxima Centauri b",
+      "Identifier": {
+        "Id": "Planet-00010"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00002"
+      },
+      "ObjectType": "Planet",
+      "Properties": {},
+      "PhysicalProperties": null,
+      "Satelites": null
+    },
+    "Planet-00011": {
+      "Name": "Proxima Centauri c",
+      "Identifier": {
+        "Id": "Planet-00011"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00002"
+      },
+      "ObjectType": "Planet",
+      "Properties": {
+        "Description": "candidate"
+      },
+      "PhysicalProperties": null,
+      "Satelites": null
+    },
+    "Planet-00012": {
+      "Name": "Alfa Centauri A b",
+      "Identifier": {
+        "Id": "Planet-00012"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00003"
+      },
+      "ObjectType": "Planet",
+      "Properties": {
+        "Description": "candidate"
+      },
+      "PhysicalProperties": null,
+      "Satelites": null
     }
   },
   "DwarfPlanets": {

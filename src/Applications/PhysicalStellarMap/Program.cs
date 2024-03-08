@@ -9,6 +9,7 @@ var dataDir = config["DataPath"];
 
 BuildEarthMap(dataDir!);
 BuildSolMap(dataDir!);
+BuildNearestStarsMap(dataDir!);
 
 void BuildEarthMap(string folder)
 {
@@ -42,6 +43,23 @@ void BuildSolMap(string folder)
     }
 
     SaveMap(folder, "PhysicalSol.json", map);
+}
+
+void BuildNearestStarsMap(string folder)
+{
+    Console.WriteLine("Creating nearest stars");
+
+    StandardStellarMap map = new("Nearest Stars");
+    map.DefaultMetaData();
+
+    var result = BuildNearestStars.NearestStars(map);
+    if (!result.Success)
+    {
+        Console.WriteLine($"Could not build nearest stars map {result.ErrorMessage}");
+        return;
+    }
+
+    SaveMap(folder, "PhysicalNearestStars.json", map);
 }
 
 

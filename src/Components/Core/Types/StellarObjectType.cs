@@ -20,7 +20,7 @@ public abstract class StellarObjectType : SmartEnum<StellarObjectType>
     private sealed class StarSystemType() : StellarObjectType(nameof(StarSystem), 1)
     {
         public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new Star(name, identifier, map);
+            => new StarSystem(name, identifier, map);
     }
 
     private sealed class StarType() : StellarObjectType(nameof(Star), 2)

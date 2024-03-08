@@ -6,6 +6,7 @@
   <ItemGroup>
     <EmbeddedResource Include="..\..\..\Data\PhysicalEarth.json" />
     <EmbeddedResource Include="..\..\..\Data\PhysicalSol.json" />
+    <EmbeddedResource Include="..\..\..\Data\PhysicalNearestStars.json" />
   </ItemGroup>
   
   <ItemGroup>
