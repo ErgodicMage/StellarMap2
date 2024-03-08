@@ -142,4 +142,34 @@ public static class BuildStars
 
         return toliman;
     }
+
+    public static Result<Star> BanardsStar(IStellarMap map)
+    {
+
+        var planet = PlanetBuilder.Create("Banard's Star b",MapIdentifierGenerator.Instance, map)
+            .WithDescription("refuted")
+            .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.SUPEREARTH)
+            .Build();
+
+
+        var banardsstar = StarBuilder.Create("Banard's Star", MapIdentifierGenerator.Instance, map)
+            .WithProperty(PropertiesConstant.DESIGNATION, "V2500 Ophiuchi, BD+04°3561a, GJ 699, HIP 87937")
+            .WithProperty(PropertiesConstant.ALTERNATIVENAME, "Proxima Ophiuchi")
+            .WithProperty(PropertiesConstant.SINBAD, "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=BD%2B043561a")
+            .AsStellarClass("M4.0V")
+            .AddPlanet(planet)
+            .Build();
+
+        return banardsstar;
+    }
+
+    public static Result<Star> WISE08550714(IStellarMap map)
+    {
+        var wise = StarBuilder.Create("WISE 0855−0714", MapIdentifierGenerator.Instance, map)
+            .WithDescription("sub-brown dwarf")
+            .WithProperty(PropertiesConstant.DESIGNATION, "WISE 0855−0714, WISEA J085510.74-071442.5, GJ 11286")
+            .AsStellarClass("Y4V")
+            .Build();
+        return wise;
+    }
 }

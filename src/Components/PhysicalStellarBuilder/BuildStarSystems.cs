@@ -25,4 +25,20 @@ public static class BuildStarSystems
             .Build();
         return alphacentauri;
     }
+
+    public static Result<StarSystem> Luhman16(IStellarMap map)
+    {
+        Star[] stars =
+        {
+            StarBuilder.Create("Luhman 16A", MapIdentifierGenerator.Instance, map).AsStellarClass("L").Build(),
+            StarBuilder.Create("Luhman 16B", MapIdentifierGenerator.Instance, map).AsStellarClass("T").Build()
+        };
+
+        var luhman16 = StarSystemBuilder.Create("Luhman 16", MapIdentifierGenerator.Instance, map)
+            .WithDescription("Star system of brown dwarfs")
+            .WithProperty(PropertiesConstant.DESIGNATION, "LUH 16, Luhman–WISE 1, WISE J104915.57−531906.1, GJ 11551")
+            .WithProperty(PropertiesConstant.SINBAD, "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=WISE+J104915.57-531906.1")
+            .Build();
+        return luhman16;
+    }
 }
