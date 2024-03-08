@@ -20,9 +20,9 @@ public static class BuildStarSystems
             BuildStars.Toliman(map)
         };
 
-        var solarsystem = StarSystemBuilder.Create("Alpha Centauri", MapIdentifierGenerator.Instance, map)
+        var alphacentauri = StarSystemBuilder.Create("Alpha Centauri", MapIdentifierGenerator.Instance, map)
             .AddStars(stars)
             .Build();
-        return solarsystem;
+        return alphacentauri;
     }
 }

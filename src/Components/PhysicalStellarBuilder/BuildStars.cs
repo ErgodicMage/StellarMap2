@@ -94,7 +94,7 @@ public static class BuildStars
         };
 
 
-        var sol = StarBuilder.Create("Proxima Centauri", MapIdentifierGenerator.Instance, map)
+        var proximacentauri = StarBuilder.Create("Proxima Centauri", MapIdentifierGenerator.Instance, map)
             .WithDescription("The closest star to Sol.")
             .WithProperty(PropertiesConstant.DESIGNATION, "Alf Cen C, Alpha Centauri C, V645 Centauri, GJ 551, HIP 70890")
             .WithProperty(PropertiesConstant.ALTERNATIVENAME, "Alpha Centauri C")
@@ -106,7 +106,7 @@ public static class BuildStars
             .AddPlanets(planets)
             .Build();
 
-        return sol;
+        return proximacentauri;
     }
 
     public static Result<Star> RigilKentaurus(IStellarMap map)
@@ -118,7 +118,7 @@ public static class BuildStars
         };
 
 
-        var sol = StarBuilder.Create("Rigil Kentaurus", MapIdentifierGenerator.Instance, map)
+        var rigilkentaurus = StarBuilder.Create("Rigil Kentaurus", MapIdentifierGenerator.Instance, map)
             .WithDescription("Largest star in Alpha Centauri.")
             .WithProperty(PropertiesConstant.DESIGNATION, "alf Cen A, Gl 559 A, Hip 71863")
             .WithProperty(PropertiesConstant.ALTERNATIVENAME, "Alpha Centauri A")
@@ -127,12 +127,12 @@ public static class BuildStars
             .AddPlanets(planets)
             .Build();
 
-        return sol;
+        return rigilkentaurus;
     }
 
     public static Result<Star> Toliman(IStellarMap map)
     {
-        var sol = StarBuilder.Create("Toliman", MapIdentifierGenerator.Instance, map)
+        var toliman = StarBuilder.Create("Toliman", MapIdentifierGenerator.Instance, map)
             .WithDescription("Second largest star in Alpha Centauri.")
             .WithProperty(PropertiesConstant.DESIGNATION, "alf Cen B, Gl 559 B, Hip 71861")
             .WithProperty(PropertiesConstant.ALTERNATIVENAME, "Alpha Centauri B")
@@ -140,6 +140,6 @@ public static class BuildStars
             .AsStellarClass("K1V")
             .Build();
 
-        return sol;
+        return toliman;
     }
 }
