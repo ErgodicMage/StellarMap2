@@ -5,19 +5,18 @@ public class PlanetBuilder
     protected Result _result = Result.Ok();
     protected Planet _planet;
 
-    public static PlanetBuilder Create(string name, Identifier identifier, IStellarMap map, bool isDwarf = false)
+    public static PlanetBuilder Create(string name, Identifier identifier, IStellarMap map)
     {
         PlanetBuilder planetBuilder = new();
-        planetBuilder._planet = new(name, identifier, map, isDwarf);
+        planetBuilder._planet = new(name, identifier, map);
         return planetBuilder;
     }
 
-    public static PlanetBuilder Create(string name, IIdentifierGenerator generator, IStellarMap map, 
-        bool isDwarf = false)
+    public static PlanetBuilder Create(string name, IIdentifierGenerator generator, IStellarMap map)
     {
         PlanetBuilder planetBuilder = new();
         Identifier identifier = generator.GenerateIdentifier(StellarObjectType.Planet, map);
-        planetBuilder._planet = new(name, identifier, map, isDwarf);
+        planetBuilder._planet = new(name, identifier, map);
         return planetBuilder;
     }
 

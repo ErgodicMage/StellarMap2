@@ -12,7 +12,7 @@ public class Planet : StellarObject, IStellarObject, IEqualityComparer<Planet>
     #region Constructors
     public Planet() { }
 
-    public Planet(string name, Identifier identifier, IStellarMap map, bool isDwarf = false) 
+    public Planet(string name, Identifier identifier, IStellarMap map) 
         : base(name, identifier, map, StellarObjectType.Planet) 
     { }
     #endregion
@@ -27,7 +27,6 @@ public class Planet : StellarObject, IStellarObject, IEqualityComparer<Planet>
             return Satelites!;
         return Result.Error(string.Empty);
     }
-
     #endregion
 
     #region Add
