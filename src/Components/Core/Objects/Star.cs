@@ -42,11 +42,11 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
     public Result<Comet> GetComet(Identifier identifier) => Get<Comet>(identifier);
     public Result<Comet> GetComet(string name) => Get<Comet>(name);
 
-    protected override Result<IDictionary<string, Identifier>> GetIdentifiers<T>()
+    protected override Result<Dictionary<string, Identifier>> GetIdentifiers<T>()
     {
         var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
         if (foundObjectType is null)
-            return Result.Error($"Can not find StellarObjectTypr for {nameof(T)}");
+            return Result.Error($"Can not find StellarObjectType for {nameof(T)}");
 
         Dictionary<string, Identifier>? dictionary = default;
         foundObjectType

@@ -19,7 +19,7 @@ public class StarSystem : StellarObject, IStellarObject, IEqualityComparer<StarS
     public Result<Star> GetStar(Identifier identifier) => Get<Star>(identifier);
     public Result<Star> GetStar(string name) => Get<Star>(name);
 
-    protected override Result<IDictionary<string, Identifier>> GetIdentifiers<T>()
+    protected override Result<Dictionary<string, Identifier>> GetIdentifiers<T>()
     {
         if (typeof(T).Name == nameof(Star) && Stars is not null)
             return Stars!;
