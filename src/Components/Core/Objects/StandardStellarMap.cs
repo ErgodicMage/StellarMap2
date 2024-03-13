@@ -87,6 +87,8 @@ public class StandardStellarMap : IStellarMap
         var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
         if (!foundObjectType.Success) return;
 
+        // can not use switch pattern matching expressions because
+        // StarSystems ??= new returns a different type than Stars ?? = new() so it doesn't know what to "return"
         switch (foundObjectType.Value.Name)
         {
             case StellarObjectType.STARSYSTEM : StarSystems ??= new(); break;
@@ -97,19 +99,6 @@ public class StandardStellarMap : IStellarMap
             case StellarObjectType.ASTEROID: Asteroids ??= new(); break;
             case StellarObjectType.COMET : Comets ??= new(); break;
         }
-
-        // Seriously MS, I have to go back to regular style switch because pattern matching gives an error on this!
-        //_ = foundObjectType.Value.Name switch
-        //{
-        //    StellarObjectType.STARSYSTEM => StarSystems ??= new(),
-        //    StellarObjectType.STAR => Stars ??= new(),
-        //    StellarObjectType.PLANET => Planets ??= new(),
-        //    StellarObjectType.DWARFPLANET => DwarfPlanets ??= new(),
-        //    StellarObjectType.SATELITE => Satelites ??= new(),
-        //    StellarObjectType.ASTEROID => Asteroids ??= new(),
-        //    StellarObjectType.COMET => Comets ??= new(),
-        //    _ => () => { }
-        //};
     }
 
     protected virtual Result<Dictionary<string, T>> GetDictionary<T>() where T : IStellarObject
