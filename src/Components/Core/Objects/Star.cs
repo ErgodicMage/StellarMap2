@@ -45,18 +45,17 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
     protected override Result<IDictionary<string, Identifier>> GetIdentifiers<T>()
     {
         var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
-        if (foundObjectType is null)
-            return Result.Error($"Can not find StellarObjectTypr for {nameof(T)}");
+        if (!foundObjectType.Success)
+            return Result.Error(foundObjectType.ErrorMessage);
 
-        Dictionary<string, Identifier>? dictionary = default;
-        foundObjectType
-                .When(StellarObjectType.Planet).Then(() => dictionary = Planets)
-                .When(StellarObjectType.DwarfPlanet).Then(() => dictionary = DwarfPlanets)
-                .When(StellarObjectType.Asteroid).Then(() => dictionary = Asteroids)
-                .When(StellarObjectType.Comet).Then(() => dictionary = Comets)
-                .Default(() => { });
-
-        return dictionary!;
+        return foundObjectType.Value.Name switch
+        {
+            StellarObjectType.PLANET => Planets,
+            StellarObjectType.DWARFPLANET => DwarfPlanets,
+            StellarObjectType.ASTEROID => Asteroids,
+            StellarObjectType.COMET => Comets,
+            _ => Result.Error($"{foundObjectType.Value.Name} is not in a Star")
+        }; ;
     }
     #endregion
 
@@ -76,14 +75,16 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
     protected override void CreateIdentifiers<T>()
     {
         var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
-        if (foundObjectType is null) return;
+        if (!foundObjectType.Success)
+            return;
 
-        foundObjectType
-            .When(StellarObjectType.Planet).Then(() => Planets ??= new())
-            .When(StellarObjectType.DwarfPlanet).Then(() => DwarfPlanets ??= new())
-            .When(StellarObjectType.Asteroid).Then(() => Asteroids ??= new())
-            .When(StellarObjectType.Comet).Then(() => Comets ??= new())
-            .Default(() => { });
+        _ = foundObjectType.Value.Name switch
+        {
+            StellarObjectType.PLANET => Planets ??= new(),
+            StellarObjectType.DWARFPLANET => DwarfPlanets ??= new(),
+            StellarObjectType.ASTEROID => Asteroids ??= new(),
+            StellarObjectType.COMET => Comets ??= new(),
+        };
     }
     #endregion
 

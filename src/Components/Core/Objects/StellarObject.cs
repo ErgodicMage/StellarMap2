@@ -19,7 +19,6 @@ public abstract class StellarObject : IStellarObject
     public Identifier ParentIdentifier { get; set; } = Identifier.NoIdentifier;
     
     [JsonPropertyOrder(4)]
-    [JsonConverter(typeof(StellarObjectTypeConverter))]
     public StellarObjectType ObjectType { get; init;  }
 
     [JsonPropertyOrder(5)]
@@ -143,7 +142,7 @@ public abstract class StellarObject : IStellarObject
         if (!(x.ObjectType is null && y.ObjectType is null))
         {
             if (x.ObjectType is null || y.ObjectType is null) return false;
-            if (x.ObjectType.Value != y.ObjectType.Value) return false;
+            if (x.ObjectType != y.ObjectType) return false;
         }
 
         if (!(x.PhysicalProperties is null && y.PhysicalProperties is null))

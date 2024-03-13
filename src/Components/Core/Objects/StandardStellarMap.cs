@@ -85,37 +85,50 @@ public class StandardStellarMap : IStellarMap
     protected virtual void CreateDictionary<T>() where T : IStellarObject
     {
         var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
-        if (foundObjectType is null) return;
+        if (!foundObjectType.Success) return;
 
-        foundObjectType
-            .When(StellarObjectType.StarSystem).Then(() => StarSystems ??= new())
-            .When(StellarObjectType.Star).Then(() => Stars ??= new())
-            .When(StellarObjectType.Planet).Then(() => Planets ??= new())
-            .When(StellarObjectType.DwarfPlanet).Then(() => DwarfPlanets ??= new())
-            .When(StellarObjectType.Satelite).Then(() => Satelites ??= new())
-            .When(StellarObjectType.Asteroid).Then(() => Asteroids ??= new())
-            .When(StellarObjectType.Comet).Then(() => Comets ??= new())
-            .Default(() => { });
+        switch (foundObjectType.Value.Name)
+        {
+            case StellarObjectType.STARSYSTEM : StarSystems ??= new(); break;
+            case StellarObjectType.STAR : Stars ??= new(); break;
+            case StellarObjectType.PLANET : Planets ??= new(); break;
+            case StellarObjectType.DWARFPLANET : DwarfPlanets ??= new(); break;
+            case StellarObjectType.SATELITE : Satelites ??= new(); break;
+            case StellarObjectType.ASTEROID: Asteroids ??= new(); break;
+            case StellarObjectType.COMET : Comets ??= new(); break;
+        }
+
+        // Seriously MS, I have to go back to regular style switch because pattern matching gives an error on this!
+        //_ = foundObjectType.Value.Name switch
+        //{
+        //    StellarObjectType.STARSYSTEM => StarSystems ??= new(),
+        //    StellarObjectType.STAR => Stars ??= new(),
+        //    StellarObjectType.PLANET => Planets ??= new(),
+        //    StellarObjectType.DWARFPLANET => DwarfPlanets ??= new(),
+        //    StellarObjectType.SATELITE => Satelites ??= new(),
+        //    StellarObjectType.ASTEROID => Asteroids ??= new(),
+        //    StellarObjectType.COMET => Comets ??= new(),
+        //    _ => () => { }
+        //};
     }
 
     protected virtual Result<Dictionary<string, T>> GetDictionary<T>() where T : IStellarObject
     {
         var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
-        if (foundObjectType is null)
-            return Result.Error($"Can not find StellarObjectTypr for {nameof(T)}");
+        if (!foundObjectType.Success)
+            return Result.Error(foundObjectType.ErrorMessage);
 
-        Dictionary<string, T>? dictionary = default;
-        foundObjectType
-                .When(StellarObjectType.StarSystem).Then(() => dictionary = StarSystems as Dictionary<string, T>)
-                .When(StellarObjectType.Star).Then(() => dictionary = Stars as Dictionary<string, T>)
-                .When(StellarObjectType.Planet).Then(() => dictionary = Planets as Dictionary<string, T>)
-                .When(StellarObjectType.DwarfPlanet).Then(() => dictionary = DwarfPlanets as Dictionary<string, T>)
-                .When(StellarObjectType.Satelite).Then(() => dictionary = Satelites as Dictionary<string, T>)
-                .When(StellarObjectType.Asteroid).Then(() => dictionary = Asteroids as Dictionary<string, T>)
-                .When(StellarObjectType.Comet).Then(() => dictionary = Comets as Dictionary<string, T>)
-                .Default(() => { });
-
-        return dictionary!;
+        return foundObjectType.Value.Name switch
+        {
+            StellarObjectType.STARSYSTEM => (StarSystems as Dictionary<string, T>)!,
+            StellarObjectType.STAR => (Stars as Dictionary<string, T>)!,
+            StellarObjectType.PLANET => (Planets as Dictionary<string, T>)!,
+            StellarObjectType.DWARFPLANET => (DwarfPlanets as Dictionary<string, T>)!,
+            StellarObjectType.SATELITE => (Satelites as Dictionary<string, T>)!,
+            StellarObjectType.ASTEROID => (Asteroids as Dictionary<string, T>)!,
+            StellarObjectType.COMET => (Comets as Dictionary<string, T>)!,
+            _ => Result.Error($"{foundObjectType.Value.Name} is not in a StallarMap")
+        };
     }
     #endregion
 

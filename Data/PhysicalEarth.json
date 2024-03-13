@@ -7,7 +7,7 @@
     "Email": "ErgodicMage@gmail.com",
     "License": "MIT License, 2024",
     "Github": "https://github.com/ErgodicMage/StellarMap2",
-    "Date": "3/7/2024"
+    "Date": "3/12/2024"
   },
   "StarSystems": null,
   "Stars": null,
@@ -20,7 +20,9 @@
       "ParentIdentifier": {
         "Id": ""
       },
-      "ObjectType": "Planet",
+      "ObjectType": {
+        "Name": "Planet"
+      },
       "Properties": {
         "Description": "The 3nd planet in the Solar System",
         "Designation": "SOL-03",
@@ -54,7 +56,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00001"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "Earth\u0027s moon",
         "AlternativeName": "Luna"

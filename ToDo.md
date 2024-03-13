@@ -1,4 +1,5 @@
 ## To Do
+* Replace StellarObjectType use of Ardalis SmartEnum with custom class
 * Add Physical Stars and Star Systems
 
 

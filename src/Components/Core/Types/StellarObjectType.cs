@@ -1,65 +1,54 @@
-﻿using Ardalis.SmartEnum.SystemTextJson;
+﻿using System.Threading;
 
 namespace StellarMap.Core;
 
-public abstract class StellarObjectType : SmartEnum<StellarObjectType>
+public record StellarObjectType(string Name)
 {
-    public static readonly StellarObjectType StarSystem = new StarSystemType();
-    public static readonly StellarObjectType Star = new StarType();
-    public static readonly StellarObjectType Planet = new PlanetType();
-    public static readonly StellarObjectType DwarfPlanet = new DwarfPlanetType();
-    public static readonly StellarObjectType Satelite = new SateliteType();
-    public static readonly StellarObjectType Asteroid = new AsteroidType();
-    public static readonly StellarObjectType Comet = new CometType();
+    public const string StellarBody = "StellarBody";
+    public const string STARSYSTEM = "StarSystem";
+    public const string STAR = "Star";
+    public const string PLANET = "Planet";
+    public const string DWARFPLANET = "DwarfPlanet";
+    public const string SATELITE = "Satelite";
+    public const string ASTEROID = "Asteroid";
+    public const string COMET = "Comet";
 
-    public abstract StellarObject CreateObject(string name, Identifier identifier, IStellarMap map);
+    public static readonly StellarObjectType StarSystem = Register(new StarSystemType());
+    public static readonly StellarObjectType Star = Register(new StarType());
+    public static readonly StellarObjectType Planet = Register(new PlanetType());
+    public static readonly StellarObjectType DwarfPlanet = Register(new DwarfPlanetType());
+    public static readonly StellarObjectType Satelite = Register(new SateliteType());
+    public static readonly StellarObjectType Asteroid = Register(new AsteroidType());
+    public static readonly StellarObjectType Comet = Register(new CometType());
 
-    protected StellarObjectType(string name, int value) : base(name, value)
-    { }
+    private static Dictionary<string, StellarObjectType> _objectTypes;
 
-    private sealed class StarSystemType() : StellarObjectType(nameof(StarSystem), 1)
+    public static StellarObjectType Register(StellarObjectType type)
     {
-        public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new StarSystem(name, identifier, map);
+        _objectTypes ??= new();
+        if (!_objectTypes.ContainsKey(type.Name))
+            _objectTypes.Add(type.Name, type);
+        return type;
     }
 
-    private sealed class StarType() : StellarObjectType(nameof(Star), 2)
+    public static Result<StellarObjectType> FromName(string name)
     {
-        public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new Star(name, identifier, map);
+        Result result = GuardClause.NullOrWhiteSpace(name);
+        if (!result.Success) return result;
+
+        if (_objectTypes.TryGetValue(name, out var objectType))
+            return objectType;
+        
+        return Result.Error($"{name} is not a StellarObjectType");
     }
 
-    private sealed class PlanetType() : StellarObjectType(nameof(Planet), 3)
-    {
-        public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new Planet(name, identifier, map);
-    }
-
-    private sealed class DwarfPlanetType() : StellarObjectType(nameof(DwarfPlanet), 4)
-    {
-        public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new DwarfPlanet(name, identifier, map);
-    }
-
-    private sealed class SateliteType() : StellarObjectType(nameof(Satelite), 5)
-    {
-        public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new Satelite(name, identifier, map);
-    }
-
-    private sealed class AsteroidType() : StellarObjectType(nameof(Asteroid), 6)
-    {
-        public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new Asteroid(name, identifier, map);
-    }
-
-    private sealed class CometType() : StellarObjectType(nameof(Comet), 7)
-    {
-        public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new Comet(name, identifier, map);
-    }
+    private record StarSystemType() : StellarObjectType(STARSYSTEM) { }
+    private record StarType() : StellarObjectType(STAR) { }
+    private record PlanetType() : StellarObjectType(PLANET) { }
+    private record DwarfPlanetType() : StellarObjectType(DWARFPLANET) { }
+    private record SateliteType() : StellarObjectType(SATELITE) { }
+    private record AsteroidType() : StellarObjectType(ASTEROID) { }
+    private record CometType() : StellarObjectType(COMET) { }
 }
 
-public class StellarObjectTypeConverter : SmartEnumNameConverter<StellarObjectType, int>
-{
-}
+

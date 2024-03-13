@@ -18,7 +18,7 @@ public static class BuilderCommonFunctionality
 
     public static Result<T> Build<T>(T stellarObject) where T : IStellarObject
     {
-        var result = GuardClause.Null(stellarObject).Null(stellarObject.Map);
+        var result = GuardClause.Null(stellarObject).Null(stellarObject?.Map);
         if (!result.Success) return result;
 
         result = stellarObject.Map.Add<T>(stellarObject);
@@ -27,7 +27,7 @@ public static class BuilderCommonFunctionality
 
     public static Result Add<T>(StellarObject parent, T objToAdd) where T : IStellarObject
     {
-        var result = GuardClause.Null(objToAdd).Null(objToAdd.Map);
+        var result = GuardClause.Null(objToAdd).Null(objToAdd?.Map);
         if (!result.Success) return result;
 
         return parent.Add<T>(objToAdd);
