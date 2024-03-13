@@ -12,7 +12,7 @@ public class StandardStellarMap : IStellarMap
     public Dictionary<string, string> MetaData { get; set; }
 
     [JsonPropertyOrder(3)]
-    public Dictionary<string, StarSystem> StarSystems { get; set; }
+    public Dictionary<string, StarSystem>? StarSystems { get; set; }
 
     [JsonPropertyOrder(4)]
     public Dictionary<string, Star>? Stars { get; set; }
@@ -125,7 +125,8 @@ public class StandardStellarMap : IStellarMap
     public override bool Equals(object? obj) => Equals(this, obj as IStellarMap);
 
     public int GetHashCode([DisallowNull] IStellarMap obj)
-        => Name.GetHashCode() ^ HashCode.Combine(MetaData, StarSystems, Stars, Planets, DwarfPlanets, Satelites, Asteroids, Comets);
+        => HashCode.Combine(HashCode.Combine(obj.Name.GetHashCode(), obj.MetaData), 
+            obj.StarSystems, obj.Stars, obj.Planets, obj.DwarfPlanets, obj.Satelites, obj.Asteroids, obj.Comets);
 
     public override int GetHashCode() => GetHashCode(this);
     #endregion
