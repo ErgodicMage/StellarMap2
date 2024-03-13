@@ -13,13 +13,13 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
     public Dictionary<string, Identifier>? Planets {get; set; }
 
     [JsonPropertyOrder(13)]
-    public Dictionary<string, Identifier> DwarfPlanets { get; set; }
+    public Dictionary<string, Identifier>? DwarfPlanets { get; set; }
 
     [JsonPropertyOrder(14)]
-    public Dictionary<string, Identifier> Asteroids {get; set; }
+    public Dictionary<string, Identifier>? Asteroids {get; set; }
 
     [JsonPropertyOrder(15)]
-    public Dictionary<string, Identifier> Comets {get; set; }
+    public Dictionary<string, Identifier>? Comets {get; set; }
 
     #endregion
 
