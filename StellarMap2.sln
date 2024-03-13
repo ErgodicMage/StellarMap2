@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhysicalStellarMap", "src\A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StellarSystems", "StellarSystems", "{47EFE9DC-7325-46EB-85E1-2295CC19D19B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Progression", "src\StellarSystems\Progression\Progression.csproj", "{A071D32B-96D8-4724-802E-344780E73CD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Progression", "src\StellarSystems\Progression\Progression.csproj", "{A071D32B-96D8-4724-802E-344780E73CD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressionTests", "tests\ProgressionTests\ProgressionTests.csproj", "{D7A36E14-521F-4CE4-A52F-BBAB9AAB4FA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{A071D32B-96D8-4724-802E-344780E73CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A071D32B-96D8-4724-802E-344780E73CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A071D32B-96D8-4724-802E-344780E73CD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7A36E14-521F-4CE4-A52F-BBAB9AAB4FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7A36E14-521F-4CE4-A52F-BBAB9AAB4FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7A36E14-521F-4CE4-A52F-BBAB9AAB4FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7A36E14-521F-4CE4-A52F-BBAB9AAB4FA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +78,7 @@ Global
 		{701F1CCE-4764-44C0-8A61-76D571DCA859} = {9DED44E2-DE6E-4805-980A-5234AE1B0042}
 		{47EFE9DC-7325-46EB-85E1-2295CC19D19B} = {5E986C0B-7675-459F-BE84-C2E2A18D1C28}
 		{A071D32B-96D8-4724-802E-344780E73CD7} = {47EFE9DC-7325-46EB-85E1-2295CC19D19B}
+		{D7A36E14-521F-4CE4-A52F-BBAB9AAB4FA9} = {5452E7E4-114D-4CFC-80C3-5085711C90A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C13566A3-4A24-4CF3-A4AB-94B4CCF0205D}

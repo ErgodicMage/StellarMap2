@@ -31,7 +31,7 @@ public class ProgressionStarSystem : StarSystem
     {
         var foundObjectType = ProgressionObjectType.FromName(typeof(T).Name);
         if (foundObjectType is null)
-            return Result.Error($"Can not find StellarObjectType for {nameof(T)}");
+            return Result.Error($"Can not find ProgressionObjectType for {nameof(T)}");
 
         Dictionary<string, Identifier>? dictionary = null;
         foundObjectType

@@ -15,36 +15,36 @@ public abstract class ProgressionObjectType : StellarObjectType
     private sealed class ProgressionStarSystemType() : ProgressionObjectType(nameof(ProgressionStarSystem), 11)
     {
         public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new ProgressionStarSystem(name, identifier, map);
+            => new ProgressionStarSystem(name, identifier, (map as IProgressionMap)!);
     }
 
     private sealed class ProgressionStarType() : ProgressionObjectType(nameof(ProgressionStar), 12)
     {
         public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new ProgressionStar(name, identifier, map);
+            => new ProgressionStar(name, identifier, (map as IProgressionMap)!);
     }
 
     private sealed class ProgressionPlanetType() : ProgressionObjectType(nameof(ProgressionPlanet), 13)
     {
         public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new ProgressionPlanet(name, identifier, map);
+            => new ProgressionPlanet(name, identifier, (map as IProgressionMap)!);
     }
 
     private sealed class ProgressionSateliteType() : ProgressionObjectType(nameof(ProgressionSatelite), 14)
     {
         public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new ProgressionSatelite(name, identifier, map);
+            => new ProgressionSatelite(name, identifier, (map as IProgressionMap)!);
     }
 
     private sealed class ProgressionAsteroidType() : ProgressionObjectType(nameof(ProgressionAsteroid), 15)
     {
         public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new ProgressionAsteroid(name, identifier, map);
+            => new ProgressionAsteroid(name, identifier, (map as IProgressionMap)!);
     }
 
     private sealed class HabitatType() : ProgressionObjectType(nameof(Habitat), 16)
     {
         public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new Habitat(name, identifier, map);
+            => new Habitat(name, identifier, (map as IProgressionMap)!);
     }
 }
