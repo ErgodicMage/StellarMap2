@@ -12,7 +12,7 @@ public class StandardStellarMap : IStellarMap
     public Dictionary<string, string> MetaData { get; set; }
 
     [JsonPropertyOrder(3)]
-    public Dictionary<string, StarSystem> StarSystems { get; set; }
+    public Dictionary<string, StarSystem>? StarSystems { get; set; }
 
     [JsonPropertyOrder(4)]
     public Dictionary<string, Star>? Stars { get; set; }
