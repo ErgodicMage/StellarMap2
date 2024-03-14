@@ -50,10 +50,10 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
 
         return foundObjectType.Value.Name switch
         {
-            StellarObjectType.PLANET => Planets,
-            StellarObjectType.DWARFPLANET => DwarfPlanets,
-            StellarObjectType.ASTEROID => Asteroids,
-            StellarObjectType.COMET => Comets,
+            StellarObjectType.PLANET => Planets!,
+            StellarObjectType.DWARFPLANET => DwarfPlanets!,
+            StellarObjectType.ASTEROID => Asteroids!,
+            StellarObjectType.COMET => Comets!,
             _ => Result.Error($"{foundObjectType.Value.Name} is not in a Star")
         }; ;
     }
