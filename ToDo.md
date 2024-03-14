@@ -1,5 +1,4 @@
 ## To Do
-* Replace StellarObjectType use of Ardalis SmartEnum with custom class
 * Add Physical Stars and Star Systems
 
 
@@ -34,3 +33,4 @@
 * ~~Add back in Dwarf Planets~~
 * ~~Utility application to build realistic Solar System and save in json. Add json as resource to Core with deserialization for common use.~~
 * ~~Add StarSystem to group gravitational bound stars~~
+* ~~Replace StellarObjectType use of Ardalis SmartEnum with custom class~~
