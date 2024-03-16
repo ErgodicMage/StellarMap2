@@ -17,13 +17,11 @@ public static class BuildSatelites
             EscapeVelocity = 2.38
         };
 
-        var moon = StellarObjectBuilder.CreateSatelite("Moon", MapIdentifierGenerator.Instance, map)
+        return StellarObjectBuilder.CreateSatelite("Moon", MapIdentifierGenerator.Instance, map)
             .WithDescription("Earth's moon")
             .WithProperty(PropertiesConstant.ALTERNATIVENAME, "Luna")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-
-        return moon;
     }
 
     public static Result<Satelite> MarsPhobos(IStellarMap map)
@@ -40,11 +38,10 @@ public static class BuildSatelites
             EscapeVelocity = 0.01139
         };
 
-        var phobos = SateliteBuilder.Create("Phobos", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Phobos", MapIdentifierGenerator.Instance, map)
             .WithDescription("First and largest natural satellite of Mars.")
             .AddPhysicalProperties (physicalProperties)
             .Build();
-        return phobos;
     }
 
     public static Result<Satelite> MarsDeimos(IStellarMap map)
@@ -61,11 +58,10 @@ public static class BuildSatelites
             EscapeVelocity = 0.005556
         };
 
-        var deimos = SateliteBuilder.Create("Deimos", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Deimos", MapIdentifierGenerator.Instance, map)
             .WithDescription("Second natural satellite of Mars.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return deimos;
     }
 
     public static Result<Satelite> JupiterMetis(IStellarMap map)
@@ -78,11 +74,10 @@ public static class BuildSatelites
             Volume = 42700
         };
 
-        var metis = SateliteBuilder.Create("Metis", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Metis", MapIdentifierGenerator.Instance, map)
             .WithDescription("First inner natural satellite of Jupiter.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return metis;
     }
 
     public static Result<Satelite> JupiterAdrastea(IStellarMap map)
@@ -94,11 +89,10 @@ public static class BuildSatelites
             Volume = 2345
         };
 
-        var adrastea = SateliteBuilder.Create("Adrastea", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Adrastea", MapIdentifierGenerator.Instance, map)
             .WithDescription("Second inner natural satellite of Jupiter.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return adrastea;
     }
 
     public static Result<Satelite> JupiterAmalthea(IStellarMap map)
@@ -114,11 +108,10 @@ public static class BuildSatelites
             EscapeVelocity = 5.8E-5
         };
 
-        var amalthea = SateliteBuilder.Create("Amalthea", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Amalthea", MapIdentifierGenerator.Instance, map)
             .WithDescription("Third inner natural satellite and the 5th largest of Jupiter.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return amalthea;
     }
 
     public static Result<Satelite> JupiterThebe(IStellarMap map)
@@ -132,11 +125,10 @@ public static class BuildSatelites
             EscapeVelocity = 0.025
         };
 
-        var thebe = SateliteBuilder.Create("Thebe", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Thebe", MapIdentifierGenerator.Instance, map)
             .WithDescription("Fourth inner natural satellite and the 7th largest of Jupiter.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return thebe;
     }
 
     public static Result<Satelite> JupiterIo(IStellarMap map)
@@ -152,11 +144,10 @@ public static class BuildSatelites
             EscapeVelocity = 2.558
         };
 
-        var io = SateliteBuilder.Create("Io", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Io", MapIdentifierGenerator.Instance, map)
             .WithDescription("First Galilean and the 3rd largest natural satellite of Jupiter.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return io;
     }
 
     public static Result<Satelite> JupiterEuropa(IStellarMap map)
@@ -172,11 +163,10 @@ public static class BuildSatelites
             EscapeVelocity = 2.025
         };
 
-        var europa = SateliteBuilder.Create("Europa", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Europa", MapIdentifierGenerator.Instance, map)
             .WithDescription("Second Galilean and 4th largest natural satellite of Jupiter.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return europa;
     }
 
     public static Result<Satelite> JupiterGanymede(IStellarMap map)
@@ -192,11 +182,10 @@ public static class BuildSatelites
             EscapeVelocity = 2.741
         };
 
-        var ganymede = SateliteBuilder.Create("Ganymede", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Ganymede", MapIdentifierGenerator.Instance, map)
             .WithDescription("Third Galilean and largest natural satellite of Jupiter.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return ganymede;
     }
 
     public static Result<Satelite> JupiterCallisto(IStellarMap map)
@@ -212,11 +201,10 @@ public static class BuildSatelites
             EscapeVelocity = 2.440
         };
 
-        var callisto = SateliteBuilder.Create("Callisto", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Callisto", MapIdentifierGenerator.Instance, map)
             .WithDescription("Fourth Galilean and 2nd largest natural satellite of Jupiter.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return callisto;
     }
 
     public static Result<Satelite> JupiterHimalia(IStellarMap map)
@@ -233,11 +221,10 @@ public static class BuildSatelites
             EscapeVelocity = 0.1
         };
 
-        var himalia = SateliteBuilder.Create("Himalia", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Himalia", MapIdentifierGenerator.Instance, map)
             .WithDescription("11th natural and 6th largest satellite of Jupiter.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return himalia;
     }
 
     public static Result<Satelite> JupiterElara(IStellarMap map)
@@ -250,11 +237,10 @@ public static class BuildSatelites
             Density = 2.6
         };
 
-        var elara = SateliteBuilder.Create("Elara", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Elara", MapIdentifierGenerator.Instance, map)
             .WithDescription("Fourth inner natural satellite of Jupiter.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return elara;
     }
 
     public static Result<Satelite> JupiterPasiphae(IStellarMap map)
@@ -269,11 +255,10 @@ public static class BuildSatelites
             EscapeVelocity = 0.036
         };
 
-        var himalia = SateliteBuilder.Create("Pasiphae", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Pasiphae", MapIdentifierGenerator.Instance, map)
             .WithDescription("60th and 9th largest inner natural satellite of Jupiter.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return himalia;
     }
 
     public static Result<Satelite> JupiterCarme(IStellarMap map)
@@ -285,11 +270,10 @@ public static class BuildSatelites
             Density = 2.6
         };
 
-        var carme = SateliteBuilder.Create("Carme", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Carme", MapIdentifierGenerator.Instance, map)
             .WithDescription("74th and 10th largest natural satellite of Jupiter.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return carme;
     }
 
     public static Result<Satelite> SaturnTitan(IStellarMap map)
@@ -305,11 +289,10 @@ public static class BuildSatelites
             EscapeVelocity = 2.639E-3
         };
 
-        var titan = SateliteBuilder.Create("Titan", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Titan", MapIdentifierGenerator.Instance, map)
             .WithDescription("Largest natural satellite of Saturn and second largest in the Solar System.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return titan;
     }
 
     public static Result<Satelite> SaturnRhea(IStellarMap map)
@@ -324,11 +307,10 @@ public static class BuildSatelites
             EscapeVelocity = 6.35E-4
         };
 
-        var rhea = SateliteBuilder.Create("Rhea", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Rhea", MapIdentifierGenerator.Instance, map)
             .WithDescription("2nd largest natural satellite of Saturn.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return rhea;
     }
 
     public static Result<Satelite> SaturnIapetus(IStellarMap map)
@@ -343,11 +325,10 @@ public static class BuildSatelites
             EscapeVelocity = 5.73E-4
         };
 
-        var iapetus = SateliteBuilder.Create("Iapetus", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Iapetus", MapIdentifierGenerator.Instance, map)
             .WithDescription("3rd largest natural satellite of Saturn.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return iapetus;
     }
 
     public static Result<Satelite> SaturnDione(IStellarMap map)
@@ -362,11 +343,10 @@ public static class BuildSatelites
             EscapeVelocity = 5.1E-4
         };
 
-        var dione = SateliteBuilder.Create("Dione", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Dione", MapIdentifierGenerator.Instance, map)
             .WithDescription("4th largest natural satellite of Saturn.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return dione;
     }
 
     public static Result<Satelite> SaturnTethys(IStellarMap map)
@@ -381,11 +361,10 @@ public static class BuildSatelites
             EscapeVelocity = 3.94E-4
         };
 
-        var tethys = SateliteBuilder.Create("Tethys", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Tethys", MapIdentifierGenerator.Instance, map)
             .WithDescription("5th largest natural satellite of Saturn.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return tethys;
     }
 
     public static Result<Satelite> SaturnEnceladus(IStellarMap map)
@@ -400,11 +379,10 @@ public static class BuildSatelites
             EscapeVelocity = 2.394E-4
         };
 
-        var enceladus = SateliteBuilder.Create("Enceladus", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Enceladus", MapIdentifierGenerator.Instance, map)
             .WithDescription("6th largest natural satellite of Saturn.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return enceladus;
     }
 
     public static Result<Satelite> SaturnMimas(IStellarMap map)
@@ -421,11 +399,10 @@ public static class BuildSatelites
             EscapeVelocity = 1.59E-4
         };
 
-        var mimas = SateliteBuilder.Create("Mimas", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Mimas", MapIdentifierGenerator.Instance, map)
             .WithDescription("7th largest natural satellite of Saturn.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return mimas;
     }
 
     public static Result<Satelite> SaturnHyperion(IStellarMap map)
@@ -440,11 +417,10 @@ public static class BuildSatelites
             EscapeVelocity = 9.99E-5
         };
 
-        var hyperion = SateliteBuilder.Create("Hyperion", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Hyperion", MapIdentifierGenerator.Instance, map)
             .WithDescription("8th largest natural satellite of Saturn.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return hyperion;
     }
 
     public static Result<Satelite> SaturnPhoebe(IStellarMap map)
@@ -459,11 +435,10 @@ public static class BuildSatelites
             EscapeVelocity = 1E-4
         };
 
-        var phoebe = SateliteBuilder.Create("Phoebe", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Phoebe", MapIdentifierGenerator.Instance, map)
             .WithDescription("9th largest natural satellite of Saturn.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return phoebe;
     }
 
     public static Result<Satelite> SaturnJanus(IStellarMap map)
@@ -477,11 +452,10 @@ public static class BuildSatelites
             Gravity = 0.017
         };
 
-        var janus = SateliteBuilder.Create("Janus", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Janus", MapIdentifierGenerator.Instance, map)
             .WithDescription("10th largest natural satellite of Saturn.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return janus;
     }
 
     public static Result<Satelite> UranusTitania(IStellarMap map)
@@ -498,11 +472,10 @@ public static class BuildSatelites
             EscapeVelocity = 7.73E-2
         };
 
-        var titania = SateliteBuilder.Create("Titania", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Titania", MapIdentifierGenerator.Instance, map)
             .WithDescription("The largest natural satellite of Uranus.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return titania;
     }
 
     public static Result<Satelite> UranusOberon(IStellarMap map)
@@ -519,11 +492,10 @@ public static class BuildSatelites
             EscapeVelocity = 7.27E-2
         };
 
-        var oberon = SateliteBuilder.Create("Oberon", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Oberon", MapIdentifierGenerator.Instance, map)
             .WithDescription("The 2nd largest natural satellite of Uranus.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return oberon;
     }
 
     public static Result<Satelite> UranusUmbriel(IStellarMap map)
@@ -539,11 +511,10 @@ public static class BuildSatelites
             EscapeVelocity = 5.2E-2
         };
 
-        var umbriel = SateliteBuilder.Create("Umbriel", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Umbriel", MapIdentifierGenerator.Instance, map)
             .WithDescription("The 3rd largest natural satellite of Uranus.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return umbriel;
     }
 
     public static Result<Satelite> UranusAriel(IStellarMap map)
@@ -560,11 +531,10 @@ public static class BuildSatelites
             EscapeVelocity = 5.59E-2
         };
 
-        var ariel = SateliteBuilder.Create("Ariel", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Ariel", MapIdentifierGenerator.Instance, map)
             .WithDescription("The 4th largest natural satellite of Uranus.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return ariel;
     }
 
     public static Result<Satelite> UranusMiranda(IStellarMap map)
@@ -581,11 +551,10 @@ public static class BuildSatelites
             EscapeVelocity = 1.93E-2
         };
 
-        var miranda = SateliteBuilder.Create("Miranda", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Miranda", MapIdentifierGenerator.Instance, map)
             .WithDescription("The 5th largest natural satellite of Uranus.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return miranda;
     }
 
     public static Result<Satelite> NeptuneTriton(IStellarMap map)
@@ -601,11 +570,10 @@ public static class BuildSatelites
             EscapeVelocity = 1.445E-3
         };
 
-        var titan = SateliteBuilder.Create("Triton", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Triton", MapIdentifierGenerator.Instance, map)
             .WithDescription("Largest natural satellite of Neptune.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return titan;
     }
 
     public static Result<Satelite> NeptuneProteus(IStellarMap map)
@@ -622,11 +590,10 @@ public static class BuildSatelites
             EscapeVelocity = 1.17E-4
         };
 
-        var proteus = SateliteBuilder.Create("Proteus", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Proteus", MapIdentifierGenerator.Instance, map)
             .WithDescription("The 2nd largest natural satellite of Neptune.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return proteus;
     }
 
     public static Result<Satelite> NeptuneNereid(IStellarMap map)
@@ -636,11 +603,10 @@ public static class BuildSatelites
             Radius = 178.5
         };
 
-        var nereid = SateliteBuilder.Create("Nereid", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Nereid", MapIdentifierGenerator.Instance, map)
             .WithDescription("The 3rd largest natural satellite of Neptune.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return nereid;
     }
 
     public static Result<Satelite> NeptuneLarissa(IStellarMap map)
@@ -657,11 +623,10 @@ public static class BuildSatelites
             EscapeVelocity = 7.6E-5
         };
 
-        var larissa = SateliteBuilder.Create("Larissa", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Larissa", MapIdentifierGenerator.Instance, map)
             .WithDescription("Largest natural satellite of Neptune.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return larissa;
     }
 
     public static Result<Satelite> PlutoCharon(IStellarMap map)
@@ -677,11 +642,10 @@ public static class BuildSatelites
             EscapeVelocity = 0.59
         };
 
-        var charon = SateliteBuilder.Create("Charon", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Charon", MapIdentifierGenerator.Instance, map)
             .WithDescription("Largest natural satellite of Pluto.")
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return charon;
     }
 
     public static Result<Satelite> PlutoNix(IStellarMap map)
@@ -695,10 +659,9 @@ public static class BuildSatelites
             EscapeVelocity = 0.0118
         };
 
-        var nix = SateliteBuilder.Create("Nix", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Nix", MapIdentifierGenerator.Instance, map)
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return nix;
     }
 
     public static Result<Satelite> PlutoHydra(IStellarMap map)
@@ -711,10 +674,9 @@ public static class BuildSatelites
             Gravity = 5.2E-3
         };
 
-        var hydra = SateliteBuilder.Create("Hydra", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Hydra", MapIdentifierGenerator.Instance, map)
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return hydra;
     }
 
     public static Result<Satelite> PlutoKerberos(IStellarMap map)
@@ -725,10 +687,9 @@ public static class BuildSatelites
             Dimensions = "19x10x9"
         };
 
-        var kerberos = SateliteBuilder.Create("Kerberos", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Kerberos", MapIdentifierGenerator.Instance, map)
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return kerberos;
     }
 
     public static Result<Satelite> PlutoStyx(IStellarMap map)
@@ -739,9 +700,8 @@ public static class BuildSatelites
             Dimensions = "16x9x8"
         };
 
-        var styx = SateliteBuilder.Create("Styx", MapIdentifierGenerator.Instance, map)
+        return SateliteBuilder.Create("Styx", MapIdentifierGenerator.Instance, map)
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return styx;
     }
 }

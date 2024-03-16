@@ -1,5 +1,10 @@
 ## To Do
+* Builders Add collection functions, reduce to call to one template function in BuilderCommonFunctions.
 * Add Physical Stars and Star Systems
+* Add Storage methods for maps and objects.
+	* json
+	* zip
+	* database?
 
 
 ## Done

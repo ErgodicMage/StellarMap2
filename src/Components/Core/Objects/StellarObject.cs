@@ -6,6 +6,7 @@ namespace StellarMap.Core;
 
 public abstract class StellarObject : IStellarObject
 {
+    #region Properties
     [JsonPropertyOrder(1)]
     public string? Name { get; init; }
 
@@ -26,6 +27,7 @@ public abstract class StellarObject : IStellarObject
 
     [JsonPropertyOrder(6)]
     public PhysicalProperties? PhysicalProperties {get; set; }
+    #endregion
 
     #region Constructors
 #pragma warning disable CS8618
@@ -86,7 +88,7 @@ public abstract class StellarObject : IStellarObject
 
         List<T> objects = new();
 
-        foreach (var (name, identifier) in identifiers.Value)
+        foreach (var (_, identifier) in identifiers.Value)
         {
             var obj = Map.Get<T>(identifier);
             if (obj.Success) 

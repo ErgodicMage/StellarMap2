@@ -21,7 +21,7 @@ public static class BuilderCommonFunctionality
         var result = GuardClause.Null(stellarObject).Null(stellarObject?.Map);
         if (!result.Success) return result;
 
-        result = stellarObject.Map.Add<T>(stellarObject);
+        result = stellarObject!.Map.Add<T>(stellarObject);
         return result.Success ? stellarObject : result;
     }
 
@@ -30,6 +30,6 @@ public static class BuilderCommonFunctionality
         var result = GuardClause.Null(objToAdd).Null(objToAdd?.Map);
         if (!result.Success) return result;
 
-        return parent.Add<T>(objToAdd);
+        return parent.Add<T>(objToAdd!);
     }
 }

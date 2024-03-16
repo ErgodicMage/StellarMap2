@@ -18,13 +18,12 @@ public static class BuildPlanets
             EscapeVelocity = 4.25
         };
 
-        var mercury = PlanetBuilder.Create("Mercury", MapIdentifierGenerator.Instance, map)
+        return PlanetBuilder.Create("Mercury", MapIdentifierGenerator.Instance, map)
             .WithDescription("The first planet in the Solar System.")
             .WithProperty(PropertiesConstant.DESIGNATION, "SOL-01")
             .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.ROCKYPLANET)
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return mercury;
     }
 
     public static Result<Planet> Venus(IStellarMap map)
@@ -41,13 +40,12 @@ public static class BuildPlanets
             EscapeVelocity = 10.36
         };
 
-        var venus = PlanetBuilder.Create("Venus", MapIdentifierGenerator.Instance, map)
+        return PlanetBuilder.Create("Venus", MapIdentifierGenerator.Instance, map)
             .WithDescription("The 2nd planet in the Solar System.")
             .WithProperty(PropertiesConstant.DESIGNATION, "SOL-02")
             .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.ROCKYPLANET)
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return venus;
     }
 
     public static Result<Planet> Earth(IStellarMap map)
@@ -67,14 +65,13 @@ public static class BuildPlanets
             EscapeVelocity = 11.186
         };
 
-        var earth = PlanetBuilder.Create("Earth", MapIdentifierGenerator.Instance, map)
+        return PlanetBuilder.Create("Earth", MapIdentifierGenerator.Instance, map)
             .WithDescription("The 3nd planet in the Solar System")
             .WithProperty(PropertiesConstant.DESIGNATION, "SOL-03")
             .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.ROCKYPLANET)
             .AddPhysicalProperties(physicalProperties)
             .AddSatelite(moon)
             .Build();
-        return earth;
     }
 
     public static Result<Planet> Mars(IStellarMap map)
@@ -97,14 +94,13 @@ public static class BuildPlanets
             EscapeVelocity = 5.027
         };
 
-        var mars = PlanetBuilder.Create("Mars", MapIdentifierGenerator.Instance, map)
+        return PlanetBuilder.Create("Mars", MapIdentifierGenerator.Instance, map)
             .WithDescription("The 4th planet in the Solar System.")
             .WithProperty(PropertiesConstant.DESIGNATION, "SOL-04")
             .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.ROCKYPLANET)
             .AddPhysicalProperties(physicalProperties)
             .AddSatelites(satelites)
             .Build();
-        return mars;
     }
 
     public static Result<Planet> Jupiter(IStellarMap map)
@@ -137,14 +133,13 @@ public static class BuildPlanets
             EscapeVelocity = 59.5
         };
 
-        var jupiter = PlanetBuilder.Create("Jupiter", MapIdentifierGenerator.Instance, map)
+        return PlanetBuilder.Create("Jupiter", MapIdentifierGenerator.Instance, map)
             .WithDescription("The fifth and largets planet in the Solar System.")
             .WithProperty(PropertiesConstant.DESIGNATION, "SOL-05")
             .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.GASGIANTPLANET)
             .AddPhysicalProperties(physicalProperties)
             .AddSatelites(satelites)
             .Build();
-        return jupiter;
     }
 
     public static Result<Planet> Saturn(IStellarMap map)
@@ -175,14 +170,13 @@ public static class BuildPlanets
             EscapeVelocity = 35.5
         };
 
-        var saturn = PlanetBuilder.Create("Saturn", MapIdentifierGenerator.Instance, map)
+        return PlanetBuilder.Create("Saturn", MapIdentifierGenerator.Instance, map)
             .WithDescription("The sixth planet in the Solar System.")
             .WithProperty(PropertiesConstant.DESIGNATION, "SOL-06")
             .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.GASGIANTPLANET)
             .AddPhysicalProperties(physicalProperties)
             .AddSatelites(satelites)
             .Build();
-        return saturn;
     }
 
     public static Result<Planet> Uranus(IStellarMap map)
@@ -208,14 +202,13 @@ public static class BuildPlanets
             EscapeVelocity = 35.5
         };
 
-        var uranus = PlanetBuilder.Create("Uranus", MapIdentifierGenerator.Instance, map)
+        return PlanetBuilder.Create("Uranus", MapIdentifierGenerator.Instance, map)
             .WithDescription("The 7th planet in the Solar System.")
             .WithProperty(PropertiesConstant.DESIGNATION, "SOL-07")
             .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.GASGIANTPLANET)
             .AddPhysicalProperties(physicalProperties)
             .AddSatelites(satelites)
             .Build();
-        return uranus;
     }
 
     public static Result<Planet> Neptune(IStellarMap map)
@@ -240,13 +233,12 @@ public static class BuildPlanets
             EscapeVelocity = 23.5
         };
 
-        var neptune = PlanetBuilder.Create("Neptune", MapIdentifierGenerator.Instance, map)
+        return PlanetBuilder.Create("Neptune", MapIdentifierGenerator.Instance, map)
             .WithDescription("The 8th planet in the Solar System.")
             .WithProperty(PropertiesConstant.DESIGNATION, "SOL-08")
             .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.GASGIANTPLANET)
             .AddPhysicalProperties(physicalProperties)
             .AddSatelites(satelites)
             .Build();
-        return neptune;
     }
 }

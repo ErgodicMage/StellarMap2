@@ -17,11 +17,10 @@ public static class BuildAsteroids
             EscapeVelocity = 0.36
         };
 
-        var vesta = AsteroidBuilder.Create("Vesta", MapIdentifierGenerator.Instance, map)
+        return AsteroidBuilder.Create("Vesta", MapIdentifierGenerator.Instance, map)
             .WithDescription("One of the largest asteroids in the Solar System.")
             .AddPhysicalProperties(properties)
             .Build();
-        return vesta;
     }
 
     public static Result<Asteroid> Pallas(IStellarMap map)
@@ -38,10 +37,9 @@ public static class BuildAsteroids
             EscapeVelocity = 0.324
         };
 
-        var pallas = AsteroidBuilder.Create("Pallas", MapIdentifierGenerator.Instance, map)
+        return AsteroidBuilder.Create("Pallas", MapIdentifierGenerator.Instance, map)
             .AddPhysicalProperties(properties)
             .Build();
-        return pallas;
     }
 
     public static Result<Asteroid> Hygiea(IStellarMap map)
@@ -54,10 +52,9 @@ public static class BuildAsteroids
             Density = 2.06
         };
 
-        var hygiea = AsteroidBuilder.Create("Hygiea", MapIdentifierGenerator.Instance, map)
+        return AsteroidBuilder.Create("Hygiea", MapIdentifierGenerator.Instance, map)
             .AddPhysicalProperties(properties)
             .Build();
-        return hygiea;
     }
 
     public static Result<Asteroid> Euphrosyne(IStellarMap map)
@@ -70,10 +67,9 @@ public static class BuildAsteroids
             Density = 1.64
         };
 
-        var euphrosyne = AsteroidBuilder.Create("Euphrosyne", MapIdentifierGenerator.Instance, map)
+        return AsteroidBuilder.Create("Euphrosyne", MapIdentifierGenerator.Instance, map)
             .AddPhysicalProperties(properties)
             .Build();
-        return euphrosyne;
     }
 
     public static Result<Asteroid> Interamnia(IStellarMap map)

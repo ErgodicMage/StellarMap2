@@ -144,7 +144,7 @@ public class StandardStellarMap : IStellarMap
     public override bool Equals(object? obj) => Equals(this, obj as IStellarMap);
 
     public int GetHashCode([DisallowNull] IStellarMap obj)
-        => Name.GetHashCode() ^ HashCode.Combine(MetaData, StarSystems, Stars, Planets, DwarfPlanets, Satelites, Asteroids, Comets);
+        => HashCode.Combine(HashCode.Combine(Name, MetaData), StarSystems, Stars, Planets, DwarfPlanets, Satelites, Asteroids, Comets);
 
     public override int GetHashCode() => GetHashCode(this);
     #endregion
