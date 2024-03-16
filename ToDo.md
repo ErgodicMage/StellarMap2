@@ -34,3 +34,4 @@
 * ~~Utility application to build realistic Solar System and save in json. Add json as resource to Core with deserialization for common use.~~
 * ~~Add StarSystem to group gravitational bound stars~~
 * ~~Replace StellarObjectType use of Ardalis SmartEnum with custom class~~
+* ~~MapIdentifierGenerator calculates the count for the StellarObjectType, which breaks single responsibility. Instead have the map determin the count of the object types and GenerateIdentifier uses that to return the identifier.~~

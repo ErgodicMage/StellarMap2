@@ -121,6 +121,23 @@ public class StandardStellarMap : IStellarMap
     }
     #endregion
 
+    #region GenObjectCount
+    public virtual Result<int> GetObjectCount(StellarObjectType type)
+    {
+        return type.Name switch
+        {
+            StellarObjectType.STARSYSTEM => StarSystems is null ? 0 : StarSystems.Count,
+            StellarObjectType.STAR => Stars is null ? 0 : Stars.Count,
+            StellarObjectType.PLANET => Planets is null ? 0 : Planets.Count,
+            StellarObjectType.DWARFPLANET => DwarfPlanets is null ? 0 : DwarfPlanets.Count,
+            StellarObjectType.SATELITE => Satelites is null ? 0 : Satelites.Count,
+            StellarObjectType.ASTEROID => Asteroids is null ? 0 : Asteroids.Count,
+            StellarObjectType.COMET => Comets is null ? 0 : Comets.Count,
+            _ => -50001
+        };
+    }
+    #endregion
+
     #region IEqualityComparer
     public bool Equals(IStellarMap? x, IStellarMap? y) => ReferenceEquals(x, y);
 

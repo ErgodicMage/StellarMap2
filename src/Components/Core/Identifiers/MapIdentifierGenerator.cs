@@ -13,17 +13,8 @@ public sealed class MapIdentifierGenerator : IIdentifierGenerator
         var result = GuardClause.Null(map);
         if (!result.Success) return Identifier.NoIdentifier;
 
-        int count = type.Name switch
-        {
-            StellarObjectType.STARSYSTEM => map?.StarSystems is null ? 0 : map.StarSystems.Count,
-            StellarObjectType.STAR => count = map?.Stars is null ? 0 : map.Stars.Count,
-            StellarObjectType.PLANET => map?.Planets is null ? 0 : map.Planets.Count,
-            StellarObjectType.DWARFPLANET => map?.DwarfPlanets is null ? 0 : map.DwarfPlanets.Count,
-            StellarObjectType.SATELITE => map?.Satelites is null ? 0 : map.Satelites.Count,
-            StellarObjectType.ASTEROID => map?.Asteroids is null ? 0 : map.Asteroids.Count,
-            StellarObjectType.COMET => map?.Comets is null ? 0 : map.Comets.Count,
-            _ => -50001
-        };
+        var count = map!.GetObjectCount(type);
+        if (!count.Success) return Identifier.NoIdentifier;
 
         return new Identifier($"{type.Name}-{count + 1:D5}");
     }
