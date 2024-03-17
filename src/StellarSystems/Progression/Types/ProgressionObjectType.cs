@@ -1,50 +1,31 @@
 ﻿namespace StellarMap.Progression;
 
-public abstract class ProgressionObjectType : StellarObjectType
+public record ProgressionObjectType : StellarObjectType
 {
-    public static readonly ProgressionObjectType ProgressionStarSystem = new ProgressionStarSystemType();
+    public const string PROGRESSIONSTARSYSTEM = "ProgressionStarSystem";
+    public const string PROGRESSIONSTAR = "ProgressionStar";
+    public const string PROGRESSIONPLANET = "ProgressionPlanet";
+    public const string PROGRESSIONSATELITE = "ProgressionSatelite";
+    public const string PROGRESSIONASTEROID = "ProgressionAsteroid";
+    public const string HABITAT = "Habitat";
+
+    public static readonly ProgressionObjectType ProgressionStarSystem = Register(new ProgressionStarSystemType());
     public static readonly ProgressionObjectType ProgressionStar = new ProgressionStarType();
     public static readonly ProgressionObjectType ProgressionPlanet = new ProgressionPlanetType();
     public static readonly ProgressionObjectType ProgressionSatelite = new ProgressionSateliteType();
     public static readonly ProgressionObjectType ProgressionAsteroid = new ProgressionAsteroidType();
     public static readonly ProgressionObjectType Habitat = new HabitatType();
 
-    protected ProgressionObjectType(string name, int value) : base(name, value)
+    protected ProgressionObjectType(string name) : base(name)
     { }
 
-    private sealed class ProgressionStarSystemType() : ProgressionObjectType(nameof(ProgressionStarSystem), 11)
-    {
-        public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new ProgressionStarSystem(name, identifier, (map as IProgressionMap)!);
-    }
+    protected static ProgressionObjectType Register(ProgressionObjectType type)
+        => (StellarObjectType.Register(type) as ProgressionObjectType)!;
 
-    private sealed class ProgressionStarType() : ProgressionObjectType(nameof(ProgressionStar), 12)
-    {
-        public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new ProgressionStar(name, identifier, (map as IProgressionMap)!);
-    }
-
-    private sealed class ProgressionPlanetType() : ProgressionObjectType(nameof(ProgressionPlanet), 13)
-    {
-        public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new ProgressionPlanet(name, identifier, (map as IProgressionMap)!);
-    }
-
-    private sealed class ProgressionSateliteType() : ProgressionObjectType(nameof(ProgressionSatelite), 14)
-    {
-        public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new ProgressionSatelite(name, identifier, (map as IProgressionMap)!);
-    }
-
-    private sealed class ProgressionAsteroidType() : ProgressionObjectType(nameof(ProgressionAsteroid), 15)
-    {
-        public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new ProgressionAsteroid(name, identifier, (map as IProgressionMap)!);
-    }
-
-    private sealed class HabitatType() : ProgressionObjectType(nameof(Habitat), 16)
-    {
-        public override StellarObject CreateObject(string name, Identifier identifier, IStellarMap map)
-            => new Habitat(name, identifier, (map as IProgressionMap)!);
-    }
+    private record ProgressionStarSystemType() : ProgressionObjectType(PROGRESSIONSTARSYSTEM) { }
+    private record ProgressionStarType() : ProgressionObjectType(PROGRESSIONSTAR) { }
+    private record ProgressionPlanetType() : ProgressionObjectType(PROGRESSIONPLANET) { }
+    private record ProgressionSateliteType() : ProgressionObjectType(PROGRESSIONSATELITE) { }
+    private record ProgressionAsteroidType() : ProgressionObjectType(PROGRESSIONASTEROID) { }
+    private record HabitatType() : ProgressionObjectType(HABITAT) { }
 }

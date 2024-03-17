@@ -55,17 +55,16 @@ public class ProgressionStar : Star
     protected override Result<Dictionary<string, Identifier>> GetIdentifiers<T>()
     {
         var foundObjectType = ProgressionObjectType.FromName(typeof(T).Name);
-        if (foundObjectType is null)
+        if (!foundObjectType.Success)
             return Result.Error($"Can not find StellarObjectType for {nameof(T)}");
 
-        Dictionary<string, Identifier>? dictionary = null;
-        foundObjectType
-                .When(ProgressionObjectType.ProgressionPlanet).Then(() => dictionary = base.GetIdentifiers<Planet>())
-                .When(ProgressionObjectType.ProgressionAsteroid).Then(() => dictionary = base.GetIdentifiers<Asteroid>())
-                .When(ProgressionObjectType.Habitat).Then(() => dictionary = Habitats)
-                .Default(() => base.GetIdentifiers<T>() );
-
-        return dictionary!;
+        return foundObjectType.Value.Name switch
+        {
+            ProgressionObjectType.PLANET => base.GetIdentifiers<Planet>(),
+            ProgressionObjectType.ASTEROID => base.GetIdentifiers<Asteroid>(),
+            ProgressionObjectType.HABITAT => Habitats!,
+            _ => base.GetIdentifiers<T>()
+        };
     }
     #endregion
 
@@ -83,13 +82,15 @@ public class ProgressionStar : Star
     protected override void CreateIdentifiers<T>()
     {
         var foundObjectType = ProgressionObjectType.FromName(typeof(T).Name);
-        if (foundObjectType is null) return;
+        if (!foundObjectType.Success) return;
 
-        foundObjectType
-            .When(ProgressionObjectType.ProgressionPlanet).Then(() => base.CreateIdentifiers<Planet>())
-            .When(ProgressionObjectType.ProgressionAsteroid).Then(() => base.CreateIdentifiers<Asteroid>())
-            .When(ProgressionObjectType.Habitat).Then(() => Habitats ??= new())
-            .Default(() => base.CreateIdentifiers<T>());
+        switch (foundObjectType.Value.Name)
+        {
+            case ProgressionObjectType.PROGRESSIONPLANET: base.CreateIdentifiers<Planet>(); break;
+            case ProgressionObjectType.ASTEROID: base.CreateIdentifiers<Asteroid>(); break;
+            case ProgressionObjectType.HABITAT: Habitats ??= new(); break;
+            default: base.CreateIdentifiers<T>(); break;
+        };
     }
     #endregion
 

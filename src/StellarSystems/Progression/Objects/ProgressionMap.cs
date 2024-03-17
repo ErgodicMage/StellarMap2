@@ -20,40 +20,45 @@ public class ProgressionMap : StandardStellarMap, IProgressionMap
     #region Dictionary
     protected override void CreateDictionary<T>()
     {
-        var list = ProgressionObjectType.List;
         var foundObjectType = ProgressionObjectType.FromName(typeof(T).Name);
-        if (foundObjectType is null) return;
+        if (!foundObjectType.Success) return;
 
-        foundObjectType
-            .When(ProgressionObjectType.ProgressionStarSystem).Then(() => base.CreateDictionary<StarSystem>())
-            .When(ProgressionObjectType.ProgressionStar).Then(() => base.CreateDictionary<Star>())
-            .When(ProgressionObjectType.ProgressionPlanet).Then(() => base.CreateDictionary<Planet>())
-            .When(ProgressionObjectType.ProgressionSatelite).Then(() => base.CreateDictionary<Satelite>())
-            .When(ProgressionObjectType.ProgressionAsteroid).Then(() => base.CreateDictionary<Asteroid>())
-            .Default(() => base.CreateDictionary<T>());
+        // can not use switch pattern matching expressions because
+        // StarSystems ??= new returns a different type than Stars ?? = new() so it doesn't know what to "return"
+        switch (foundObjectType.Value.Name)
+        {
+            case ProgressionObjectType.PROGRESSIONSTARSYSTEM: base.CreateDictionary<StarSystem>(); break;
+            case ProgressionObjectType.PROGRESSIONSTAR: base.CreateDictionary<Star>(); break;
+            case ProgressionObjectType.PROGRESSIONPLANET: base.CreateDictionary<Planet>(); break;
+            case ProgressionObjectType.PROGRESSIONSATELITE: base.CreateDictionary<Satelite>(); break;
+            case ProgressionObjectType.PROGRESSIONASTEROID: base.CreateDictionary<Asteroid>(); break;
+
+            case ProgressionObjectType.HABITAT: Habitats ??= new(); break;
+
+            default: base.CreateDictionary<T>(); break;
+        };
     }
 
     protected override Result<Dictionary<string, T>> GetDictionary<T>()
     {
         var foundObjectType = ProgressionObjectType.FromName(typeof(T).Name);
-        if (foundObjectType is null)
-            return Result.Error($"Can not find ProgressionObjectTypr for {nameof(T)}");
+        if (!foundObjectType.Success)
+            return Result.Error($"Can not find ProgressionObjectType for {nameof(T)}");
 
-        Dictionary<string, T>? dictionary = null;
-        foundObjectType
-                .When(ProgressionObjectType.ProgressionStarSystem)
-                    .Then(() => dictionary = base.GetDictionary<StarSystem>().Value as Dictionary<string, T>)
-                .When(ProgressionObjectType.ProgressionStar)
-                    .Then(() => dictionary = base.GetDictionary<Star>().Value as Dictionary<string, T>)
-                .When(ProgressionObjectType.ProgressionPlanet)
-                    .Then(() => dictionary = base.GetDictionary<Planet>().Value as Dictionary<string, T>)
-                .When(ProgressionObjectType.ProgressionSatelite)
-                    .Then(() => dictionary = base.GetDictionary<Satelite>().Value as Dictionary<string, T>)
-                .When(ProgressionObjectType.ProgressionAsteroid)
-                    .Then(() => dictionary = base.GetDictionary<Asteroid>().Value as Dictionary<string, T>)
-                .Default(() => dictionary = base.GetDictionary<T>());
+#pragma warning disable CS0458
+        return foundObjectType.Value.Name switch
+        {
+            ProgressionObjectType.PROGRESSIONSTARSYSTEM => (base.GetDictionary<StarSystem>() as Dictionary<string, T>)!,
+            ProgressionObjectType.PROGRESSIONSTAR => (base.GetDictionary<Star>() as Dictionary<string, T>)!,
+            ProgressionObjectType.PROGRESSIONPLANET => (base.GetDictionary<Planet>() as Dictionary<string, T>)!,
+            ProgressionObjectType.PROGRESSIONSATELITE => (base.GetDictionary<Satelite>() as Dictionary<string, T>)!,
+            ProgressionObjectType.PROGRESSIONASTEROID => (base.GetDictionary<Asteroid>() as Dictionary<string, T>)!,
 
-        return dictionary!;
+            ProgressionObjectType.HABITAT => (Habitats as Dictionary<string, T>)!,
+
+            _ => base.GetDictionary<T>()
+        };
+#pragma warning restore CS0458
     }
     #endregion
 }

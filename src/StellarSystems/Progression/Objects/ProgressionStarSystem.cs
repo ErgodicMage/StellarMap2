@@ -1,4 +1,6 @@
-﻿namespace StellarMap.Progression;
+﻿using StellarMap.Core;
+
+namespace StellarMap.Progression;
 
 public class ProgressionStarSystem : StarSystem
 {
@@ -30,15 +32,13 @@ public class ProgressionStarSystem : StarSystem
     protected override Result<Dictionary<string, Identifier>> GetIdentifiers<T>()
     {
         var foundObjectType = ProgressionObjectType.FromName(typeof(T).Name);
-        if (foundObjectType is null)
+        if (!foundObjectType.Success)
             return Result.Error($"Can not find ProgressionObjectType for {nameof(T)}");
 
-        Dictionary<string, Identifier>? dictionary = null;
-        foundObjectType
-                .When(ProgressionObjectType.ProgressionStar).Then(() => dictionary = base.GetIdentifiers<Star>())
-                .Default(() => base.GetIdentifiers<T>());
+        if (foundObjectType.Value.Name == ProgressionObjectType.STAR)
+            return base.GetIdentifiers<Star>();
 
-        return dictionary!;
+        return Result.Error(string.Empty); 
     }
     #endregion
 
@@ -49,11 +49,10 @@ public class ProgressionStarSystem : StarSystem
     protected override void CreateIdentifiers<T>()
     {
         var foundObjectType = ProgressionObjectType.FromName(typeof(T).Name);
-        if (foundObjectType is null) return;
+        if (!foundObjectType.Success) return;
 
-        foundObjectType
-            .When(ProgressionObjectType.ProgressionStar).Then(() => base.CreateIdentifiers<Star>())
-            .Default(() => base.CreateIdentifiers<T>());
+        if (foundObjectType.Value.Name == ProgressionObjectType.STAR)
+            base.CreateIdentifiers<Star>();
     }
     #endregion
 }
