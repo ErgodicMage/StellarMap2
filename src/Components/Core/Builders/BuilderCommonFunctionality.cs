@@ -18,18 +18,33 @@ public static class BuilderCommonFunctionality
 
     public static Result<T> Build<T>(T stellarObject) where T : IStellarObject
     {
-        var result = GuardClause.Null(stellarObject).Null(stellarObject.Map);
+        var result = GuardClause.Null(stellarObject).Null(stellarObject?.Map);
         if (!result.Success) return result;
 
-        result = stellarObject.Map.Add<T>(stellarObject);
+        result = stellarObject!.Map.Add<T>(stellarObject);
         return result.Success ? stellarObject : result;
     }
 
-    public static Result Add<T>(StellarObject parent, T objToAdd) where T : IStellarObject
+    public static Result Add<T>(IStellarObject parent, T objToAdd) where T : IStellarObject
     {
-        var result = GuardClause.Null(objToAdd).Null(objToAdd.Map);
+        var result = GuardClause.Null(parent).Null(objToAdd).Null(objToAdd?.Map);
         if (!result.Success) return result;
 
-        return parent.Add<T>(objToAdd);
+        return parent.Add<T>(objToAdd!);
+    }
+
+    public static Result Add<T>(IStellarObject parent, ICollection<T> objectsToAdd) where T : IStellarObject
+    {
+        var result = GuardClause.Null(parent).Null(objectsToAdd).NegativeOrZero(objectsToAdd.Count);
+        if (!result.Success) return result;
+
+        foreach (var obj in objectsToAdd)
+        {
+            result = GuardClause.Null(obj.Map);
+            if (!result.Success) return result;
+            result = parent.Add<T>(obj);
+            if (!result.Success) return result;
+        }
+        return result;
     }
 }

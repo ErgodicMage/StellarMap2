@@ -13,13 +13,13 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
     public Dictionary<string, Identifier>? Planets {get; set; }
 
     [JsonPropertyOrder(13)]
-    public Dictionary<string, Identifier> DwarfPlanets { get; set; }
+    public Dictionary<string, Identifier>? DwarfPlanets { get; set; }
 
     [JsonPropertyOrder(14)]
-    public Dictionary<string, Identifier> Asteroids {get; set; }
+    public Dictionary<string, Identifier>? Asteroids {get; set; }
 
     [JsonPropertyOrder(15)]
-    public Dictionary<string, Identifier> Comets {get; set; }
+    public Dictionary<string, Identifier>? Comets {get; set; }
 
     #endregion
 
@@ -45,18 +45,17 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
     protected override Result<Dictionary<string, Identifier>> GetIdentifiers<T>()
     {
         var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
-        if (foundObjectType is null)
-            return Result.Error($"Can not find StellarObjectType for {nameof(T)}");
+        if (!foundObjectType.Success)
+            return Result.Error(foundObjectType.ErrorMessage);
 
-        Dictionary<string, Identifier>? dictionary = default;
-        foundObjectType
-                .When(StellarObjectType.Planet).Then(() => dictionary = Planets)
-                .When(StellarObjectType.DwarfPlanet).Then(() => dictionary = DwarfPlanets)
-                .When(StellarObjectType.Asteroid).Then(() => dictionary = Asteroids)
-                .When(StellarObjectType.Comet).Then(() => dictionary = Comets)
-                .Default(() => { });
-
-        return dictionary!;
+        return foundObjectType.Value.Name switch
+        {
+            StellarObjectType.PLANET => Planets!,
+            StellarObjectType.DWARFPLANET => DwarfPlanets!,
+            StellarObjectType.ASTEROID => Asteroids!,
+            StellarObjectType.COMET => Comets!,
+            _ => Result.Error($"{foundObjectType.Value.Name} is not in a Star")
+        }; ;
     }
     #endregion
 
@@ -76,14 +75,16 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
     protected override void CreateIdentifiers<T>()
     {
         var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
-        if (foundObjectType is null) return;
+        if (!foundObjectType.Success)
+            return;
 
-        foundObjectType
-            .When(StellarObjectType.Planet).Then(() => Planets ??= new())
-            .When(StellarObjectType.DwarfPlanet).Then(() => DwarfPlanets ??= new())
-            .When(StellarObjectType.Asteroid).Then(() => Asteroids ??= new())
-            .When(StellarObjectType.Comet).Then(() => Comets ??= new())
-            .Default(() => { });
+        _ = foundObjectType.Value.Name switch
+        {
+            StellarObjectType.PLANET => Planets ??= new(),
+            StellarObjectType.DWARFPLANET => DwarfPlanets ??= new(),
+            StellarObjectType.ASTEROID => Asteroids ??= new(),
+            StellarObjectType.COMET => Comets ??= new(),
+        };
     }
     #endregion
 

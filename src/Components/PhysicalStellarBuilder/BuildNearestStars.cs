@@ -7,7 +7,7 @@ public class BuildNearestStars
         Result result = BuildStars.Sol(map);
         if (!result.Success) return result;
 
-        result = BuildStarSystems.AlphsCentauri(map);
+        result = BuildStarSystems.AlphaCentauri(map);
         if (!result.Success) return result;
 
         result = BuildStars.BanardsStar(map);

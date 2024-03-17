@@ -61,7 +61,7 @@ public static class BuildStars
             BuildComets.dArrests(map)
         };
 
-        var sol = StarBuilder.Create("Sol", MapIdentifierGenerator.Instance, map)
+        return StarBuilder.Create("Sol", MapIdentifierGenerator.Instance, map)
             .WithDescription("The star at the center of the Solar System.")
             .WithProperty(PropertiesConstant.DESIGNATION, "Sol")
             .WithProperty(PropertiesConstant.ALTERNATIVENAME, "Sun")
@@ -74,8 +74,6 @@ public static class BuildStars
             .AddAsteroids(asteroids)
             .AddComets(comets)
             .Build();
-
-        return sol;
     }
 
     public static Result<Star> ProximaCentauri(IStellarMap map)
@@ -94,7 +92,7 @@ public static class BuildStars
         };
 
 
-        var proximacentauri = StarBuilder.Create("Proxima Centauri", MapIdentifierGenerator.Instance, map)
+        return StarBuilder.Create("Proxima Centauri", MapIdentifierGenerator.Instance, map)
             .WithDescription("The closest star to Sol.")
             .WithProperty(PropertiesConstant.DESIGNATION, "Alf Cen C, Alpha Centauri C, V645 Centauri, GJ 551, HIP 70890")
             .WithProperty(PropertiesConstant.ALTERNATIVENAME, "Alpha Centauri C")
@@ -105,8 +103,6 @@ public static class BuildStars
             .AsStellarClass("M5.5Ve")
             .AddPlanets(planets)
             .Build();
-
-        return proximacentauri;
     }
 
     public static Result<Star> RigilKentaurus(IStellarMap map)
@@ -118,7 +114,7 @@ public static class BuildStars
         };
 
 
-        var rigilkentaurus = StarBuilder.Create("Rigil Kentaurus", MapIdentifierGenerator.Instance, map)
+        return StarBuilder.Create("Rigil Kentaurus", MapIdentifierGenerator.Instance, map)
             .WithDescription("Largest star in Alpha Centauri.")
             .WithProperty(PropertiesConstant.DESIGNATION, "alf Cen A, Gl 559 A, Hip 71863")
             .WithProperty(PropertiesConstant.ALTERNATIVENAME, "Alpha Centauri A")
@@ -126,21 +122,17 @@ public static class BuildStars
             .AsStellarClass("G2V")
             .AddPlanets(planets)
             .Build();
-
-        return rigilkentaurus;
     }
 
     public static Result<Star> Toliman(IStellarMap map)
     {
-        var toliman = StarBuilder.Create("Toliman", MapIdentifierGenerator.Instance, map)
+        return StarBuilder.Create("Toliman", MapIdentifierGenerator.Instance, map)
             .WithDescription("Second largest star in Alpha Centauri.")
             .WithProperty(PropertiesConstant.DESIGNATION, "alf Cen B, Gl 559 B, Hip 71861")
             .WithProperty(PropertiesConstant.ALTERNATIVENAME, "Alpha Centauri B")
             .WithProperty(PropertiesConstant.SINBAD, "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=TYC+9007-5848-1")
             .AsStellarClass("K1V")
             .Build();
-
-        return toliman;
     }
 
     public static Result<Star> BanardsStar(IStellarMap map)
@@ -152,24 +144,21 @@ public static class BuildStars
             .Build();
 
 
-        var banardsstar = StarBuilder.Create("Banard's Star", MapIdentifierGenerator.Instance, map)
+        return StarBuilder.Create("Banard's Star", MapIdentifierGenerator.Instance, map)
             .WithProperty(PropertiesConstant.DESIGNATION, "V2500 Ophiuchi, BD+04°3561a, GJ 699, HIP 87937")
             .WithProperty(PropertiesConstant.ALTERNATIVENAME, "Proxima Ophiuchi")
             .WithProperty(PropertiesConstant.SINBAD, "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=BD%2B043561a")
             .AsStellarClass("M4.0V")
             .AddPlanet(planet)
             .Build();
-
-        return banardsstar;
     }
 
     public static Result<Star> WISE08550714(IStellarMap map)
     {
-        var wise = StarBuilder.Create("WISE 0855−0714", MapIdentifierGenerator.Instance, map)
+        return StarBuilder.Create("WISE 0855−0714", MapIdentifierGenerator.Instance, map)
             .WithDescription("sub-brown dwarf")
             .WithProperty(PropertiesConstant.DESIGNATION, "WISE 0855−0714, WISEA J085510.74-071442.5, GJ 11286")
             .AsStellarClass("Y4V")
             .Build();
-        return wise;
     }
 }

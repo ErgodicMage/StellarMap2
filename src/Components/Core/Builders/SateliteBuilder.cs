@@ -14,8 +14,7 @@ public class SateliteBuilder
         return sateliteBuilder;
     }
 
-    public static SateliteBuilder Create(string name, IIdentifierGenerator generator, IStellarMap map,
-        bool isDwarf = false)
+    public static SateliteBuilder Create(string name, IIdentifierGenerator generator, IStellarMap map)
     {
         SateliteBuilder sateliteBuilder = new();
         Identifier identifier = generator.GenerateIdentifier(StellarObjectType.Satelite, map);

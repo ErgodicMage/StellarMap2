@@ -12,8 +12,7 @@ public class CometBuilder
         return cometBuilder;
     }
 
-    public static CometBuilder Create(string name, IIdentifierGenerator generator, IStellarMap map,
-        bool isDwarf = false)
+    public static CometBuilder Create(string name, IIdentifierGenerator generator, IStellarMap map)
     {
         CometBuilder cometBuilder = new();
         Identifier identifier = generator.GenerateIdentifier(StellarObjectType.Comet, map);

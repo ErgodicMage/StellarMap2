@@ -1,4 +1,6 @@
-﻿namespace StellarMap.Core;
+﻿using System.Numerics;
+
+namespace StellarMap.Core;
 
 public class PlanetBuilder
 {
@@ -55,15 +57,7 @@ public class PlanetBuilder
     public PlanetBuilder AddSatelites(ICollection<Satelite> satelites)
     {
         if (!_result.Success) return this;
-        _result = GuardClause.Null(satelites);
-        if (!_result.Success) return this;
-
-        foreach (var satelite in satelites)
-        {
-            _result = BuilderCommonFunctionality.Add<Satelite>(_planet, satelite);
-            if (!_result.Success) return this;
-        }
-
+        _result = BuilderCommonFunctionality.Add<Satelite>(_planet, satelites);
         return this;
     }
 }

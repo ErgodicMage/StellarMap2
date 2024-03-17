@@ -24,14 +24,13 @@ public class BuildDwarfPlanets
             EscapeVelocity = 1.212
         };
 
-        var pluto = DwarfPlanetBuilder.Create("Pluto", MapIdentifierGenerator.Instance, map)
+        return DwarfPlanetBuilder.Create("Pluto", MapIdentifierGenerator.Instance, map)
             .WithDescription("The largets Dwarf Planet in the Solar System.")
             .WithProperty(PropertiesConstant.DESIGNATION, "SOL-D-01")
             .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.ROCKYDWARFPLANET)
             .AddPhysicalProperties(physicalProperties)
             .AddSatelites(satelites)
             .Build();
-        return pluto;
     }
 
     public static Result<DwarfPlanet> Ceres(IStellarMap map)
@@ -49,12 +48,11 @@ public class BuildDwarfPlanets
             EscapeVelocity = 0.516
         };
 
-        var ceres = DwarfPlanetBuilder.Create("Ceres", MapIdentifierGenerator.Instance, map)
+        return DwarfPlanetBuilder.Create("Ceres", MapIdentifierGenerator.Instance, map)
             .WithDescription("Dwarf planet in the asteroid belt.")
             .WithProperty(PropertiesConstant.DESIGNATION, "SOL-D-2")
             .WithProperty(PropertiesConstant.PLANETTYPE, PropertiesConstant.ROCKYDWARFPLANET)
             .AddPhysicalProperties(physicalProperties)
             .Build();
-        return ceres;
     }
 }

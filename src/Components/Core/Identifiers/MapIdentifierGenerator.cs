@@ -13,15 +13,8 @@ public sealed class MapIdentifierGenerator : IIdentifierGenerator
         var result = GuardClause.Null(map);
         if (!result.Success) return Identifier.NoIdentifier;
 
-        int count = 0;
-        type
-            .When(StellarObjectType.StarSystem).Then(() => count = map?.StarSystems is null ? 0 : map.StarSystems.Count)
-            .When(StellarObjectType.Star).Then(() => count = map?.Stars is null ? 0 : map.Stars.Count)
-            .When(StellarObjectType.Planet).Then(() => count = map?.Planets is null ? 0 : map.Planets.Count)
-            .When(StellarObjectType.DwarfPlanet).Then(() => count = map?.DwarfPlanets is null ? 0 : map.DwarfPlanets.Count)
-            .When(StellarObjectType.Satelite).Then(() => count = map?.Satelites is null ? 0 : map.Satelites.Count)
-            .When(StellarObjectType.Asteroid).Then(() => count = map?.Asteroids is null ? 0 : map.Asteroids.Count)
-            .When(StellarObjectType.Comet).Then(() => count = map?.Comets is null ? 0 : map.Comets.Count);
+        var count = map!.GetObjectCount(type);
+        if (!count.Success) return Identifier.NoIdentifier;
 
         return new Identifier($"{type.Name}-{count + 1:D5}");
     }

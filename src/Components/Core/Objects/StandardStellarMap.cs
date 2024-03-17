@@ -85,37 +85,56 @@ public class StandardStellarMap : IStellarMap
     protected virtual void CreateDictionary<T>() where T : IStellarObject
     {
         var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
-        if (foundObjectType is null) return;
+        if (!foundObjectType.Success) return;
 
-        foundObjectType
-            .When(StellarObjectType.StarSystem).Then(() => StarSystems ??= new())
-            .When(StellarObjectType.Star).Then(() => Stars ??= new())
-            .When(StellarObjectType.Planet).Then(() => Planets ??= new())
-            .When(StellarObjectType.DwarfPlanet).Then(() => DwarfPlanets ??= new())
-            .When(StellarObjectType.Satelite).Then(() => Satelites ??= new())
-            .When(StellarObjectType.Asteroid).Then(() => Asteroids ??= new())
-            .When(StellarObjectType.Comet).Then(() => Comets ??= new())
-            .Default(() => { });
+        // can not use switch pattern matching expressions because
+        // StarSystems ??= new returns a different type than Stars ?? = new() so it doesn't know what to "return"
+        switch (foundObjectType.Value.Name)
+        {
+            case StellarObjectType.STARSYSTEM : StarSystems ??= new(); break;
+            case StellarObjectType.STAR : Stars ??= new(); break;
+            case StellarObjectType.PLANET : Planets ??= new(); break;
+            case StellarObjectType.DWARFPLANET : DwarfPlanets ??= new(); break;
+            case StellarObjectType.SATELITE : Satelites ??= new(); break;
+            case StellarObjectType.ASTEROID: Asteroids ??= new(); break;
+            case StellarObjectType.COMET : Comets ??= new(); break;
+        }
     }
 
     protected virtual Result<Dictionary<string, T>> GetDictionary<T>() where T : IStellarObject
     {
         var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
-        if (foundObjectType is null)
-            return Result.Error($"Can not find StellarObjectTypr for {nameof(T)}");
+        if (!foundObjectType.Success)
+            return Result.Error(foundObjectType.ErrorMessage);
 
-        Dictionary<string, T>? dictionary = default;
-        foundObjectType
-                .When(StellarObjectType.StarSystem).Then(() => dictionary = StarSystems as Dictionary<string, T>)
-                .When(StellarObjectType.Star).Then(() => dictionary = Stars as Dictionary<string, T>)
-                .When(StellarObjectType.Planet).Then(() => dictionary = Planets as Dictionary<string, T>)
-                .When(StellarObjectType.DwarfPlanet).Then(() => dictionary = DwarfPlanets as Dictionary<string, T>)
-                .When(StellarObjectType.Satelite).Then(() => dictionary = Satelites as Dictionary<string, T>)
-                .When(StellarObjectType.Asteroid).Then(() => dictionary = Asteroids as Dictionary<string, T>)
-                .When(StellarObjectType.Comet).Then(() => dictionary = Comets as Dictionary<string, T>)
-                .Default(() => { });
+        return foundObjectType.Value.Name switch
+        {
+            StellarObjectType.STARSYSTEM => (StarSystems as Dictionary<string, T>)!,
+            StellarObjectType.STAR => (Stars as Dictionary<string, T>)!,
+            StellarObjectType.PLANET => (Planets as Dictionary<string, T>)!,
+            StellarObjectType.DWARFPLANET => (DwarfPlanets as Dictionary<string, T>)!,
+            StellarObjectType.SATELITE => (Satelites as Dictionary<string, T>)!,
+            StellarObjectType.ASTEROID => (Asteroids as Dictionary<string, T>)!,
+            StellarObjectType.COMET => (Comets as Dictionary<string, T>)!,
+            _ => Result.Error($"{foundObjectType.Value.Name} is not in a StallarMap")
+        };
+    }
+    #endregion
 
-        return dictionary!;
+    #region GenObjectCount
+    public virtual Result<int> GetObjectCount(StellarObjectType type)
+    {
+        return type.Name switch
+        {
+            StellarObjectType.STARSYSTEM => StarSystems is null ? 0 : StarSystems.Count,
+            StellarObjectType.STAR => Stars is null ? 0 : Stars.Count,
+            StellarObjectType.PLANET => Planets is null ? 0 : Planets.Count,
+            StellarObjectType.DWARFPLANET => DwarfPlanets is null ? 0 : DwarfPlanets.Count,
+            StellarObjectType.SATELITE => Satelites is null ? 0 : Satelites.Count,
+            StellarObjectType.ASTEROID => Asteroids is null ? 0 : Asteroids.Count,
+            StellarObjectType.COMET => Comets is null ? 0 : Comets.Count,
+            _ => -50001
+        };
     }
     #endregion
 
@@ -125,8 +144,7 @@ public class StandardStellarMap : IStellarMap
     public override bool Equals(object? obj) => Equals(this, obj as IStellarMap);
 
     public int GetHashCode([DisallowNull] IStellarMap obj)
-        => HashCode.Combine(HashCode.Combine(obj.Name.GetHashCode(), obj.MetaData), 
-            obj.StarSystems, obj.Stars, obj.Planets, obj.DwarfPlanets, obj.Satelites, obj.Asteroids, obj.Comets);
+        => HashCode.Combine(HashCode.Combine(Name, MetaData), StarSystems, Stars, Planets, DwarfPlanets, Satelites, Asteroids, Comets);
 
     public override int GetHashCode() => GetHashCode(this);
     #endregion

@@ -7,7 +7,7 @@
     "Email": "ErgodicMage@gmail.com",
     "License": "MIT License, 2024",
     "Github": "https://github.com/ErgodicMage/StellarMap2",
-    "Date": "3/7/2024"
+    "Date": "3/16/2024"
   },
   "StarSystems": {
     "StarSystem-00001": {
@@ -18,7 +18,9 @@
       "ParentIdentifier": {
         "Id": ""
       },
-      "ObjectType": "StarSystem",
+      "ObjectType": {
+        "Name": "StarSystem"
+      },
       "Properties": {},
       "PhysicalProperties": null,
       "Stars": {
@@ -32,6 +34,25 @@
           "Id": "Star-00004"
         }
       }
+    },
+    "StarSystem-00002": {
+      "Name": "Luhman 16",
+      "Identifier": {
+        "Id": "StarSystem-00002"
+      },
+      "ParentIdentifier": {
+        "Id": ""
+      },
+      "ObjectType": {
+        "Name": "StarSystem"
+      },
+      "Properties": {
+        "Description": "Star system of brown dwarfs",
+        "Designation": "LUH 16, Luhman\u2013WISE 1, WISE J104915.57\u2212531906.1, GJ 11551",
+        "Sinbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=WISE\u002BJ104915.57-531906.1"
+      },
+      "PhysicalProperties": null,
+      "Stars": null
     }
   },
   "Stars": {
@@ -43,7 +64,9 @@
       "ParentIdentifier": {
         "Id": ""
       },
-      "ObjectType": "Star",
+      "ObjectType": {
+        "Name": "Star"
+      },
       "Properties": {
         "Description": "The star at the center of the Solar System.",
         "Designation": "Sol",
@@ -164,7 +187,9 @@
       "ParentIdentifier": {
         "Id": "StarSystem-00001"
       },
-      "ObjectType": "Star",
+      "ObjectType": {
+        "Name": "Star"
+      },
       "Properties": {
         "Description": "The closest star to Sol.",
         "Designation": "Alf Cen C, Alpha Centauri C, V645 Centauri, GJ 551, HIP 70890",
@@ -208,7 +233,9 @@
       "ParentIdentifier": {
         "Id": "StarSystem-00001"
       },
-      "ObjectType": "Star",
+      "ObjectType": {
+        "Name": "Star"
+      },
       "Properties": {
         "Description": "Largest star in Alpha Centauri.",
         "Designation": "alf Cen A, Gl 559 A, Hip 71863",
@@ -234,7 +261,9 @@
       "ParentIdentifier": {
         "Id": "StarSystem-00001"
       },
-      "ObjectType": "Star",
+      "ObjectType": {
+        "Name": "Star"
+      },
       "Properties": {
         "Description": "Second largest star in Alpha Centauri.",
         "Designation": "alf Cen B, Gl 559 B, Hip 71861",
@@ -243,6 +272,93 @@
       },
       "PhysicalProperties": null,
       "StellarClass": "K1V",
+      "Planets": null,
+      "DwarfPlanets": null,
+      "Asteroids": null,
+      "Comets": null
+    },
+    "Star-00005": {
+      "Name": "Banard\u0027s Star",
+      "Identifier": {
+        "Id": "Star-00005"
+      },
+      "ParentIdentifier": {
+        "Id": ""
+      },
+      "ObjectType": {
+        "Name": "Star"
+      },
+      "Properties": {
+        "Designation": "V2500 Ophiuchi, BD\u002B04\u00B03561a, GJ 699, HIP 87937",
+        "AlternativeName": "Proxima Ophiuchi",
+        "Sinbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=BD%2B043561a"
+      },
+      "PhysicalProperties": null,
+      "StellarClass": "M4.0V",
+      "Planets": {
+        "Banard\u0027s Star b": {
+          "Id": "Planet-00013"
+        }
+      },
+      "DwarfPlanets": null,
+      "Asteroids": null,
+      "Comets": null
+    },
+    "Star-00006": {
+      "Name": "Luhman 16A",
+      "Identifier": {
+        "Id": "Star-00006"
+      },
+      "ParentIdentifier": {
+        "Id": ""
+      },
+      "ObjectType": {
+        "Name": "Star"
+      },
+      "Properties": {},
+      "PhysicalProperties": null,
+      "StellarClass": "L",
+      "Planets": null,
+      "DwarfPlanets": null,
+      "Asteroids": null,
+      "Comets": null
+    },
+    "Star-00007": {
+      "Name": "Luhman 16B",
+      "Identifier": {
+        "Id": "Star-00007"
+      },
+      "ParentIdentifier": {
+        "Id": ""
+      },
+      "ObjectType": {
+        "Name": "Star"
+      },
+      "Properties": {},
+      "PhysicalProperties": null,
+      "StellarClass": "T",
+      "Planets": null,
+      "DwarfPlanets": null,
+      "Asteroids": null,
+      "Comets": null
+    },
+    "Star-00008": {
+      "Name": "WISE 0855\u22120714",
+      "Identifier": {
+        "Id": "Star-00008"
+      },
+      "ParentIdentifier": {
+        "Id": ""
+      },
+      "ObjectType": {
+        "Name": "Star"
+      },
+      "Properties": {
+        "Description": "sub-brown dwarf",
+        "Designation": "WISE 0855\u22120714, WISEA J085510.74-071442.5, GJ 11286"
+      },
+      "PhysicalProperties": null,
+      "StellarClass": "Y4V",
       "Planets": null,
       "DwarfPlanets": null,
       "Asteroids": null,
@@ -258,7 +374,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Planet",
+      "ObjectType": {
+        "Name": "Planet"
+      },
       "Properties": {
         "Description": "The first planet in the Solar System.",
         "Designation": "SOL-01",
@@ -285,7 +403,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Planet",
+      "ObjectType": {
+        "Name": "Planet"
+      },
       "Properties": {
         "Description": "The 2nd planet in the Solar System.",
         "Designation": "SOL-02",
@@ -312,7 +432,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Planet",
+      "ObjectType": {
+        "Name": "Planet"
+      },
       "Properties": {
         "Description": "The 3nd planet in the Solar System",
         "Designation": "SOL-03",
@@ -343,7 +465,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Planet",
+      "ObjectType": {
+        "Name": "Planet"
+      },
       "Properties": {
         "Description": "The 4th planet in the Solar System.",
         "Designation": "SOL-04",
@@ -377,7 +501,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Planet",
+      "ObjectType": {
+        "Name": "Planet"
+      },
       "Properties": {
         "Description": "The fifth and largets planet in the Solar System.",
         "Designation": "SOL-05",
@@ -441,7 +567,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Planet",
+      "ObjectType": {
+        "Name": "Planet"
+      },
       "Properties": {
         "Description": "The sixth planet in the Solar System.",
         "Designation": "SOL-06",
@@ -499,7 +627,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Planet",
+      "ObjectType": {
+        "Name": "Planet"
+      },
       "Properties": {
         "Description": "The 7th planet in the Solar System.",
         "Designation": "SOL-07",
@@ -542,7 +672,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Planet",
+      "ObjectType": {
+        "Name": "Planet"
+      },
       "Properties": {
         "Description": "The 8th planet in the Solar System.",
         "Designation": "SOL-08",
@@ -582,7 +714,9 @@
       "ParentIdentifier": {
         "Id": "Star-00002"
       },
-      "ObjectType": "Planet",
+      "ObjectType": {
+        "Name": "Planet"
+      },
       "Properties": {},
       "PhysicalProperties": null,
       "Satelites": null
@@ -595,7 +729,9 @@
       "ParentIdentifier": {
         "Id": "Star-00002"
       },
-      "ObjectType": "Planet",
+      "ObjectType": {
+        "Name": "Planet"
+      },
       "Properties": {},
       "PhysicalProperties": null,
       "Satelites": null
@@ -608,7 +744,9 @@
       "ParentIdentifier": {
         "Id": "Star-00002"
       },
-      "ObjectType": "Planet",
+      "ObjectType": {
+        "Name": "Planet"
+      },
       "Properties": {
         "Description": "candidate"
       },
@@ -623,9 +761,29 @@
       "ParentIdentifier": {
         "Id": "Star-00003"
       },
-      "ObjectType": "Planet",
+      "ObjectType": {
+        "Name": "Planet"
+      },
       "Properties": {
         "Description": "candidate"
+      },
+      "PhysicalProperties": null,
+      "Satelites": null
+    },
+    "Planet-00013": {
+      "Name": "Banard\u0027s Star b",
+      "Identifier": {
+        "Id": "Planet-00013"
+      },
+      "ParentIdentifier": {
+        "Id": "Star-00005"
+      },
+      "ObjectType": {
+        "Name": "Planet"
+      },
+      "Properties": {
+        "Description": "refuted",
+        "Planet Type": "Super Earth"
       },
       "PhysicalProperties": null,
       "Satelites": null
@@ -640,7 +798,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "DwarfPlanet",
+      "ObjectType": {
+        "Name": "DwarfPlanet"
+      },
       "Properties": {
         "Description": "The largets Dwarf Planet in the Solar System.",
         "Designation": "SOL-D-01",
@@ -683,7 +843,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "DwarfPlanet",
+      "ObjectType": {
+        "Name": "DwarfPlanet"
+      },
       "Properties": {
         "Description": "Dwarf planet in the asteroid belt.",
         "Designation": "SOL-D-2",
@@ -712,7 +874,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00003"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "Earth\u0027s moon",
         "AlternativeName": "Luna"
@@ -737,7 +901,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00004"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "First and largest natural satellite of Mars."
       },
@@ -761,7 +927,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00004"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "Second natural satellite of Mars."
       },
@@ -785,7 +953,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00005"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "First inner natural satellite of Jupiter."
       },
@@ -809,7 +979,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00005"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "Second inner natural satellite of Jupiter."
       },
@@ -833,7 +1005,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00005"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "Third inner natural satellite and the 5th largest of Jupiter."
       },
@@ -857,7 +1031,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00005"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "Fourth inner natural satellite and the 7th largest of Jupiter."
       },
@@ -881,7 +1057,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00005"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "First Galilean and the 3rd largest natural satellite of Jupiter."
       },
@@ -905,7 +1083,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00005"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "Second Galilean and 4th largest natural satellite of Jupiter."
       },
@@ -929,7 +1109,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00005"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "Third Galilean and largest natural satellite of Jupiter."
       },
@@ -953,7 +1135,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00005"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "Fourth Galilean and 2nd largest natural satellite of Jupiter."
       },
@@ -977,7 +1161,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00005"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "11th natural and 6th largest satellite of Jupiter."
       },
@@ -1001,7 +1187,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00005"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "Fourth inner natural satellite of Jupiter."
       },
@@ -1025,7 +1213,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00005"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "60th and 9th largest inner natural satellite of Jupiter."
       },
@@ -1049,7 +1239,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00005"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "74th and 10th largest natural satellite of Jupiter."
       },
@@ -1073,7 +1265,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00006"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "Largest natural satellite of Saturn and second largest in the Solar System."
       },
@@ -1097,7 +1291,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00006"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "2nd largest natural satellite of Saturn."
       },
@@ -1121,7 +1317,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00006"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "3rd largest natural satellite of Saturn."
       },
@@ -1145,7 +1343,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00006"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "4th largest natural satellite of Saturn."
       },
@@ -1169,7 +1369,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00006"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "5th largest natural satellite of Saturn."
       },
@@ -1193,7 +1395,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00006"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "6th largest natural satellite of Saturn."
       },
@@ -1217,7 +1421,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00006"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "7th largest natural satellite of Saturn."
       },
@@ -1241,7 +1447,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00006"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "8th largest natural satellite of Saturn."
       },
@@ -1265,7 +1473,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00006"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "9th largest natural satellite of Saturn."
       },
@@ -1289,7 +1499,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00006"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "10th largest natural satellite of Saturn."
       },
@@ -1313,7 +1525,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00007"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "The largest natural satellite of Uranus."
       },
@@ -1337,7 +1551,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00007"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "The 2nd largest natural satellite of Uranus."
       },
@@ -1361,7 +1577,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00007"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "The 3rd largest natural satellite of Uranus."
       },
@@ -1385,7 +1603,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00007"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "The 4th largest natural satellite of Uranus."
       },
@@ -1409,7 +1629,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00007"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "The 5th largest natural satellite of Uranus."
       },
@@ -1433,7 +1655,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00008"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "Largest natural satellite of Neptune."
       },
@@ -1457,7 +1681,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00008"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "The 2nd largest natural satellite of Neptune."
       },
@@ -1481,7 +1707,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00008"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "The 3rd largest natural satellite of Neptune."
       },
@@ -1505,7 +1733,9 @@
       "ParentIdentifier": {
         "Id": "Planet-00008"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "Largest natural satellite of Neptune."
       },
@@ -1529,7 +1759,9 @@
       "ParentIdentifier": {
         "Id": "DwarfPlanet-00001"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {
         "Description": "Largest natural satellite of Pluto."
       },
@@ -1553,7 +1785,9 @@
       "ParentIdentifier": {
         "Id": "DwarfPlanet-00001"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {},
       "PhysicalProperties": {
         "Mass": 26000000000000000,
@@ -1575,7 +1809,9 @@
       "ParentIdentifier": {
         "Id": "DwarfPlanet-00001"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {},
       "PhysicalProperties": {
         "Mass": 30100000000000000,
@@ -1597,7 +1833,9 @@
       "ParentIdentifier": {
         "Id": "DwarfPlanet-00001"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {},
       "PhysicalProperties": {
         "Mass": 16500000000000000,
@@ -1619,7 +1857,9 @@
       "ParentIdentifier": {
         "Id": "DwarfPlanet-00001"
       },
-      "ObjectType": "Satelite",
+      "ObjectType": {
+        "Name": "Satelite"
+      },
       "Properties": {},
       "PhysicalProperties": {
         "Mass": 7500000000000000,
@@ -1643,7 +1883,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Asteroid",
+      "ObjectType": {
+        "Name": "Asteroid"
+      },
       "Properties": {
         "Description": "One of the largest asteroids in the Solar System."
       },
@@ -1667,7 +1909,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Asteroid",
+      "ObjectType": {
+        "Name": "Asteroid"
+      },
       "Properties": {},
       "PhysicalProperties": {
         "Mass": 2.04E+20,
@@ -1689,7 +1933,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Asteroid",
+      "ObjectType": {
+        "Name": "Asteroid"
+      },
       "Properties": {},
       "PhysicalProperties": {
         "Mass": 8.74E+19,
@@ -1711,7 +1957,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Asteroid",
+      "ObjectType": {
+        "Name": "Asteroid"
+      },
       "Properties": {},
       "PhysicalProperties": {
         "Mass": 1.65E+19,
@@ -1733,7 +1981,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Asteroid",
+      "ObjectType": {
+        "Name": "Asteroid"
+      },
       "Properties": {},
       "PhysicalProperties": null
     },
@@ -1745,7 +1995,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Asteroid",
+      "ObjectType": {
+        "Name": "Asteroid"
+      },
       "Properties": {},
       "PhysicalProperties": null
     },
@@ -1757,7 +2009,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Asteroid",
+      "ObjectType": {
+        "Name": "Asteroid"
+      },
       "Properties": {},
       "PhysicalProperties": null
     },
@@ -1769,7 +2023,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Asteroid",
+      "ObjectType": {
+        "Name": "Asteroid"
+      },
       "Properties": {},
       "PhysicalProperties": null
     },
@@ -1781,7 +2037,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Asteroid",
+      "ObjectType": {
+        "Name": "Asteroid"
+      },
       "Properties": {},
       "PhysicalProperties": null
     },
@@ -1793,7 +2051,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Asteroid",
+      "ObjectType": {
+        "Name": "Asteroid"
+      },
       "Properties": {},
       "PhysicalProperties": null
     },
@@ -1805,7 +2065,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Asteroid",
+      "ObjectType": {
+        "Name": "Asteroid"
+      },
       "Properties": {},
       "PhysicalProperties": null
     }
@@ -1819,7 +2081,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Comet",
+      "ObjectType": {
+        "Name": "Comet"
+      },
       "Properties": {
         "Description": "Haley\u0027s Comet"
       },
@@ -1843,7 +2107,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Comet",
+      "ObjectType": {
+        "Name": "Comet"
+      },
       "Properties": {
         "Description": "Caeser\u0027s Comet"
       },
@@ -1857,7 +2123,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Comet",
+      "ObjectType": {
+        "Name": "Comet"
+      },
       "Properties": {
         "Description": "Encke\u0027s Comet"
       },
@@ -1871,7 +2139,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Comet",
+      "ObjectType": {
+        "Name": "Comet"
+      },
       "Properties": {
         "Description": "Biela\u0027s Comet"
       },
@@ -1885,7 +2155,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Comet",
+      "ObjectType": {
+        "Name": "Comet"
+      },
       "Properties": {
         "Description": "Faye\u0027s Comet"
       },
@@ -1899,7 +2171,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Comet",
+      "ObjectType": {
+        "Name": "Comet"
+      },
       "Properties": {
         "Description": "Brorsen\u0027s Comet"
       },
@@ -1913,7 +2187,9 @@
       "ParentIdentifier": {
         "Id": "Star-00001"
       },
-      "ObjectType": "Comet",
+      "ObjectType": {
+        "Name": "Comet"
+      },
       "Properties": {
         "Description": "d\u0027Arrest\u0027s Comet"
       },

@@ -17,4 +17,6 @@ public interface IStellarMap : IEqualityComparer<IStellarMap>
     Result Add<T>(T t) where T : IStellarObject;
 
     Result<T> Get<T>(Identifier identifier) where T : IStellarObject;
+
+    Result<int> GetObjectCount(StellarObjectType type);
 }

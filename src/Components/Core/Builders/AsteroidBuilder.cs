@@ -12,8 +12,7 @@ public class AsteroidBuilder
         return asteroidBuilder;
     }
 
-    public static AsteroidBuilder Create(string name, IIdentifierGenerator generator, IStellarMap map,
-        bool isDwarf = false)
+    public static AsteroidBuilder Create(string name, IIdentifierGenerator generator, IStellarMap map)
     {
         AsteroidBuilder asteroidBuilder = new();
         Identifier identifier = generator.GenerateIdentifier(StellarObjectType.Asteroid, map);
