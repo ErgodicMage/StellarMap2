@@ -1,4 +1,6 @@
-﻿namespace StellarMap.Core;
+﻿using System.Numerics;
+
+namespace StellarMap.Core;
 
 public class StarSystemBuilder
 {
@@ -46,15 +48,7 @@ public class StarSystemBuilder
     public StarSystemBuilder AddStars(ICollection<Star> stars)
     {
         if (!_result.Success) return this;
-        _result = GuardClause.Null(stars);
-        if (!_result.Success) return this;
-
-        foreach (var star in stars)
-        {
-            _result = BuilderCommonFunctionality.Add<Star>(_starsystem, star);
-            if (!_result.Success) return this;
-        }
-
+        _result = BuilderCommonFunctionality.Add<Star>(_starsystem, stars);
         return this;
     }
 }

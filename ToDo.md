@@ -1,5 +1,4 @@
 ## To Do
-* Builders Add collection functions, reduce to call to one template function in BuilderCommonFunctions.
 * Add Physical Stars and Star Systems
 * Add Storage methods for maps and objects.
 	* json
@@ -40,3 +39,4 @@
 * ~~Add StarSystem to group gravitational bound stars~~
 * ~~Replace StellarObjectType use of Ardalis SmartEnum with custom class~~
 * ~~MapIdentifierGenerator calculates the count for the StellarObjectType, which breaks single responsibility. Instead have the map determin the count of the object types and GenerateIdentifier uses that to return the identifier.~~
+* ~~Builders Add collection functions, reduce to call to one template function in BuilderCommonFunctions.~~

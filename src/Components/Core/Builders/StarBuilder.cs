@@ -66,15 +66,7 @@ public class StarBuilder
     public StarBuilder AddPlanets(ICollection<Planet> planets)
     {
         if (!_result.Success) return this;
-        _result = GuardClause.Null(planets);
-        if (!_result.Success) return this;
-
-        foreach (var planet in planets)
-        {
-            _result = BuilderCommonFunctionality.Add<Planet>(_star, planet);
-            if (!_result.Success) return this;
-        }
-
+        _result = BuilderCommonFunctionality.Add<Planet>(_star, planets);
         return this;
     }
 
@@ -88,15 +80,7 @@ public class StarBuilder
     public StarBuilder AddDwarfPlanets(ICollection<DwarfPlanet> dwarfplanets)
     {
         if (!_result.Success) return this;
-        _result = GuardClause.Null(dwarfplanets);
-        if (!_result.Success) return this;
-
-        foreach (var dwarfplanet in dwarfplanets)
-        {
-            _result = BuilderCommonFunctionality.Add<DwarfPlanet>(_star, dwarfplanet);
-            if (!_result.Success) return this;
-        }
-
+        _result = BuilderCommonFunctionality.Add<DwarfPlanet>(_star, dwarfplanets);
         return this;
     }
 
@@ -110,15 +94,7 @@ public class StarBuilder
     public StarBuilder AddAsteroids(ICollection<Asteroid> asteroids)
     {
         if (!_result.Success) return this;
-        _result = GuardClause.Null(asteroids);
-        if (!_result.Success) return this;
-
-        foreach (var asteroid in asteroids)
-        {
-            _result = BuilderCommonFunctionality.Add<Asteroid>(_star, asteroid);
-            if (!_result.Success) return this;
-        }
-
+        _result = BuilderCommonFunctionality.Add<Asteroid>(_star, asteroids);
         return this;
     }
 
@@ -132,15 +108,7 @@ public class StarBuilder
     public StarBuilder AddComets(ICollection<Comet> comets)
     {
         if (!_result.Success) return this;
-        _result = GuardClause.Null(comets);
-        if (!_result.Success) return this;
-
-        foreach (var comet in comets)
-        {
-            _result = BuilderCommonFunctionality.Add<Comet>(_star, comet);
-            if (!_result.Success) return this;
-        }
-
+        _result = BuilderCommonFunctionality.Add<Comet>(_star, comets);
         return this;
     }
 }
