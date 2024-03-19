@@ -61,4 +61,20 @@ public class ProgressionMap : StandardStellarMap, IProgressionMap
 #pragma warning restore CS0458
     }
     #endregion
+
+    #region GenObjectCount
+    public override Result<int> GetObjectCount(StellarObjectType type)
+    {
+        return type.Name switch
+        {
+            ProgressionObjectType.PROGRESSIONSTARSYSTEM => base.GetObjectCount(StellarObjectType.StarSystem),
+            ProgressionObjectType.PROGRESSIONSTAR => base.GetObjectCount(StellarObjectType.Star),
+            ProgressionObjectType.PROGRESSIONPLANET => base.GetObjectCount(StellarObjectType.Planet),
+            ProgressionObjectType.PROGRESSIONSATELITE => base.GetObjectCount(StellarObjectType.Satelite),
+            ProgressionObjectType.PROGRESSIONASTEROID => base.GetObjectCount(StellarObjectType.Asteroid),
+            ProgressionObjectType.HABITAT => Habitats is null ? 0 : Habitats.Count,
+            _ => base.GetObjectCount(type)
+        };
+    }
+    #endregion
 }

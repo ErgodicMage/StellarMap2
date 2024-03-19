@@ -10,11 +10,11 @@ public record ProgressionObjectType : StellarObjectType
     public const string HABITAT = "Habitat";
 
     public static readonly ProgressionObjectType ProgressionStarSystem = Register(new ProgressionStarSystemType());
-    public static readonly ProgressionObjectType ProgressionStar = new ProgressionStarType();
-    public static readonly ProgressionObjectType ProgressionPlanet = new ProgressionPlanetType();
-    public static readonly ProgressionObjectType ProgressionSatelite = new ProgressionSateliteType();
-    public static readonly ProgressionObjectType ProgressionAsteroid = new ProgressionAsteroidType();
-    public static readonly ProgressionObjectType Habitat = new HabitatType();
+    public static readonly ProgressionObjectType ProgressionStar = Register(new ProgressionStarType());
+    public static readonly ProgressionObjectType ProgressionPlanet = Register(new ProgressionPlanetType());
+    public static readonly ProgressionObjectType ProgressionSatelite = Register(new ProgressionSateliteType());
+    public static readonly ProgressionObjectType ProgressionAsteroid = Register(new ProgressionAsteroidType());
+    public static readonly ProgressionObjectType Habitat = Register(new HabitatType());
 
     protected ProgressionObjectType(string name) : base(name)
     { }
