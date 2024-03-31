@@ -18,36 +18,14 @@ public class ProgressionStar : Star
 
     #region Get
     public Result<ProgressionPlanet> GetProgressionPlanet(Identifier identifier)
-    {
-        var result = Get<Planet>(identifier);
-        if (!result.Success) return Result.Error(result.ErrorMessage);
-        var planet = result.Value as ProgressionPlanet;
-        return planet is not null ? planet : Result.Error("Planet is not a ProgressionPlanet");
-    }
-
+        => GetPlanet(identifier).Convert<ProgressionPlanet, Planet>();
     public Result<ProgressionPlanet> GetProgressionPlanet(string name)
-    {
-        var result = Get<Planet>(name);
-        if (!result.Success) return Result.Error(result.ErrorMessage);
-        var planet = result.Value as ProgressionPlanet;
-        return planet is not null ? planet : Result.Error("Planet is not a ProgressionPlanet");
-    }
+        => GetPlanet(name).Convert<ProgressionPlanet, Planet>();
 
     public Result<ProgressionAsteroid> GetProgressionAsteroid(Identifier identifier)
-    {
-        var result = Get<Asteroid>(identifier);
-        if (!result.Success) return Result.Error(result.ErrorMessage);
-        var asteroid = result.Value as ProgressionAsteroid;
-        return asteroid is not null ? asteroid : Result.Error("Asteroid is not a ProgressionAsteroid");
-    }
-
+        => GetAsteroid(identifier).Convert<ProgressionAsteroid, Asteroid>();
     public Result<ProgressionAsteroid> GetProgressionAsteroid(string name)
-    {
-        var result = Get<Asteroid>(name);
-        if (!result.Success) return Result.Error(result.ErrorMessage);
-        var asteroid = result.Value as ProgressionAsteroid;
-        return asteroid is not null ? asteroid : Result.Error("Asteroid is not a ProgressionAsteroid");
-    }
+        => GetAsteroid(name).Convert<ProgressionAsteroid, Asteroid>();
 
     public Result<Habitat> GetHabitat(Identifier identifier) => Get<Habitat>(identifier);
     public Result<Habitat> GetHabitat(string name) => Get<Habitat>(name);

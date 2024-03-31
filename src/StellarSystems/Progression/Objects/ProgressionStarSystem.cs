@@ -14,20 +14,10 @@ public class ProgressionStarSystem : StarSystem
 
     #region Get
     public Result<ProgressionStar> GetProgressionStar(Identifier identifier)
-    {
-        var result = Get<Star>(identifier);
-        if (!result.Success) return Result.Error(result.ErrorMessage);
-        var star = result.Value as ProgressionStar;
-        return star is not null ? star : Result.Error("Star is not a ProgressionStar");
-    }
+        => GetStar(identifier).Convert<ProgressionStar, Star>();
 
     public Result<ProgressionStar> GetProgressionStar(string name)
-    {
-        var result = Get<Star>(name);
-        if (!result.Success) return Result.Error(result.ErrorMessage);
-        var star = result.Value as ProgressionStar;
-        return star is not null ? star : Result.Error("Star is not a ProgressionStar");
-    }
+        => GetStar(name).Convert<ProgressionStar, Star>();
 
     protected override Result<Dictionary<string, Identifier>> GetIdentifiers<T>()
     {

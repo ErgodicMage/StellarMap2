@@ -17,6 +17,23 @@ public class ProgressionMap : StandardStellarMap, IProgressionMap
     }
     #endregion
 
+    #region Get
+    public Result<ProgressionStarSystem> GetProgressionStarSystem(Identifier identifier)
+        => Get<StarSystem>(identifier).Convert<ProgressionStarSystem, StarSystem>();
+
+    public Result<ProgressionStar> GetProgressionStar(Identifier identifier)
+        => Get<Star>(identifier).Convert<ProgressionStar, Star>();
+
+    public Result<ProgressionPlanet> GetProgressionPlanet(Identifier identifier)
+        => Get<Planet>(identifier).Convert<ProgressionPlanet, Planet>();
+
+    public Result<ProgressionSatelite> GetProgressionSatelite(Identifier identifier)
+        => Get<Satelite>(identifier).Convert<ProgressionSatelite, Satelite>();
+
+    public Result<ProgressionAsteroid> GetProgressionAsteroid(Identifier identifier)
+        => Get<Asteroid>(identifier).Convert<ProgressionAsteroid, Asteroid>();
+    #endregion
+
     #region Dictionary
     protected override void CreateDictionary<T>()
     {
