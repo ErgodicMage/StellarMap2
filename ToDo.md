@@ -1,5 +1,4 @@
 ## To Do
-* IStellarMap enforces too much implementation with Dictionaries of specific IStellarObjects. This make it difficult for other systems to make their own implmentations.
 * Add Physical Stars and Star Systems
 * Add Storage methods for maps and objects.
 	* json
