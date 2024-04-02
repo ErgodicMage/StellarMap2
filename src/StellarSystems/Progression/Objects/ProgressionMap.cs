@@ -32,6 +32,9 @@ public class ProgressionMap : StandardStellarMap, IProgressionMap
 
     public Result<ProgressionAsteroid> GetProgressionAsteroid(Identifier identifier)
         => Get<Asteroid>(identifier).Convert<ProgressionAsteroid, Asteroid>();
+
+    public Result<Habitat> GetHabitat(Identifier identifier)
+        => Get<Habitat>(identifier);
     #endregion
 
     #region Dictionary
