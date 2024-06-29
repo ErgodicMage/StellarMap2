@@ -8,5 +8,9 @@
     <EmbeddedResource Include="..\..\..\Data\PhysicalSol.json" />
     <EmbeddedResource Include="..\..\..\Data\PhysicalNearestStars.json" />
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="ErgodicMage.Result" Version="0.4.0" />
+  </ItemGroup>
  
 </Project>

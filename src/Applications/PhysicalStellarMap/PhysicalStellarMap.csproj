@@ -25,4 +25,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Update="ErgodicMage.Result" Version="0.4.0" />
+  </ItemGroup>
+
 </Project>
