@@ -19,7 +19,7 @@ public class ProgressionPlanet : Planet
     public Result<ProgressionSatelite> GetProgressionSatelite(Identifier identifier)
         => GetSatelite(identifier).Convert<ProgressionSatelite, Satelite>();
     public Result<ProgressionSatelite> GetProgressionSatelite(string name)
-    => GetSatelite(name).Convert<ProgressionSatelite, Satelite>();
+        => GetSatelite(name).Convert<ProgressionSatelite, Satelite>();
 
     public Result<Habitat> GetHabitat(Identifier identifier) => Get<Habitat>(identifier);
     public Result<Habitat> GetHabitat(string name) => Get<Habitat>(name);

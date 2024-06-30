@@ -38,8 +38,8 @@ public class ProgressionStar : Star
 
         return foundObjectType.Value.Name switch
         {
-            ProgressionObjectType.PLANET => base.GetIdentifiers<Planet>(),
-            ProgressionObjectType.ASTEROID => base.GetIdentifiers<Asteroid>(),
+            ProgressionObjectType.PROGRESSIONPLANET => base.GetIdentifiers<Planet>(),
+            ProgressionObjectType.PROGRESSIONASTEROID => base.GetIdentifiers<Asteroid>(),
             ProgressionObjectType.HABITAT => Habitats!,
             _ => base.GetIdentifiers<T>()
         };
@@ -65,7 +65,7 @@ public class ProgressionStar : Star
         switch (foundObjectType.Value.Name)
         {
             case ProgressionObjectType.PROGRESSIONPLANET: base.CreateIdentifiers<Planet>(); break;
-            case ProgressionObjectType.ASTEROID: base.CreateIdentifiers<Asteroid>(); break;
+            case ProgressionObjectType.PROGRESSIONASTEROID: base.CreateIdentifiers<Asteroid>(); break;
             case ProgressionObjectType.HABITAT: Habitats ??= new(); break;
             default: base.CreateIdentifiers<T>(); break;
         };
