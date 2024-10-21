@@ -54,7 +54,7 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
             StellarObjectType.DWARFPLANET => DwarfPlanets!,
             StellarObjectType.ASTEROID => Asteroids!,
             StellarObjectType.COMET => Comets!,
-            _ => Result.Error($"{foundObjectType.Value.Name} is not in a Star")
+            _ => Result.Error($"{foundObjectType.Value.Name} is not part of thes star {Name}")
         }; ;
     }
     #endregion

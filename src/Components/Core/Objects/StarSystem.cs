@@ -21,9 +21,15 @@ public class StarSystem : StellarObject, IStellarObject, IEqualityComparer<StarS
 
     protected override Result<Dictionary<string, Identifier>> GetIdentifiers<T>()
     {
-        if (typeof(T).Name == nameof(Star) && Stars is not null)
-            return Stars!;
-        return Result.Error(string.Empty);
+        var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
+        if (!foundObjectType.Success)
+            return Result.Error(foundObjectType.ErrorMessage);
+
+        return foundObjectType.Value.Name switch
+        {
+            StellarObjectType.STAR => Stars!,
+            _ => Result.Error($"{foundObjectType.Value.Name} is not part of the star system {Name}")
+        };
     }
     #endregion
 
@@ -33,8 +39,14 @@ public class StarSystem : StellarObject, IStellarObject, IEqualityComparer<StarS
 
     protected override void CreateIdentifiers<T>()
     {
-        if (typeof(T).Name == nameof(Star))
-            Stars ??= new();
+        var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
+        if (!foundObjectType.Success)
+            Result.Error(foundObjectType.ErrorMessage);
+
+        _ = foundObjectType.Value.Name switch
+        {
+            StellarObjectType.STAR => Stars ??= new()
+        };
     }
     #endregion
 

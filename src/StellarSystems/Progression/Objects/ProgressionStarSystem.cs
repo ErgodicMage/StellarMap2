@@ -23,12 +23,13 @@ public class ProgressionStarSystem : StarSystem
     {
         var foundObjectType = ProgressionObjectType.FromName(typeof(T).Name);
         if (!foundObjectType.Success)
-            return Result.Error($"Can not find ProgressionObjectType for {nameof(T)}");
+            return Result.Error(foundObjectType.ErrorMessage);
 
-        if (foundObjectType.Value.Name == ProgressionObjectType.PROGRESSIONSTAR)
-            return base.GetIdentifiers<Star>();
-
-        return base.GetIdentifiers<T>(); 
+        return foundObjectType.Value.Name switch
+        {
+            ProgressionObjectType.PROGRESSIONSTAR => base.GetIdentifiers<Star>(),
+            _ => Result.Error($"{foundObjectType.Value.Name} is not part of the star system {Name}")
+        };
     }
     #endregion
 
@@ -41,10 +42,11 @@ public class ProgressionStarSystem : StarSystem
         var foundObjectType = ProgressionObjectType.FromName(typeof(T).Name);
         if (!foundObjectType.Success) return;
 
-        if (foundObjectType.Value.Name == ProgressionObjectType.PROGRESSIONSTAR)
-            base.CreateIdentifiers<Star>();
-        else
-            base.CreateIdentifiers<T>();
+        switch (foundObjectType.Value.Name)
+        {
+            case ProgressionObjectType.PROGRESSIONSTAR: base.CreateIdentifiers<Star>(); break;
+            default: base.CreateIdentifiers<T>(); break;
+        };
     }
     #endregion
 }

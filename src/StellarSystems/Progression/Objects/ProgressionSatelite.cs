@@ -21,9 +21,15 @@ public class ProgressionSatelite : Satelite
 
     protected override Result<Dictionary<string, Identifier>> GetIdentifiers<T>()
     {
-        if (typeof(T).Name == nameof(Habitat) && Habitats is not null)
-            return Habitats!;
-        return base.GetIdentifiers<T>();
+        var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
+        if (!foundObjectType.Success)
+            return Result.Error(foundObjectType.ErrorMessage);
+
+        return foundObjectType.Value.Name switch
+        {
+            ProgressionObjectType.HABITAT => Habitats!,
+            _ => Result.Error($"{foundObjectType.Value.Name} is not part of the satellite {Name}")
+        };
     }
     #endregion
 
@@ -33,10 +39,14 @@ public class ProgressionSatelite : Satelite
 
     protected override void CreateIdentifiers<T>()
     {
-        if (typeof(T).Name == nameof(Habitat))
-            Habitats ??= new();
-        else
-            base.CreateIdentifiers<T>();
+        var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
+        if (!foundObjectType.Success)
+            Result.Error(foundObjectType.ErrorMessage);
+
+        _ = foundObjectType.Value.Name switch
+        {
+            ProgressionObjectType.HABITAT => Habitats ??= new()
+        };
     }
     #endregion
 

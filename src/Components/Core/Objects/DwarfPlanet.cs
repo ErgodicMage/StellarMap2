@@ -23,9 +23,15 @@ public class DwarfPlanet : StellarObject, IStellarObject, IEqualityComparer<Dwar
 
     protected override Result<Dictionary<string, Identifier>> GetIdentifiers<T>()
     {
-        if (typeof(T).Name == nameof(Satelite) && Satelites is not null)
-            return Satelites!;
-        return Result.Error(string.Empty);
+        var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
+        if (!foundObjectType.Success)
+            return Result.Error(foundObjectType.ErrorMessage);
+
+        return foundObjectType.Value.Name switch
+        {
+            StellarObjectType.SATELITE => Satelites!,
+            _ => Result.Error($"{foundObjectType.Value.Name} is not part of the dwarf planet {Name}")
+        };
     }
 
     #endregion
@@ -36,8 +42,14 @@ public class DwarfPlanet : StellarObject, IStellarObject, IEqualityComparer<Dwar
 
     protected override void CreateIdentifiers<T>()
     {
-        if (typeof(T).Name == nameof(Satelite))
-            Satelites ??= new();
+        var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
+        if (!foundObjectType.Success)
+            Result.Error(foundObjectType.ErrorMessage);
+
+        _ = foundObjectType.Value.Name switch
+        {
+            StellarObjectType.SATELITE => Satelites ??= new()
+        };
     }
     #endregion
 
