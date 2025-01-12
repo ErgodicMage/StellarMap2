@@ -51,7 +51,7 @@ public class ProgressionSatelite : Satelite
     #endregion
 
     #region IEqualityComparer Functions
-    public bool Equals(ProgressionPlanet? x, ProgressionPlanet? y)
+    public bool Equals(ProgressionSatelite? x, ProgressionSatelite? y)
     {
         if (x is null || y is null) return false;
         if (ReferenceEquals(x, y)) return true;
@@ -61,7 +61,7 @@ public class ProgressionSatelite : Satelite
 
     public override bool Equals(object? obj) => Equals(this, obj as ProgressionPlanet);
 
-    public int GetHashCode(ProgressionPlanet obj) => HashCode.Combine(base.GetHashCode(obj), obj.Habitats);
+    public int GetHashCode(ProgressionSatelite obj) => HashCode.Combine(base.GetHashCode(obj), obj.Habitats);
 
     public override int GetHashCode() => GetHashCode(this);
     #endregion

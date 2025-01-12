@@ -51,7 +51,7 @@ public class ProgressionAsteroid : Asteroid
     #endregion
 
     #region IEqualityComparer Functions
-    public bool Equals(ProgressionPlanet? x, ProgressionPlanet? y)
+    public bool Equals(ProgressionAsteroid? x, ProgressionAsteroid? y)
     {
         if (x is null || y is null) return false;
         if (ReferenceEquals(x, y)) return true;
@@ -59,9 +59,9 @@ public class ProgressionAsteroid : Asteroid
         return CommonFunctionality.CompareDictionaries(x.Habitats, y.Habitats);
     }
 
-    public override bool Equals(object? obj) => Equals(this, obj as ProgressionPlanet);
+    public override bool Equals(object? obj) => Equals(this, obj as ProgressionAsteroid);
 
-    public int GetHashCode(ProgressionPlanet obj) => HashCode.Combine(base.GetHashCode(obj), obj.Habitats);
+    public int GetHashCode(ProgressionAsteroid obj) => HashCode.Combine(base.GetHashCode(obj), obj.Habitats);
 
     public override int GetHashCode() => GetHashCode(this);
     #endregion
