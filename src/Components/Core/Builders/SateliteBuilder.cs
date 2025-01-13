@@ -5,7 +5,7 @@ namespace StellarMap.Core;
 public class SateliteBuilder
 {
     protected Result _result = Result.Ok();
-    protected Satelite _satelite;
+    protected Satelite? _satelite;
 
     public static SateliteBuilder Create(string name, Identifier identifier, IStellarMap map)
     {
@@ -41,9 +41,9 @@ public class SateliteBuilder
     public SateliteBuilder AddPhysicalProperties(PhysicalProperties properties)
     {
         if (!_result.Success) return this;
-        _result = GuardClause.Null(properties);
+        _result = GuardClause.Null(_satelite).Null(properties);
         if (!_result.Success) return this;
-        _satelite.PhysicalProperties = properties;
+        _satelite!.PhysicalProperties = properties;
         return this;
     }
 }

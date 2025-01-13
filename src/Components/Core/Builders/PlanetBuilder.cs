@@ -5,7 +5,7 @@ namespace StellarMap.Core;
 public class PlanetBuilder
 {
     protected Result _result = Result.Ok();
-    protected Planet _planet;
+    protected Planet? _planet;
 
     public static PlanetBuilder Create(string name, Identifier identifier, IStellarMap map)
     {
@@ -40,14 +40,14 @@ public class PlanetBuilder
     public PlanetBuilder AddPhysicalProperties(PhysicalProperties properties)
     {
         if (!_result.Success) return this;
-        _result = GuardClause.Null(properties);
+        _result = GuardClause.Null(_planet).Null(properties);
         if (!_result.Success) return this;
-        _planet.PhysicalProperties = properties;
+        _planet!.PhysicalProperties = properties;
         return this;
     }
 
     // just store the satelites will add to _planet later to resolve identifiers
-    public PlanetBuilder AddSatelite(Satelite satelite) //=> Add(_planet, satelite) as PlanetBuilder;
+    public PlanetBuilder AddSatelite(Satelite? satelite) //=> Add(_planet, satelite) as PlanetBuilder;
     {
         if (!_result.Success) return this;
         _result = BuilderCommonFunctionality.Add<Satelite>(_planet, satelite);

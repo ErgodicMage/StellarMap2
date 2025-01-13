@@ -48,7 +48,9 @@ public class Planet : StellarObject, IStellarObject, IEqualityComparer<Planet>
 
         _ = foundObjectType.Value.Name switch
         {
-            StellarObjectType.SATELITE => Satelites ??= new()
+            StellarObjectType.SATELITE => Satelites ??= new(),
+            _ => null as Dictionary<string, Identifier>
+
         };
     }
     #endregion

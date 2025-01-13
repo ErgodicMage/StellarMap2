@@ -3,7 +3,7 @@
 public class AsteroidBuilder
 {
     protected Result _result = Result.Ok();
-    protected Asteroid _asteroid;
+    protected Asteroid? _asteroid;
 
     public static AsteroidBuilder Create(string name, Identifier identifier, IStellarMap map)
     {
@@ -39,9 +39,9 @@ public class AsteroidBuilder
     public AsteroidBuilder AddPhysicalProperties(PhysicalProperties properties)
     {
         if (!_result.Success) return this;
-        _result = GuardClause.Null(properties);
+        _result = GuardClause.Null(_asteroid).Null(properties);
         if (!_result.Success) return this;
-        _asteroid.PhysicalProperties = properties;
+        _asteroid!.PhysicalProperties = properties;
         return this;
     }
 }

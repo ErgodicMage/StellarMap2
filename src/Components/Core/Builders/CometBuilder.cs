@@ -3,7 +3,7 @@
 public class CometBuilder
 {
     protected Result _result = Result.Ok();
-    protected Comet _comet;
+    protected Comet? _comet;
 
     public static CometBuilder Create(string name, Identifier identifier, IStellarMap map)
     {
@@ -38,9 +38,9 @@ public class CometBuilder
     public CometBuilder AddPhysicalProperties(PhysicalProperties properties)
     {
         if (!_result.Success) return this;
-        _result = GuardClause.Null(properties);
+        _result = GuardClause.Null(_comet).Null(properties);
         if (!_result.Success) return this;
-        _comet.PhysicalProperties = properties;
+        _comet!.PhysicalProperties = properties;
         return this;
     }
 }

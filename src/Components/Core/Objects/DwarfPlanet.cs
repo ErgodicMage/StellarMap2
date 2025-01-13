@@ -48,7 +48,8 @@ public class DwarfPlanet : StellarObject, IStellarObject, IEqualityComparer<Dwar
 
         _ = foundObjectType.Value.Name switch
         {
-            StellarObjectType.SATELITE => Satelites ??= new()
+            StellarObjectType.SATELITE => Satelites ??= new(),
+            _ => null as Dictionary<string, Identifier>
         };
     }
     #endregion

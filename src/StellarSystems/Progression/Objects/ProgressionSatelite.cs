@@ -41,12 +41,12 @@ public class ProgressionSatelite : Satelite
     {
         var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
         if (!foundObjectType.Success)
-            Result.Error(foundObjectType.ErrorMessage);
+            return;
 
-        _ = foundObjectType.Value.Name switch
-        {
-            ProgressionObjectType.HABITAT => Habitats ??= new()
-        };
+        if (foundObjectType.Value.Name == ProgressionObjectType.HABITAT)
+            Habitats ??= new();
+        else
+            base.CreateIdentifiers<T>();
     }
     #endregion
 

@@ -37,6 +37,18 @@ public class ProgressionMap : StandardStellarMap, IProgressionMap
         => Get<Habitat>(identifier);
     #endregion
 
+    #region Add
+    public Result Add(ProgressionStarSystem starSystem) => Add<StarSystem>(starSystem);
+
+    public Result Add(ProgressionStar star) => Add<Star>(star);
+
+    public Result Add(ProgressionPlanet planet) => Add<Planet>(planet);
+
+    public Result Add(ProgressionSatelite satelite) => Add<Satelite>(satelite);
+
+    public Result Add(ProgressionAsteroid asteroid) => Add<Asteroid>(asteroid);
+    #endregion
+
     #region Dictionary
     protected override void CreateDictionary<T>()
     {

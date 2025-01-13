@@ -84,6 +84,7 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
             StellarObjectType.DWARFPLANET => DwarfPlanets ??= new(),
             StellarObjectType.ASTEROID => Asteroids ??= new(),
             StellarObjectType.COMET => Comets ??= new(),
+            _ => null as Dictionary<string, Identifier>
         };
     }
     #endregion

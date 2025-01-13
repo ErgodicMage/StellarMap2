@@ -45,7 +45,8 @@ public class StarSystem : StellarObject, IStellarObject, IEqualityComparer<StarS
 
         _ = foundObjectType.Value.Name switch
         {
-            StellarObjectType.STAR => Stars ??= new()
+            StellarObjectType.STAR => Stars ??= new(),
+            _ => null as Dictionary<string, Identifier>
         };
     }
     #endregion
