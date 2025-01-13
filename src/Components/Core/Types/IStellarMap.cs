@@ -2,7 +2,7 @@
 
 public interface IStellarMap : IEqualityComparer<IStellarMap>
 {
-    string Name { get; set; }
+    string Name { get; init; }
     Dictionary<string, string> MetaData { get; }
 
     // I had to switch from Identifier to strings for the Dictionary key so it works easier with System.Text.Json serialization
