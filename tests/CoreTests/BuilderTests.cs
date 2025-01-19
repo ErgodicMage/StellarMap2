@@ -118,6 +118,7 @@ public class BuilderTests
         Assert.Equal("G2V", sol.StellarClass);
         Assert.NotNull(sol.Planets);
         Assert.Equal(8, sol.Planets.Count);
+        Assert.NotNull(sol.DwarfPlanets);
         Assert.Equal(2, sol.DwarfPlanets.Count);
         Assert.NotNull(sol.Asteroids);
         Assert.Equal(11, sol.Asteroids.Count);

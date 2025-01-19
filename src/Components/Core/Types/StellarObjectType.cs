@@ -21,13 +21,12 @@ public record StellarObjectType(string Name)
     public static readonly StellarObjectType Asteroid = Register(new AsteroidType());
     public static readonly StellarObjectType Comet = Register(new CometType());
 
-    private static Dictionary<string, StellarObjectType> _objectTypes;
+    private static Dictionary<string, StellarObjectType>? _objectTypes;
 
     public static StellarObjectType Register(StellarObjectType type)
     {
         _objectTypes ??= new();
-        if (!_objectTypes.ContainsKey(type.Name))
-            _objectTypes.Add(type.Name, type);
+        _objectTypes.TryAdd(type.Name, type);
         return type;
     }
 

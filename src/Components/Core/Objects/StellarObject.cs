@@ -98,7 +98,8 @@ public abstract class StellarObject : IStellarObject
         return objects;
     }
 
-    protected virtual Result<IDictionary<string, Identifier>> GetIdentifiers<T>() where T : IStellarObject => Result.Error(string.Empty);
+    protected virtual Result<Dictionary<string, Identifier>> GetIdentifiers<T>() where T : IStellarObject 
+        => Result.Error("StellarObject does not contain any identifiers");
     #endregion
 
     #region Add

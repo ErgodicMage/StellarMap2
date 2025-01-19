@@ -42,7 +42,7 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
     public Result<Comet> GetComet(Identifier identifier) => Get<Comet>(identifier);
     public Result<Comet> GetComet(string name) => Get<Comet>(name);
 
-    protected override Result<IDictionary<string, Identifier>> GetIdentifiers<T>()
+    protected override Result<Dictionary<string, Identifier>> GetIdentifiers<T>()
     {
         var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
         if (!foundObjectType.Success)
@@ -54,7 +54,7 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
             StellarObjectType.DWARFPLANET => DwarfPlanets!,
             StellarObjectType.ASTEROID => Asteroids!,
             StellarObjectType.COMET => Comets!,
-            _ => Result.Error($"{foundObjectType.Value.Name} is not in a Star")
+            _ => Result.Error($"{foundObjectType.Value.Name} is not part of thes star {Name}")
         }; ;
     }
     #endregion
@@ -84,6 +84,7 @@ public class Star : StellarObject, IStellarObject, IEqualityComparer<Star>
             StellarObjectType.DWARFPLANET => DwarfPlanets ??= new(),
             StellarObjectType.ASTEROID => Asteroids ??= new(),
             StellarObjectType.COMET => Comets ??= new(),
+            _ => null as Dictionary<string, Identifier>
         };
     }
     #endregion

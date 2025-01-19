@@ -5,7 +5,7 @@ namespace StellarMap.Core;
 public class StarSystemBuilder
 {
     public Result _result = Result.Ok();
-    public StarSystem _starsystem;
+    public StarSystem? _starsystem;
 
     public static StarSystemBuilder Create(string name, Identifier identifier, IStellarMap map)
     {
@@ -38,7 +38,7 @@ public class StarSystemBuilder
     public StarSystemBuilder WithDescription(string description)
         => WithProperty(PropertiesConstant.DESCRIPTION, description);
 
-    public StarSystemBuilder AddStar(Star star)
+    public StarSystemBuilder AddStar(Star? star)
     {
         if (!_result.Success) return this;
         _result = BuilderCommonFunctionality.Add<Star>(_starsystem, star);

@@ -2,5 +2,5 @@
 
 public interface IIdentifierGenerator
 {
-    Identifier GenerateIdentifier(StellarObjectType type, IStellarMap? map = null);
+    Identifier GenerateIdentifier(StellarObjectType type, IStellarMap map);
 }

@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Components\Core\Core.csproj" />
+    <ProjectReference Include="..\..\src\StellarSystems\Progression\Progression.csproj" />
   </ItemGroup>
 
 </Project>

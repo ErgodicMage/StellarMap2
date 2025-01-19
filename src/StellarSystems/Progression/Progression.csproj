@@ -4,13 +4,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="..\..\..\Data\PhysicalEarth.json" />
-    <EmbeddedResource Include="..\..\..\Data\PhysicalSol.json" />
-    <EmbeddedResource Include="..\..\..\Data\PhysicalNearestStars.json" />
+    <ProjectReference Include="..\..\Components\Core\Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Update="ErgodicMage.Result" Version="0.5.0" />
   </ItemGroup>
- 
+
 </Project>

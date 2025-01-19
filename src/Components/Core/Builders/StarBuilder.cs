@@ -5,7 +5,7 @@ namespace StellarMap.Core;
 public class StarBuilder
 {
     protected Result _result = Result.Ok();
-    protected Star _star;
+    protected Star? _star;
 
     public static StarBuilder Create(string name, Identifier identifier, IStellarMap map)
     {
@@ -41,22 +41,22 @@ public class StarBuilder
     public StarBuilder AsStellarClass(string stellarClass)
     {
         if (!_result.Success) return this;
-        _result = GuardClause.NullOrWhiteSpace(stellarClass);
+        _result = GuardClause.Null(_star).NullOrWhiteSpace(stellarClass);
         if (!_result) return this;
-        _star.StellarClass = stellarClass;
+        _star!.StellarClass = stellarClass;
         return this;
     }
 
     public StarBuilder AddPhysicalProperties(PhysicalProperties properties)
     {
         if (!_result.Success) return this;
-        _result = GuardClause.Null(properties);
+        _result = GuardClause.Null(_star).Null(properties);
         if (!_result.Success) return this;
-        _star.PhysicalProperties = properties;
+        _star!.PhysicalProperties = properties;
         return this;
     }
 
-    public StarBuilder AddPlanet(Planet planet)
+    public StarBuilder AddPlanet(Planet? planet)
     {
         if (!_result.Success) return this;
         _result = BuilderCommonFunctionality.Add<Planet>(_star, planet);
@@ -70,7 +70,7 @@ public class StarBuilder
         return this;
     }
 
-    public StarBuilder AddDwarfPlanet(DwarfPlanet dwarfplanet)
+    public StarBuilder AddDwarfPlanet(DwarfPlanet? dwarfplanet)
     {
         if (!_result.Success) return this;
         _result = BuilderCommonFunctionality.Add<DwarfPlanet>(_star, dwarfplanet);
@@ -84,7 +84,7 @@ public class StarBuilder
         return this;
     }
 
-    public StarBuilder AddAsteroid(Asteroid asteroid)
+    public StarBuilder AddAsteroid(Asteroid? asteroid)
     {
         if (!_result.Success) return this;
         _result = BuilderCommonFunctionality.Add<Asteroid>(_star, asteroid);
@@ -98,7 +98,7 @@ public class StarBuilder
         return this;
     }
 
-    public StarBuilder AddComet(Comet comet)
+    public StarBuilder AddComet(Comet? comet)
     {
         if (!_result.Success) return this;
         _result = BuilderCommonFunctionality.Add<Comet>(_star, comet);

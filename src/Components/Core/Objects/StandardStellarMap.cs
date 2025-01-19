@@ -6,10 +6,10 @@ namespace StellarMap.Core;
 public class StandardStellarMap : IStellarMap
 {
     [JsonPropertyOrder(1)]
-    public string Name { get; set; }
+    public string Name { get; init; }
 
     [JsonPropertyOrder(2)]
-    public Dictionary<string, string> MetaData { get; set; }
+    public Dictionary<string, string> MetaData { get; init; }
 
     [JsonPropertyOrder(3)]
     public Dictionary<string, StarSystem>? StarSystems { get; set; }

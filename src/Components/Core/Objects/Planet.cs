@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Numerics;
+using System.Text.Json.Serialization;
 
 namespace StellarMap.Core;
 
@@ -21,13 +22,18 @@ public class Planet : StellarObject, IStellarObject, IEqualityComparer<Planet>
     public Result<Satelite> GetSatelite(Identifier identifier) => Get<Satelite>(identifier);
     public Result<Satelite> GetSatelite(string name) => Get<Satelite>(name);
 
-    protected override Result<IDictionary<string, Identifier>> GetIdentifiers<T>()
+    protected override Result<Dictionary<string, Identifier>> GetIdentifiers<T>()
     {
-        if (typeof(T).Name == nameof(Satelite) && Satelites is not null)
-            return Satelites!;
-        return Result.Error(string.Empty);
-    }
+        var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
+        if (!foundObjectType.Success)
+            return Result.Error(foundObjectType.ErrorMessage);
 
+        return foundObjectType.Value.Name switch
+        {
+            StellarObjectType.SATELITE => Satelites!,
+            _ => Result.Error($"{foundObjectType.Value.Name} is not part of the planet {Name}")
+        };
+    }
     #endregion
 
     #region Add
@@ -36,8 +42,16 @@ public class Planet : StellarObject, IStellarObject, IEqualityComparer<Planet>
 
     protected override void CreateIdentifiers<T>()
     {
-        if (typeof(T).Name == nameof(Satelite))
-            Satelites ??= new();
+        var foundObjectType = StellarObjectType.FromName(typeof(T).Name);
+        if (!foundObjectType.Success)
+            Result.Error(foundObjectType.ErrorMessage);
+
+        _ = foundObjectType.Value.Name switch
+        {
+            StellarObjectType.SATELITE => Satelites ??= new(),
+            _ => null as Dictionary<string, Identifier>
+
+        };
     }
     #endregion
 
