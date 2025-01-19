@@ -1,0 +1,23 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+    <File Path="ToDo.md" />
+  </Folder>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Applications/">
+    <Project Path="src/Applications/PhysicalStellarMap/PhysicalStellarMap.csproj" />
+  </Folder>
+  <Folder Name="/src/Components/">
+    <File Path="src/Components/Directory.Build.props" />
+    <Project Path="src/Components/Core/Core.csproj" />
+    <Project Path="src/Components/PhysicalStellarBuilder/PhysicalStellarBuilder.csproj" />
+  </Folder>
+  <Folder Name="/src/StellarSystems/">
+    <Project Path="src/StellarSystems/Progression/Progression.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CoreTests/CoreTests.csproj" />
+    <Project Path="tests/ProgressionTests/ProgressionTests.csproj" />
+  </Folder>
+</Solution>
