@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Configuration;
-using System.Text.Json;
 
 IConfiguration config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")

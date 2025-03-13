@@ -26,10 +26,16 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhysicalStellarBuilder", "src\Components\PhysicalStellarBuilder\PhysicalStellarBuilder.csproj", "{679DA2BD-C213-4D90-B982-F8613E17FEDD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Applications", "{9DED44E2-DE6E-4805-980A-5234AE1B0042}"
+	ProjectSection(SolutionItems) = preProject
+		src\Applications\Directory.Build.props = src\Applications\Directory.Build.props
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhysicalStellarMap", "src\Applications\PhysicalStellarMap\PhysicalStellarMap.csproj", "{701F1CCE-4764-44C0-8A61-76D571DCA859}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StellarSystems", "StellarSystems", "{47EFE9DC-7325-46EB-85E1-2295CC19D19B}"
+	ProjectSection(SolutionItems) = preProject
+		src\StellarSystems\Directory.Build.props = src\StellarSystems\Directory.Build.props
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Progression", "src\StellarSystems\Progression\Progression.csproj", "{A071D32B-96D8-4724-802E-344780E73CD7}"
 EndProject
