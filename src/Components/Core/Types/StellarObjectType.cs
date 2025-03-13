@@ -1,6 +1,4 @@
-﻿using System.Threading;
-
-namespace StellarMap.Core;
+﻿namespace StellarMap.Core;
 
 public record StellarObjectType(string Name)
 {
@@ -23,8 +21,9 @@ public record StellarObjectType(string Name)
 
     private static Dictionary<string, StellarObjectType>? _objectTypes;
 
-    public static StellarObjectType Register(StellarObjectType type)
+    protected static StellarObjectType Register(StellarObjectType type)
     {
+        ArgumentNullException.ThrowIfNull(type); // note I want to specifically throw an exception here instead of using GuardClause
         _objectTypes ??= new();
         _objectTypes.TryAdd(type.Name, type);
         return type;
@@ -35,7 +34,7 @@ public record StellarObjectType(string Name)
         Result result = GuardClause.NullOrWhiteSpace(name);
         if (!result.Success) return result;
 
-        if (_objectTypes.TryGetValue(name, out var objectType))
+        if (_objectTypes!.TryGetValue(name, out var objectType))
             return objectType;
         
         return Result.Error($"{name} is not a StellarObjectType");
