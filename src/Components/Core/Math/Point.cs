@@ -29,7 +29,7 @@ public readonly record struct Point(double X, double Y, double Z) : IFormattable
 
     public SphericalPoint ToSphericalPoint()
     {
-        double radius = Length(this);
+        double radius = Length();
         double inclination = System.Math.Acos(Z / radius);
         double azimuthal = System.Math.Sign(Y) * System.Math.Acos(X / radius);
         return new(radius, inclination, azimuthal);
