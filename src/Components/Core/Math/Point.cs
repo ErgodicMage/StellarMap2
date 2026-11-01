@@ -1,9 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Numerics;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace StellarMap.Core.Math;
 
+[JsonConverter(typeof(PointJsonConverter))]
 public readonly record struct Point(double X, double Y, double Z) : IFormattable, IParsable<Point>,
     IAdditionOperators<Point, Point, Point>, ISubtractionOperators<Point, Point, Point>, IUnaryNegationOperators<Point, Point>
 {
@@ -98,7 +101,23 @@ public readonly record struct Point(double X, double Y, double Z) : IFormattable
 
         return false;
     }
-
-
     #endregion
+}
+
+public sealed class PointJsonConverter : JsonConverter<Point>
+{
+    public override Point Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    {
+        if (reader.TokenType != JsonTokenType.String)
+            throw new JsonException("Expected Point as \"(x, y, z)\".");
+
+        return Point.TryParse(reader.GetString(), CultureInfo.InvariantCulture, out Point result)
+            ? result
+            : throw new JsonException($"Invalid Point: '{reader.GetString()}'.");
+    }
+
+    public override void Write(Utf8JsonWriter writer, Point value, JsonSerializerOptions options)
+    {
+        writer.WriteStringValue(value.ToString(null, CultureInfo.InvariantCulture));
+    }
 }

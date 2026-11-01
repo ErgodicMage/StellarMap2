@@ -7,7 +7,7 @@
     "Email": "ErgodicMage@gmail.com",
     "License": "MIT License, 2024",
     "Github": "https://github.com/ErgodicMage/StellarMap2",
-    "Date": "3/13/2025"
+    "Date": "11/1/2026"
   },
   "StarSystems": null,
   "Stars": null,
@@ -29,6 +29,7 @@
         "Planet Type": "Rocky Planet"
       },
       "PhysicalProperties": {
+        "Position": "(0,0,0)",
         "Mass": 5.97237E+24,
         "Radius": 6371,
         "Dimensions": "",
@@ -64,6 +65,7 @@
         "AlternativeName": "Luna"
       },
       "PhysicalProperties": {
+        "Position": "(0,0,0)",
         "Mass": 5.97237E+24,
         "Radius": 7.342E+22,
         "Dimensions": "",
