@@ -1,6 +1,4 @@
-﻿using System.Numerics;
-
-namespace StellarMap.Core;
+﻿namespace StellarMap.Core;
 
 public class SateliteBuilder
 {
