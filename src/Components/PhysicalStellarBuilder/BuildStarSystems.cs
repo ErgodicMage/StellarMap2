@@ -28,6 +28,7 @@ public static class BuildStarSystems
             .WithDescription("Star system of brown dwarfs")
             .WithProperty(PropertiesConstant.DESIGNATION, "LUH 16, Luhman–WISE 1, WISE J104915.57−531906.1, GJ 11551")
             .WithProperty(PropertiesConstant.SINBAD, "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=WISE+J104915.57-531906.1")
+            .AddStars(stars)
             .Build();
     }
 }
