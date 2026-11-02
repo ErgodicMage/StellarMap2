@@ -7,5 +7,6 @@ global using System.Text.Json.Serialization;
 global using ErgodicMage.Result;
 
 global using StellarMap.Core;
+global using StellarMap.Core.Math;
 
 

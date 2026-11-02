@@ -4,6 +4,11 @@ namespace StellarMap.Progression;
 
 public class ProgressionStarSystem : StarSystem
 {
+    #region Properties
+    [JsonPropertyOrder(101)]
+    public List<Portal> Portals { get; } = new();
+    #endregion
+
     #region Constructors
     public ProgressionStarSystem() { }
 
@@ -36,6 +41,13 @@ public class ProgressionStarSystem : StarSystem
     #region Add
     public Result Add(ProgressionStar star) => Add<ProgressionStar>(star);
     public Result AddProgressionStar(ProgressionStar star) => Add<ProgressionStar>(star);
+
+    public Result Add(Portal portal) => AddPortal(portal);
+    public Result AddPortal(Portal portal)
+    {
+        Portals.Add(portal);
+        return Result.Ok();
+    }
 
     protected override void CreateIdentifiers<T>()
     {

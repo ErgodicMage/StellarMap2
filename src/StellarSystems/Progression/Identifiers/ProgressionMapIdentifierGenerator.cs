@@ -1,6 +1,6 @@
 ﻿namespace StellarMap.Progression;
 
-public sealed class ProgressionMapIdentifierGenerator
+public sealed class ProgressionMapIdentifierGenerator : IIdentifierGenerator
 {
     private ProgressionMapIdentifierGenerator() { }
 
