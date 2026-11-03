@@ -6,8 +6,8 @@ public static class BuildSatelites
     {
         PhysicalProperties physicalProperties = new()
         {
-            Mass = 5.97237E24,
-            Radius = 7.342E22,
+            Mass = 7.342E22,
+            Radius = 1738.1,
             Dimensions = string.Empty,
             Area = 3.793E7,
             Volume = 2.1958E10,
