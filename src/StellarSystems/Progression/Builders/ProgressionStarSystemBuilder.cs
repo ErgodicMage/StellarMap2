@@ -36,6 +36,15 @@ public class ProgressionStarSystemBuilder
     public ProgressionStarSystemBuilder WithDescription(string description)
         => WithProperty(PropertiesConstant.DESCRIPTION, description);
 
+    public ProgressionStarSystemBuilder AddPhysicalProperties(PhysicalProperties properties)
+    {
+        if (!_result.Success) return this;
+        _result = GuardClause.Null(_starsystem).Null(properties);
+        if (!_result.Success) return this;
+        _starsystem!.PhysicalProperties = properties;
+        return this;
+    }
+
     public ProgressionStarSystemBuilder AddStar(ProgressionStar? star)
     {
         if (!_result.Success) return this;

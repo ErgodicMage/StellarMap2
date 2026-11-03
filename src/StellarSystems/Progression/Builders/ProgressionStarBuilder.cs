@@ -81,4 +81,18 @@ public class ProgressionStarBuilder
         _result = BuilderCommonFunctionality.Add<ProgressionAsteroid>(_star, asteroids);
         return this;
     }
+
+    public ProgressionStarBuilder AddComet(Comet? comet)
+    {
+        if (!_result.Success) return this;
+        _result = BuilderCommonFunctionality.Add<Comet>(_star, comet);
+        return this;
+    }
+
+    public ProgressionStarBuilder AddComets(ICollection<Comet> comets)
+    {
+        if (!_result.Success) return this;
+        _result = BuilderCommonFunctionality.Add<Comet>(_star, comets);
+        return this;
+    }
 }

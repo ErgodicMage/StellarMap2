@@ -12,6 +12,7 @@
     <File Path="src/Components/Directory.Build.props" />
     <Project Path="src/Components/Core/Core.csproj" />
     <Project Path="src/Components/PhysicalStellarBuilder/PhysicalStellarBuilder.csproj" />
+    <Project Path="src/Components/ProgressionStellarBuilder/ProgressionStellarBuilder.csproj" Id="96a947c6-96f9-4624-9f9f-1cf624f724f0" />
   </Folder>
   <Folder Name="/src/StellarSystems/">
     <Project Path="src/StellarSystems/Progression/Progression.csproj" />

@@ -45,6 +45,20 @@ public class ProgressionPlanetBuilder
         return this;
     }
 
+    public ProgressionPlanetBuilder AddSatelite(ProgressionSatelite? satelite) //=> Add(_planet, satelite) as PlanetBuilder;
+    {
+        if (!_result.Success) return this;
+        _result = BuilderCommonFunctionality.Add<ProgressionSatelite>(_planet, satelite);
+        return this;
+    }
+
+    public ProgressionPlanetBuilder AddSatelites(ICollection<ProgressionSatelite> satelites)
+    {
+        if (!_result.Success) return this;
+        _result = BuilderCommonFunctionality.Add<ProgressionSatelite>(_planet, satelites);
+        return this;
+    }
+
     public ProgressionPlanetBuilder AddHabitat(Habitat habitat)
     {
         if (!_result.Success) return this;

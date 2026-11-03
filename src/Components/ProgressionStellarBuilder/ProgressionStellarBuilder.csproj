@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\StellarSystems\Progression\Progression.csproj" />
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\PhysicalStellarBuilder\PhysicalStellarBuilder.csproj" />
+  </ItemGroup>
+
+</Project>
