@@ -59,11 +59,11 @@ public class ProgressionMap : StandardStellarMap, IProgressionMap
         // StarSystems ??= new returns a different type than Stars ?? = new() so it doesn't know what to "return"
         switch (foundObjectType.Value.Name)
         {
-            case ProgressionObjectType.PROGRESSIONSTARSYSTEM: base.CreateDictionary<StarSystem>(); break;
-            case ProgressionObjectType.PROGRESSIONSTAR: base.CreateDictionary<Star>(); break;
-            case ProgressionObjectType.PROGRESSIONPLANET: base.CreateDictionary<Planet>(); break;
-            case ProgressionObjectType.PROGRESSIONSATELITE: base.CreateDictionary<Satelite>(); break;
-            case ProgressionObjectType.PROGRESSIONASTEROID: base.CreateDictionary<Asteroid>(); break;
+            case ProgressionObjectType.PROGRESSIONSTARSYSTEM: StarSystems ??= new(); break;
+            case ProgressionObjectType.PROGRESSIONSTAR: Stars ??= new(); break;
+            case ProgressionObjectType.PROGRESSIONPLANET: Planets ??= new(); break;
+            case ProgressionObjectType.PROGRESSIONSATELITE: Satelites ??= new(); break;
+            case ProgressionObjectType.PROGRESSIONASTEROID: Asteroids ??= new(); break;
 
             case ProgressionObjectType.HABITAT: Habitats ??= new(); break;
 
@@ -80,11 +80,11 @@ public class ProgressionMap : StandardStellarMap, IProgressionMap
 #pragma warning disable CS0458
         return foundObjectType.Value.Name switch
         {
-            ProgressionObjectType.PROGRESSIONSTARSYSTEM => (base.GetDictionary<StarSystem>() as Dictionary<string, T>)!,
-            ProgressionObjectType.PROGRESSIONSTAR => (base.GetDictionary<Star>() as Dictionary<string, T>)!,
-            ProgressionObjectType.PROGRESSIONPLANET => (base.GetDictionary<Planet>() as Dictionary<string, T>)!,
-            ProgressionObjectType.PROGRESSIONSATELITE => (base.GetDictionary<Satelite>() as Dictionary<string, T>)!,
-            ProgressionObjectType.PROGRESSIONASTEROID => (base.GetDictionary<Asteroid>() as Dictionary<string, T>)!,
+            ProgressionObjectType.PROGRESSIONSTARSYSTEM => (base.GetDictionary<StarSystem>().Value as Dictionary<string, T>)!,
+            ProgressionObjectType.PROGRESSIONSTAR => (base.GetDictionary<Star>().Value as Dictionary<string, T>)!,
+            ProgressionObjectType.PROGRESSIONPLANET => (base.GetDictionary<Planet>().Value as Dictionary<string, T>)!,
+            ProgressionObjectType.PROGRESSIONSATELITE => (base.GetDictionary<Satelite>().Value as Dictionary<string, T>)!,
+            ProgressionObjectType.PROGRESSIONASTEROID => (base.GetDictionary<Asteroid>().Value as Dictionary<string, T>)!,
 
             ProgressionObjectType.HABITAT => (Habitats as Dictionary<string, T>)!,
 
