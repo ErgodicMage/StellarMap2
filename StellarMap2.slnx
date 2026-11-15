@@ -7,6 +7,7 @@
   <Folder Name="/src/" />
   <Folder Name="/src/Applications/">
     <Project Path="src/Applications/PhysicalStellarMap/PhysicalStellarMap.csproj" />
+    <Project Path="src/Applications/ProgressionStellarMap/ProgressionStellarMap.csproj" Id="b1b2f0a1-c41a-4b3b-81b3-11c8cacee9cb" />
   </Folder>
   <Folder Name="/src/Components/">
     <File Path="src/Components/Directory.Build.props" />
